@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tourmanagement" Class="TourManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3R5K64P\DB;Initial Catalog=tourmanagement;Integrated Security=True" SettingsObjectName="TourManagement.Properties.Settings" SettingsPropertyName="tourmanagementConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tour" Member="Tours">
+    <Type Name="Tour">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTour" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DacDiem" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GiaTour_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LoaiTour_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Tour_GiaTour" Member="GiaTours" ThisKey="Id" OtherKey="Tour_Id" Type="GiaTour" />
+      <Association Name="Tour_DoanDuLich" Member="DoanDuLiches" ThisKey="Id" OtherKey="Tour_Id" Type="DoanDuLich" />
+      <Association Name="Tour_ThamQuan" Member="ThamQuans" ThisKey="Id" OtherKey="Tour_Id" Type="ThamQuan" />
+      <Association Name="LoaiTour_Tour" Member="LoaiTour" ThisKey="LoaiTour_Id" OtherKey="Id" Type="LoaiTour" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiTour" Member="LoaiTours">
+    <Type Name="LoaiTour">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiTour_Tour" Member="Tours" ThisKey="Id" OtherKey="LoaiTour_Id" Type="Tour" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiaTour" Member="GiaTours">
+    <Type Name="GiaTour">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Gia" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DangApDung" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tour_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tour_GiaTour" Member="Tour" ThisKey="Tour_Id" OtherKey="Id" Type="Tour" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiPhi" Member="ChiPhis">
+    <Type Name="ChiPhi">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiChiPhi_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DoanDuLich_ChiPhi" Member="DoanDuLich" ThisKey="DoanDuLich_Id" OtherKey="Id" Type="DoanDuLich" IsForeignKey="true" />
+      <Association Name="LoaiChiPhi_ChiPhi" Member="LoaiChiPhi" ThisKey="LoaiChiPhi_Id" OtherKey="Id" Type="LoaiChiPhi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietDoan" Member="ChiTietDoans">
+    <Type Name="ChiTietDoan">
+      <Column Name="KhachHang_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DoanDuLich_ChiTietDoan" Member="DoanDuLich" ThisKey="DoanDuLich_Id" OtherKey="Id" Type="DoanDuLich" IsForeignKey="true" />
+      <Association Name="KhachHang_ChiTietDoan" Member="KhachHang" ThisKey="KhachHang_Id" OtherKey="Id" Type="KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiaDiem" Member="DiaDiems">
+    <Type Name="DiaDiem">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDiaDiem" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DiaDiem_NoiDungTour" Member="NoiDungTours" ThisKey="Id" OtherKey="DiaDiem_Id" Type="NoiDungTour" />
+      <Association Name="DiaDiem_ThamQuan" Member="ThamQuans" ThisKey="Id" OtherKey="DiaDiem_Id" Type="ThamQuan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DoanDuLich" Member="DoanDuLiches">
+    <Type Name="DoanDuLich">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tour_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKhoiHanh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DoanhThu" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="DoanDuLich_ChiPhi" Member="ChiPhis" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiPhi" />
+      <Association Name="DoanDuLich_ChiTietDoan" Member="ChiTietDoans" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiTietDoan" />
+      <Association Name="DoanDuLich_NoiDungTour" Member="NoiDungTour" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="NoiDungTour" Cardinality="One" />
+      <Association Name="DoanDuLich_PhanCong" Member="PhanCongs" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="PhanCong" />
+      <Association Name="Tour_DoanDuLich" Member="Tour" ThisKey="Tour_Id" OtherKey="Id" Type="Tour" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="QuocTich" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="KhachHang_ChiTietDoan" Member="ChiTietDoans" ThisKey="Id" OtherKey="KhachHang_Id" Type="ChiTietDoan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiChiPhi" Member="LoaiChiPhis">
+    <Type Name="LoaiChiPhi">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiChiPhi_ChiPhi" Member="ChiPhis" ThisKey="Id" OtherKey="LoaiChiPhi_Id" Type="ChiPhi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_PhanCong" Member="PhanCongs" ThisKey="Id" OtherKey="NhanVien_Id" Type="PhanCong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NoiDungTour" Member="NoiDungTours">
+    <Type Name="NoiDungTour">
+      <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HanhTrinh" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="KhachSan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaDiem_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DiaDiem_NoiDungTour" Member="DiaDiem" ThisKey="DiaDiem_Id" OtherKey="Id" Type="DiaDiem" IsForeignKey="true" />
+      <Association Name="DoanDuLich_NoiDungTour" Member="DoanDuLich" ThisKey="DoanDuLich_Id" OtherKey="Id" Type="DoanDuLich" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhanCong" Member="PhanCongs">
+    <Type Name="PhanCong">
+      <Column Name="NhanVien_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NhiemVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DoanDuLich_PhanCong" Member="DoanDuLich" ThisKey="DoanDuLich_Id" OtherKey="Id" Type="DoanDuLich" IsForeignKey="true" />
+      <Association Name="NhanVien_PhanCong" Member="NhanVien" ThisKey="NhanVien_Id" OtherKey="Id" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThamQuan" Member="ThamQuans">
+    <Type Name="ThamQuan">
+      <Column Name="Tour_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DiaDiem_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ThuTu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DiaDiem_ThamQuan" Member="DiaDiem" ThisKey="DiaDiem_Id" OtherKey="Id" Type="DiaDiem" IsForeignKey="true" />
+      <Association Name="Tour_ThamQuan" Member="Tour" ThisKey="Tour_Id" OtherKey="Id" Type="Tour" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
