@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using TourManagement.BUS;
-using TourManagement.DTO;
+﻿using System.Windows.Forms;
 
 namespace TourManagement.GUI.GiaoDienChiPhi
 {
@@ -14,11 +10,11 @@ namespace TourManagement.GUI.GiaoDienChiPhi
             InitializeComponent();
         }
 
-      
 
-     
 
-        
+
+
+
 
     }
 }

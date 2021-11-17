@@ -7,7 +7,7 @@ namespace TourManagement.GUI.GiaoDienTour
 {
     public partial class Gui_ThemTour : Form
     {
-        
+
 
         public Gui_ThemTour()
         {
