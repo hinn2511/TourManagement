@@ -81,7 +81,7 @@ namespace TourManagement.BUS
         public List<LoaiTour> LayDanhSachLoaiTour()
         {
             Dal_LoaiTour dal_loaiTour = new Dal_LoaiTour();
-            var result = dal_loaiTour.getAllTourType();
+            var result = dal_loaiTour.LayTatCaLoaiTour();
             return result;
         }
     }

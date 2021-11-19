@@ -1,6 +1,6 @@
-﻿namespace TourManagement.GUI.GiaoDienTour
+﻿namespace TourManagement.GUI
 {
-    partial class Gui_Tour
+    partial class Gui_Mau_1
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnLoaiTour = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
@@ -100,8 +100,6 @@
             this.tourGridView.RowTemplate.Height = 24;
             this.tourGridView.Size = new System.Drawing.Size(1237, 592);
             this.tourGridView.TabIndex = 0;
-            this.tourGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tourGridView_CellClick);
-            this.tourGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tourGridView_CellContentClick);
             // 
             // panel6
             // 
@@ -154,7 +152,6 @@
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLamMoi
             // 
@@ -176,7 +173,6 @@
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // panel4
             // 
@@ -190,7 +186,7 @@
             // 
             this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.iconButton1);
-            this.panel2.Controls.Add(this.btnLoaiTour);
+            this.panel2.Controls.Add(this.iconButton2);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnXoa);
@@ -238,31 +234,30 @@
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(121, 50);
             this.iconButton1.TabIndex = 12;
-            this.iconButton1.Text = "GIÁ TOUR";
+            this.iconButton1.Text = "MENU 2";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
-            // btnLoaiTour
+            // iconButton2
             // 
-            this.btnLoaiTour.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoaiTour.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLoaiTour.FlatAppearance.BorderSize = 0;
-            this.btnLoaiTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoaiTour.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLoaiTour.ForeColor = System.Drawing.Color.Black;
-            this.btnLoaiTour.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnLoaiTour.IconColor = System.Drawing.Color.Black;
-            this.btnLoaiTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLoaiTour.IconSize = 24;
-            this.btnLoaiTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoaiTour.Location = new System.Drawing.Point(0, 0);
-            this.btnLoaiTour.Name = "btnLoaiTour";
-            this.btnLoaiTour.Size = new System.Drawing.Size(149, 50);
-            this.btnLoaiTour.TabIndex = 9;
-            this.btnLoaiTour.Text = "LOẠI TOUR";
-            this.btnLoaiTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLoaiTour.UseVisualStyleBackColor = false;
-            this.btnLoaiTour.Click += new System.EventHandler(this.btnLoaiTour_Click);
+            this.iconButton2.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.iconButton2.ForeColor = System.Drawing.Color.Black;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 24;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(0, 0);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(149, 50);
+            this.iconButton2.TabIndex = 9;
+            this.iconButton2.Text = "MENU 1";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = false;
             // 
             // btnThem
             // 
@@ -284,7 +279,6 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -327,16 +321,15 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // Gui_Tour
+            // Gui_Mau_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 755);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Gui_Tour";
+            this.Name = "Gui_Mau_1";
             this.Text = "Gui_GiaTour";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -362,7 +355,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnLoaiTour;
+        private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton btnThem;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;

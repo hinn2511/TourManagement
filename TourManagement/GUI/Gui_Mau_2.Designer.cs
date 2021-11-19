@@ -1,6 +1,6 @@
-﻿namespace TourManagement.GUI.GiaoDienTour
+﻿namespace TourManagement.GUI
 {
-    partial class Gui_Tour
+    partial class Gui_Mau_2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,64 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelTen = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.tourGridView = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelDuoiTimKiem = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChiTiet = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnLoaiTour = new FontAwesome.Sharp.IconButton();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
+            this.panelTen.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelMenu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelTen
+            // 
+            this.panelTen.BackColor = System.Drawing.Color.LightSalmon;
+            this.panelTen.Controls.Add(this.label1);
+            this.panelTen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTen.Location = new System.Drawing.Point(0, 0);
+            this.panelTen.Name = "panelTen";
+            this.panelTen.Size = new System.Drawing.Size(953, 70);
+            this.panelTen.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TÊN TIÊU ĐỀ";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelTen);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1257, 755);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(953, 675);
+            this.panel1.TabIndex = 6;
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(10, 60);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1237, 685);
-            this.panel3.TabIndex = 1;
+            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Controls.Add(this.panelDuoiTimKiem);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panelMenu);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.panel2.Size = new System.Drawing.Size(953, 605);
+            this.panel2.TabIndex = 6;
             // 
-            // panel7
+            // panel8
             // 
-            this.panel7.Controls.Add(this.tourGridView);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 93);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1237, 592);
-            this.panel7.TabIndex = 3;
+            this.panel8.Controls.Add(this.tourGridView);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(10, 145);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(933, 450);
+            this.panel8.TabIndex = 11;
             // 
             // tourGridView
             // 
@@ -98,18 +118,16 @@
             this.tourGridView.ReadOnly = true;
             this.tourGridView.RowHeadersWidth = 51;
             this.tourGridView.RowTemplate.Height = 24;
-            this.tourGridView.Size = new System.Drawing.Size(1237, 592);
-            this.tourGridView.TabIndex = 0;
-            this.tourGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tourGridView_CellClick);
-            this.tourGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tourGridView_CellContentClick);
+            this.tourGridView.Size = new System.Drawing.Size(933, 450);
+            this.tourGridView.TabIndex = 1;
             // 
-            // panel6
+            // panelDuoiTimKiem
             // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 68);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1237, 25);
-            this.panel6.TabIndex = 2;
+            this.panelDuoiTimKiem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDuoiTimKiem.Location = new System.Drawing.Point(10, 125);
+            this.panelDuoiTimKiem.Name = "panelDuoiTimKiem";
+            this.panelDuoiTimKiem.Size = new System.Drawing.Size(933, 20);
+            this.panelDuoiTimKiem.TabIndex = 10;
             // 
             // panel5
             // 
@@ -117,10 +135,10 @@
             this.panel5.Controls.Add(this.btnTimKiem);
             this.panel5.Controls.Add(this.btnLamMoi);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 20);
+            this.panel5.Location = new System.Drawing.Point(10, 77);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1237, 48);
-            this.panel5.TabIndex = 1;
+            this.panel5.Size = new System.Drawing.Size(933, 48);
+            this.panel5.TabIndex = 9;
             // 
             // txtTimKiem
             // 
@@ -131,7 +149,7 @@
             this.txtTimKiem.Location = new System.Drawing.Point(0, 0);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(884, 48);
+            this.txtTimKiem.Size = new System.Drawing.Size(580, 48);
             this.txtTimKiem.TabIndex = 15;
             // 
             // btnTimKiem
@@ -146,7 +164,7 @@
             this.btnTimKiem.IconColor = System.Drawing.Color.Black;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 24;
-            this.btnTimKiem.Location = new System.Drawing.Point(884, 0);
+            this.btnTimKiem.Location = new System.Drawing.Point(580, 0);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(191, 48);
             this.btnTimKiem.TabIndex = 14;
@@ -154,11 +172,10 @@
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLamMoi.BackColor = System.Drawing.Color.Transparent;
             this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLamMoi.FlatAppearance.BorderSize = 0;
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -168,7 +185,7 @@
             this.btnLamMoi.IconColor = System.Drawing.Color.Black;
             this.btnLamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLamMoi.IconSize = 24;
-            this.btnLamMoi.Location = new System.Drawing.Point(1075, 0);
+            this.btnLamMoi.Location = new System.Drawing.Point(771, 0);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(162, 48);
             this.btnLamMoi.TabIndex = 13;
@@ -176,93 +193,26 @@
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Location = new System.Drawing.Point(10, 60);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1237, 20);
-            this.panel4.TabIndex = 0;
+            this.panel4.Size = new System.Drawing.Size(933, 17);
+            this.panel4.TabIndex = 8;
             // 
-            // panel2
+            // panelMenu
             // 
-            this.panel2.Controls.Add(this.btnChiTiet);
-            this.panel2.Controls.Add(this.iconButton1);
-            this.panel2.Controls.Add(this.btnLoaiTour);
-            this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Controls.Add(this.btnSua);
-            this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1237, 50);
-            this.panel2.TabIndex = 0;
-            // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.BackColor = System.Drawing.Color.Orange;
-            this.btnChiTiet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnChiTiet.FlatAppearance.BorderSize = 0;
-            this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChiTiet.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnChiTiet.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.btnChiTiet.IconColor = System.Drawing.Color.White;
-            this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChiTiet.IconSize = 24;
-            this.btnChiTiet.Location = new System.Drawing.Point(717, 0);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(130, 50);
-            this.btnChiTiet.TabIndex = 13;
-            this.btnChiTiet.Text = "CHI TIẾT";
-            this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChiTiet.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 24;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(149, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(121, 50);
-            this.iconButton1.TabIndex = 12;
-            this.iconButton1.Text = "GIÁ TOUR";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnLoaiTour
-            // 
-            this.btnLoaiTour.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoaiTour.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLoaiTour.FlatAppearance.BorderSize = 0;
-            this.btnLoaiTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoaiTour.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLoaiTour.ForeColor = System.Drawing.Color.Black;
-            this.btnLoaiTour.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnLoaiTour.IconColor = System.Drawing.Color.Black;
-            this.btnLoaiTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLoaiTour.IconSize = 24;
-            this.btnLoaiTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoaiTour.Location = new System.Drawing.Point(0, 0);
-            this.btnLoaiTour.Name = "btnLoaiTour";
-            this.btnLoaiTour.Size = new System.Drawing.Size(149, 50);
-            this.btnLoaiTour.TabIndex = 9;
-            this.btnLoaiTour.Text = "LOẠI TOUR";
-            this.btnLoaiTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLoaiTour.UseVisualStyleBackColor = false;
-            this.btnLoaiTour.Click += new System.EventHandler(this.btnLoaiTour_Click);
+            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelMenu.Controls.Add(this.btnThem);
+            this.panelMenu.Controls.Add(this.btnSua);
+            this.panelMenu.Controls.Add(this.btnXoa);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenu.Location = new System.Drawing.Point(10, 10);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(933, 50);
+            this.panelMenu.TabIndex = 7;
             // 
             // btnThem
             // 
@@ -276,7 +226,7 @@
             this.btnThem.IconColor = System.Drawing.Color.White;
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 24;
-            this.btnThem.Location = new System.Drawing.Point(847, 0);
+            this.btnThem.Location = new System.Drawing.Point(543, 0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(130, 50);
             this.btnThem.TabIndex = 2;
@@ -284,7 +234,6 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -298,7 +247,7 @@
             this.btnSua.IconColor = System.Drawing.Color.White;
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 24;
-            this.btnSua.Location = new System.Drawing.Point(977, 0);
+            this.btnSua.Location = new System.Drawing.Point(673, 0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(130, 50);
             this.btnSua.TabIndex = 1;
@@ -319,7 +268,7 @@
             this.btnXoa.IconColor = System.Drawing.Color.White;
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 24;
-            this.btnXoa.Location = new System.Drawing.Point(1107, 0);
+            this.btnXoa.Location = new System.Drawing.Point(803, 0);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(130, 50);
             this.btnXoa.TabIndex = 0;
@@ -327,46 +276,46 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // Gui_Tour
+            // Gui_Mau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 755);
+            this.ClientSize = new System.Drawing.Size(953, 675);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Gui_Tour";
+            this.Name = "Gui_Mau";
             this.Text = "Gui_GiaTour";
+            this.panelTen.ResumeLayout(false);
+            this.panelTen.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel panelTen;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView tourGridView;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelDuoiTimKiem;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private FontAwesome.Sharp.IconButton btnTimKiem;
         private FontAwesome.Sharp.IconButton btnLamMoi;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnLoaiTour;
+        private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnThem;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private FontAwesome.Sharp.IconButton btnChiTiet;
     }
 }

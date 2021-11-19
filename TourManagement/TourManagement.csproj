@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\Bus_GiaTour.cs" />
+    <Compile Include="BUS\Bus_LoaiTour.cs" />
     <Compile Include="BUS\Bus_Tour.cs" />
     <Compile Include="DAL\Dal_GiaTour.cs" />
     <Compile Include="DAL\Dal_LoaiTour.cs" />
@@ -99,6 +100,24 @@
     <Compile Include="GUI\GiaoDienKhachHang\Gui_KhachHang.Designer.cs">
       <DependentUpon>Gui_KhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiaoDienLoaiTour\Gui_LoaiTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiTour\Gui_LoaiTour.Designer.cs">
+      <DependentUpon>Gui_LoaiTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiTour\Gui_SuaLoaiTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiTour\Gui_SuaLoaiTour.Designer.cs">
+      <DependentUpon>Gui_SuaLoaiTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiTour\Gui_ThemLoaiTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiTour\Gui_ThemLoaiTour.Designer.cs">
+      <DependentUpon>Gui_ThemLoaiTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoDienNhanVien\Gui_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +129,24 @@
     </Compile>
     <Compile Include="GUI\Gui_GiaoDienChinh.Designer.cs">
       <DependentUpon>Gui_GiaoDienChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Gui_Mau_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Gui_Mau_2.Designer.cs">
+      <DependentUpon>Gui_Mau_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Gui_Mau_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Gui_Mau_1.Designer.cs">
+      <DependentUpon>Gui_Mau_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Gui_Mau_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Gui_Mau_3.Designer.cs">
+      <DependentUpon>Gui_Mau_3.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Gui_TrangChu.cs">
       <SubType>Form</SubType>
@@ -148,11 +185,29 @@
     <EmbeddedResource Include="GUI\GiaoDienKhachHang\Gui_KhachHang.resx">
       <DependentUpon>Gui_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienLoaiTour\Gui_LoaiTour.resx">
+      <DependentUpon>Gui_LoaiTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienLoaiTour\Gui_SuaLoaiTour.resx">
+      <DependentUpon>Gui_SuaLoaiTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienLoaiTour\Gui_ThemLoaiTour.resx">
+      <DependentUpon>Gui_ThemLoaiTour.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienNhanVien\Gui_NhanVien.resx">
       <DependentUpon>Gui_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Gui_GiaoDienChinh.resx">
       <DependentUpon>Gui_GiaoDienChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Gui_Mau_2.resx">
+      <DependentUpon>Gui_Mau_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Gui_Mau_1.resx">
+      <DependentUpon>Gui_Mau_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Gui_Mau_3.resx">
+      <DependentUpon>Gui_Mau_3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Gui_TrangChu.resx">
       <DependentUpon>Gui_TrangChu.cs</DependentUpon>
@@ -198,7 +253,9 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GUI\GiaoDienGiaTour\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home.jpg" />
   </ItemGroup>

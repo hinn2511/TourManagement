@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
+using TourManagement.GUI.GiaoDienLoaiTour;
 
 namespace TourManagement.GUI.GiaoDienTour
 {
@@ -94,6 +95,12 @@ namespace TourManagement.GUI.GiaoDienTour
                 currentId = int.Parse(tourGridView.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
 
             }
+        }
+
+        private void btnLoaiTour_Click(object sender, EventArgs e)
+        {
+            Gui_LoaiTour loaiTourForm = new Gui_LoaiTour();
+            loaiTourForm.ShowDialog();
         }
     }
 }

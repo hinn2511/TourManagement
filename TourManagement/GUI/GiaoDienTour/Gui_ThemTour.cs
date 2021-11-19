@@ -59,10 +59,13 @@ namespace TourManagement.GUI.GiaoDienTour
                 giaTour.Gia = gia;
                 Bus_Tour bus_Tour = new Bus_Tour();
                 if (bus_Tour.ThemTourMoi(tour, giaTour))
+                {
                     MessageBox.Show("Đã thêm tour thành công", "Thành công", MessageBoxButtons.OK);
-
-                DialogResult = DialogResult.OK;
-                Close();
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Đã có lỗi xảy ra", "Thất bại", MessageBoxButtons.OK);
             }
 
 
