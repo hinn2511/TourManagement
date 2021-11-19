@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using TourManagement.BUS;
 
@@ -43,7 +42,7 @@ namespace TourManagement.GUI.GiaoDienLoaiTour
             {
                 MessageBox.Show("Vui lòng nhập thông tin mới", "Lỗi", MessageBoxButtons.OK);
                 return;
-            }    
+            }
             if (bus.CapNhatLoaiTour(loaiTour))
             {
                 MessageBox.Show("Đã cập nhật loại tour thành công", "Thành công", MessageBoxButtons.OK);
