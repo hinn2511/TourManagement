@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using TourManagement.DAL;
 
 namespace TourManagement.BUS
@@ -33,6 +35,12 @@ namespace TourManagement.BUS
         {
             Dal_LoaiTour dal = new Dal_LoaiTour();
             return dal.LayThongTinLoaiTour(id);
+        }
+
+        public List<LoaiTour> TimKiemLoaiTour(List<LoaiTour> dsLoaiTour, string tukhoa)
+        {
+            var result = dsLoaiTour.Where(t => t.TenLoai.Contains(tukhoa)).ToList();
+            return result;
         }
     }
 }

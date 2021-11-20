@@ -75,14 +75,31 @@ namespace TourManagement.GUI.GiaoDienLoaiTour
 
         private void btnSua_Click(object sender, System.EventArgs e)
         {
-            string tenLoaiTour = loaiTourGridView.Rows[currentIndex].Cells["TenLoai"].FormattedValue.ToString();
-            Gui_SuaLoaiTour suaLoaiTourForm = new Gui_SuaLoaiTour(currentId, tenLoaiTour);
-            var result = suaLoaiTourForm.ShowDialog();
-            if (result == DialogResult.OK)
+            if (currentIndex < 0)
+                MessageBox.Show("Vui lòng chọn loại tour cần sửa", "Lỗi", MessageBoxButtons.OK);
+            else
             {
-                CapNhatDanhSachLoaiTour();
+                string tenLoaiTour = loaiTourGridView.Rows[currentIndex].Cells["TenLoai"].FormattedValue.ToString();
+                Gui_SuaLoaiTour suaLoaiTourForm = new Gui_SuaLoaiTour(currentId, tenLoaiTour);
+                var result = suaLoaiTourForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    CapNhatDanhSachLoaiTour();
+                }
             }
+            
         }
 
+        private void btnTimKiem_Click(object sender, System.EventArgs e)
+        {
+            Bus_LoaiTour bus = new Bus_LoaiTour();
+            var result = bus.TimKiemLoaiTour(dsLoaiTour, txtTimKiem.Text);
+            loaiTourGridView.DataSource = result;
+        }
+
+        private void btnLamMoi_Click(object sender, System.EventArgs e)
+        {
+            loaiTourGridView.DataSource = dsLoaiTour;
+        }
     }
 }
