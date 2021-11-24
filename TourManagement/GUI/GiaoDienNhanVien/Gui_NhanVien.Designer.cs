@@ -235,6 +235,7 @@
             this.btnPhanCong.Text = "PHÂN CÔNG";
             this.btnPhanCong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhanCong.UseVisualStyleBackColor = false;
+            this.btnPhanCong.Click += new System.EventHandler(this.btnPhanCong_Click);
             // 
             // btnThem
             // 

@@ -70,11 +70,14 @@
   <ItemGroup>
     <Compile Include="BUS\Bus_GiaTour.cs" />
     <Compile Include="BUS\Bus_LoaiTour.cs" />
+    <Compile Include="BUS\Bus_NV.cs" />
     <Compile Include="BUS\Bus_Tour.cs" />
     <Compile Include="DAL\Dal_GiaTour.cs" />
     <Compile Include="DAL\Dal_LoaiTour.cs" />
+    <Compile Include="DAL\Dal_NV.cs" />
     <Compile Include="DAL\Dal_Tour.cs" />
     <Compile Include="DTO\Dto_GiaTour.cs" />
+    <Compile Include="DTO\Dto_NV.cs" />
     <Compile Include="DTO\Dto_Tour.cs" />
     <Compile Include="GUI\GiaoDienChiPhi\Gui_ChiPhi.cs">
       <SubType>Form</SubType>
@@ -168,9 +171,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TourManagement.cs">
-      <DependentUpon>TourManagement.dbml</DependentUpon>
-    </Compile>
     <Compile Include="TourManagement.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

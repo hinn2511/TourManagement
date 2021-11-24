@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
-
+using TourManagement.BUS;
+using TourManagement.DTO;
 namespace TourManagement.GUI.GiaoDienNhanVien
 {
     public partial class Gui_NhanVien : Form
@@ -11,6 +12,9 @@ namespace TourManagement.GUI.GiaoDienNhanVien
             InitializeComponent();
         }
 
+        private void btnPhanCong_Click(object sender, System.EventArgs e)
+        {
 
+        }
     }
 }

@@ -43,5 +43,16 @@ namespace TourManagement.Properties {
                 return ((string)(this["tourmanagementConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-JREQFRS\\HLONG;Initial Catalog=tourmanagement;Integrated Secur" +
+            "ity=True")]
+        public string tourmanagementConnectionString1 {
+            get {
+                return ((string)(this["tourmanagementConnectionString1"]));
+            }
+        }
     }
 }
