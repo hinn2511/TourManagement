@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.tourGridView = new System.Windows.Forms.DataGridView();
+            this.khGridView = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khGridView)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -78,26 +78,26 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.tourGridView);
+            this.panel7.Controls.Add(this.khGridView);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 93);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1237, 592);
             this.panel7.TabIndex = 3;
             // 
-            // tourGridView
+            // khGridView
             // 
-            this.tourGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tourGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.tourGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tourGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tourGridView.Location = new System.Drawing.Point(0, 0);
-            this.tourGridView.Name = "tourGridView";
-            this.tourGridView.ReadOnly = true;
-            this.tourGridView.RowHeadersWidth = 51;
-            this.tourGridView.RowTemplate.Height = 24;
-            this.tourGridView.Size = new System.Drawing.Size(1237, 592);
-            this.tourGridView.TabIndex = 0;
+            this.khGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.khGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.khGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.khGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.khGridView.Location = new System.Drawing.Point(0, 0);
+            this.khGridView.Name = "khGridView";
+            this.khGridView.ReadOnly = true;
+            this.khGridView.RowHeadersWidth = 51;
+            this.khGridView.RowTemplate.Height = 24;
+            this.khGridView.Size = new System.Drawing.Size(1237, 592);
+            this.khGridView.TabIndex = 0;
             // 
             // panel6
             // 
@@ -288,7 +288,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khGridView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -301,7 +301,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.DataGridView tourGridView;
+        private System.Windows.Forms.DataGridView khGridView;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnTimKiem;

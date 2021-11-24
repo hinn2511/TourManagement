@@ -69,14 +69,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\Bus_GiaTour.cs" />
+    <Compile Include="BUS\Bus_KH.cs" />
     <Compile Include="BUS\Bus_LoaiTour.cs" />
     <Compile Include="BUS\Bus_NV.cs" />
     <Compile Include="BUS\Bus_Tour.cs" />
     <Compile Include="DAL\Dal_GiaTour.cs" />
+    <Compile Include="DAL\Dal_KH.cs" />
     <Compile Include="DAL\Dal_LoaiTour.cs" />
     <Compile Include="DAL\Dal_NV.cs" />
     <Compile Include="DAL\Dal_Tour.cs" />
     <Compile Include="DTO\Dto_GiaTour.cs" />
+    <Compile Include="DTO\Dto_KH.cs" />
     <Compile Include="DTO\Dto_NV.cs" />
     <Compile Include="DTO\Dto_Tour.cs" />
     <Compile Include="GUI\GiaoDienChiPhi\Gui_ChiPhi.cs">
@@ -102,6 +105,12 @@
     </Compile>
     <Compile Include="GUI\GiaoDienKhachHang\Gui_KhachHang.Designer.cs">
       <DependentUpon>Gui_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienKhachHang\Gui_ThemKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienKhachHang\Gui_ThemKH.Designer.cs">
+      <DependentUpon>Gui_ThemKH.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GiaoDienLoaiTour\Gui_LoaiTour.cs">
       <SubType>Form</SubType>
@@ -193,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienKhachHang\Gui_KhachHang.resx">
       <DependentUpon>Gui_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienKhachHang\Gui_ThemKH.resx">
+      <DependentUpon>Gui_ThemKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienLoaiTour\Gui_LoaiTour.resx">
       <DependentUpon>Gui_LoaiTour.cs</DependentUpon>
