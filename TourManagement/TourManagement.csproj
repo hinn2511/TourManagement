@@ -121,6 +121,12 @@
     <Compile Include="GUI\GiaoDienLoaiTour\Gui_ThemLoaiTour.Designer.cs">
       <DependentUpon>Gui_ThemLoaiTour.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiaoDienNhanVien\Gui_ThemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienNhanVien\Gui_ThemNV.Designer.cs">
+      <DependentUpon>Gui_ThemNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoDienNhanVien\Gui_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienLoaiTour\Gui_ThemLoaiTour.resx">
       <DependentUpon>Gui_ThemLoaiTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienNhanVien\Gui_ThemNV.resx">
+      <DependentUpon>Gui_ThemNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienNhanVien\Gui_NhanVien.resx">
       <DependentUpon>Gui_NhanVien.cs</DependentUpon>

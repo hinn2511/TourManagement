@@ -73,7 +73,7 @@ namespace TourManagement.GUI.GiaoDienTour
             else
             {
                 Bus_Tour bus = new Bus_Tour();
-                var result = bus.XoaTour(currentId);
+                var result = bus.XoaTour(dsTour[currentIndex].Id);
                 if (result)
                 {
                     MessageBox.Show("Đã xóa tour thành công", "Xóa thành công", MessageBoxButtons.OK);
