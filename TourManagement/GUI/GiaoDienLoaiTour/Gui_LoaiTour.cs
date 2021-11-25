@@ -50,7 +50,7 @@ namespace TourManagement.GUI.GiaoDienLoaiTour
             else
             {
                 Bus_LoaiTour bus = new Bus_LoaiTour();
-                var result = bus.XoaLoaiTour(currentId);
+                var result = bus.XoaLoaiTour(dsLoaiTour[currentIndex].Id);
                 if (result)
                 {
                     MessageBox.Show("Đã xóa loại tour thành công", "Xóa thành công", MessageBoxButtons.OK);

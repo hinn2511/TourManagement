@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.tourGridView = new System.Windows.Forms.DataGridView();
+            this.nvGridView = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvGridView)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,26 +79,26 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.tourGridView);
+            this.panel7.Controls.Add(this.nvGridView);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 93);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1237, 592);
             this.panel7.TabIndex = 3;
             // 
-            // tourGridView
+            // nvGridView
             // 
-            this.tourGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tourGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.tourGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tourGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tourGridView.Location = new System.Drawing.Point(0, 0);
-            this.tourGridView.Name = "tourGridView";
-            this.tourGridView.ReadOnly = true;
-            this.tourGridView.RowHeadersWidth = 51;
-            this.tourGridView.RowTemplate.Height = 24;
-            this.tourGridView.Size = new System.Drawing.Size(1237, 592);
-            this.tourGridView.TabIndex = 0;
+            this.nvGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.nvGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.nvGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nvGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nvGridView.Location = new System.Drawing.Point(0, 0);
+            this.nvGridView.Name = "nvGridView";
+            this.nvGridView.ReadOnly = true;
+            this.nvGridView.RowHeadersWidth = 51;
+            this.nvGridView.RowTemplate.Height = 24;
+            this.nvGridView.Size = new System.Drawing.Size(1237, 592);
+            this.nvGridView.TabIndex = 0;
             // 
             // panel6
             // 
@@ -235,6 +235,7 @@
             this.btnPhanCong.Text = "PHÂN CÔNG";
             this.btnPhanCong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhanCong.UseVisualStyleBackColor = false;
+            this.btnPhanCong.Click += new System.EventHandler(this.btnPhanCong_Click);
             // 
             // btnThem
             // 
@@ -311,7 +312,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvGridView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -324,7 +325,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.DataGridView tourGridView;
+        private System.Windows.Forms.DataGridView nvGridView;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnTimKiem;
