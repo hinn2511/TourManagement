@@ -69,12 +69,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\Bus_GiaTour.cs" />
+    <Compile Include="BUS\Bus_ThamQuan.cs" />
     <Compile Include="BUS\Bus_LoaiTour.cs" />
     <Compile Include="BUS\Bus_Tour.cs" />
     <Compile Include="DAL\Dal_GiaTour.cs" />
     <Compile Include="DAL\Dal_LoaiTour.cs" />
+    <Compile Include="DAL\Dal_ThamQuan.cs" />
     <Compile Include="DAL\Dal_Tour.cs" />
-    <Compile Include="DTO\Dto_GiaTour.cs" />
+    <Compile Include="DTO\Dto_ThamQuan.cs" />
     <Compile Include="DTO\Dto_Tour.cs" />
     <Compile Include="GUI\GiaoDienChiPhi\Gui_ChiPhi.cs">
       <SubType>Form</SubType>
@@ -93,6 +95,42 @@
     </Compile>
     <Compile Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.Designer.cs">
       <DependentUpon>Gui_DoanDuLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.Designer.cs">
+      <DependentUpon>Gui_ThamQuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienThamQuan\Gui_SuaThamQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienThamQuan\Gui_SuaThamQuan.Designer.cs">
+      <DependentUpon>Gui_SuaThamQuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienThamQuan\Gui_ThemThamQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienThamQuan\Gui_ThemThamQuan.Designer.cs">
+      <DependentUpon>Gui_ThemThamQuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienGiaTour\Gui_GiaTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienGiaTour\Gui_GiaTour.Designer.cs">
+      <DependentUpon>Gui_GiaTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienGiaTour\Gui_SuaGiaTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienGiaTour\Gui_SuaGiaTour.Designer.cs">
+      <DependentUpon>Gui_SuaGiaTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienGiaTour\Gui_ThemGiaTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienGiaTour\Gui_ThemGiaTour.Designer.cs">
+      <DependentUpon>Gui_ThemGiaTour.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GiaoDienKhachHang\Gui_KhachHang.cs">
       <SubType>Form</SubType>
@@ -123,6 +161,18 @@
     </Compile>
     <Compile Include="GUI\GiaoDienNhanVien\Gui_NhanVien.Designer.cs">
       <DependentUpon>Gui_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienTour\Gui_ChiTietTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienTour\Gui_ChiTietTour.Designer.cs">
+      <DependentUpon>Gui_ChiTietTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienTour\Gui_SuaTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienTour\Gui_SuaTour.Designer.cs">
+      <DependentUpon>Gui_SuaTour.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Gui_GiaoDienChinh.cs">
       <SubType>Form</SubType>
@@ -185,6 +235,24 @@
     <EmbeddedResource Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.resx">
       <DependentUpon>Gui_DoanDuLich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.resx">
+      <DependentUpon>Gui_ThamQuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienThamQuan\Gui_SuaThamQuan.resx">
+      <DependentUpon>Gui_SuaThamQuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienThamQuan\Gui_ThemThamQuan.resx">
+      <DependentUpon>Gui_ThemThamQuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienGiaTour\Gui_GiaTour.resx">
+      <DependentUpon>Gui_GiaTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienGiaTour\Gui_SuaGiaTour.resx">
+      <DependentUpon>Gui_SuaGiaTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienGiaTour\Gui_ThemGiaTour.resx">
+      <DependentUpon>Gui_ThemGiaTour.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienKhachHang\Gui_KhachHang.resx">
       <DependentUpon>Gui_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +267,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienNhanVien\Gui_NhanVien.resx">
       <DependentUpon>Gui_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienTour\Gui_ChiTietTour.resx">
+      <DependentUpon>Gui_ChiTietTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienTour\Gui_SuaTour.resx">
+      <DependentUpon>Gui_SuaTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Gui_GiaoDienChinh.resx">
       <DependentUpon>Gui_GiaoDienChinh.cs</DependentUpon>
@@ -256,9 +330,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\GiaoDienGiaTour\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\home.jpg" />
   </ItemGroup>

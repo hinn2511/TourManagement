@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TourManagement.DAL;
 
@@ -10,7 +9,7 @@ namespace TourManagement.BUS
         public List<LoaiTour> LayDanhSachLoaiTour()
         {
             Dal_LoaiTour dal = new Dal_LoaiTour();
-            return dal.LayTatCaLoaiTour();
+            return dal.LayDanhSachLoaiTour();
         }
 
         public bool ThemLoaiTour(LoaiTour loaiTour)

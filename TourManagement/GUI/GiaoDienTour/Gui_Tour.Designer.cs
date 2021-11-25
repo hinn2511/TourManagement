@@ -39,8 +39,9 @@
             this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLichTrinh = new FontAwesome.Sharp.IconButton();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnGiaTour = new FontAwesome.Sharp.IconButton();
             this.btnLoaiTour = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
@@ -62,7 +63,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1257, 755);
+            this.panel1.Size = new System.Drawing.Size(1296, 755);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -75,7 +76,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(10, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1237, 685);
+            this.panel3.Size = new System.Drawing.Size(1276, 685);
             this.panel3.TabIndex = 1;
             // 
             // panel7
@@ -84,7 +85,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 93);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1237, 592);
+            this.panel7.Size = new System.Drawing.Size(1276, 592);
             this.panel7.TabIndex = 3;
             // 
             // tourGridView
@@ -98,17 +99,16 @@
             this.tourGridView.ReadOnly = true;
             this.tourGridView.RowHeadersWidth = 51;
             this.tourGridView.RowTemplate.Height = 24;
-            this.tourGridView.Size = new System.Drawing.Size(1237, 592);
+            this.tourGridView.Size = new System.Drawing.Size(1276, 592);
             this.tourGridView.TabIndex = 0;
             this.tourGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tourGridView_CellClick);
-            this.tourGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tourGridView_CellContentClick);
             // 
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 68);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1237, 25);
+            this.panel6.Size = new System.Drawing.Size(1276, 25);
             this.panel6.TabIndex = 2;
             // 
             // panel5
@@ -119,7 +119,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 20);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1237, 48);
+            this.panel5.Size = new System.Drawing.Size(1276, 48);
             this.panel5.TabIndex = 1;
             // 
             // txtTimKiem
@@ -127,12 +127,13 @@
             this.txtTimKiem.BackColor = System.Drawing.Color.White;
             this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTimKiem.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTimKiem.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTimKiem.Location = new System.Drawing.Point(0, 0);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(884, 48);
+            this.txtTimKiem.Size = new System.Drawing.Size(923, 48);
             this.txtTimKiem.TabIndex = 15;
+            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
             // 
             // btnTimKiem
             // 
@@ -146,7 +147,7 @@
             this.btnTimKiem.IconColor = System.Drawing.Color.Black;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 24;
-            this.btnTimKiem.Location = new System.Drawing.Point(884, 0);
+            this.btnTimKiem.Location = new System.Drawing.Point(923, 0);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(191, 48);
             this.btnTimKiem.TabIndex = 14;
@@ -168,7 +169,7 @@
             this.btnLamMoi.IconColor = System.Drawing.Color.Black;
             this.btnLamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLamMoi.IconSize = 24;
-            this.btnLamMoi.Location = new System.Drawing.Point(1075, 0);
+            this.btnLamMoi.Location = new System.Drawing.Point(1114, 0);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(162, 48);
             this.btnLamMoi.TabIndex = 13;
@@ -183,13 +184,14 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1237, 20);
+            this.panel4.Size = new System.Drawing.Size(1276, 20);
             this.panel4.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnLichTrinh);
             this.panel2.Controls.Add(this.btnChiTiet);
-            this.panel2.Controls.Add(this.iconButton1);
+            this.panel2.Controls.Add(this.btnGiaTour);
             this.panel2.Controls.Add(this.btnLoaiTour);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.btnSua);
@@ -197,8 +199,30 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1237, 50);
+            this.panel2.Size = new System.Drawing.Size(1276, 50);
             this.panel2.TabIndex = 0;
+            // 
+            // btnLichTrinh
+            // 
+            this.btnLichTrinh.BackColor = System.Drawing.Color.Transparent;
+            this.btnLichTrinh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLichTrinh.FlatAppearance.BorderSize = 0;
+            this.btnLichTrinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichTrinh.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLichTrinh.ForeColor = System.Drawing.Color.Black;
+            this.btnLichTrinh.IconChar = FontAwesome.Sharp.IconChar.Bus;
+            this.btnLichTrinh.IconColor = System.Drawing.Color.Black;
+            this.btnLichTrinh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLichTrinh.IconSize = 24;
+            this.btnLichTrinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichTrinh.Location = new System.Drawing.Point(291, 0);
+            this.btnLichTrinh.Name = "btnLichTrinh";
+            this.btnLichTrinh.Size = new System.Drawing.Size(243, 50);
+            this.btnLichTrinh.TabIndex = 14;
+            this.btnLichTrinh.Text = "LỊCH TRÌNH THAM QUAN";
+            this.btnLichTrinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLichTrinh.UseVisualStyleBackColor = false;
+            this.btnLichTrinh.Click += new System.EventHandler(this.btnLichTrinh_Click);
             // 
             // btnChiTiet
             // 
@@ -212,7 +236,7 @@
             this.btnChiTiet.IconColor = System.Drawing.Color.White;
             this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChiTiet.IconSize = 24;
-            this.btnChiTiet.Location = new System.Drawing.Point(717, 0);
+            this.btnChiTiet.Location = new System.Drawing.Point(756, 0);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.Size = new System.Drawing.Size(130, 50);
             this.btnChiTiet.TabIndex = 13;
@@ -220,27 +244,29 @@
             this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChiTiet.UseVisualStyleBackColor = false;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
-            // iconButton1
+            // btnGiaTour
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 24;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(149, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(121, 50);
-            this.iconButton1.TabIndex = 12;
-            this.iconButton1.Text = "GIÁ TOUR";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnGiaTour.BackColor = System.Drawing.Color.Transparent;
+            this.btnGiaTour.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnGiaTour.FlatAppearance.BorderSize = 0;
+            this.btnGiaTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGiaTour.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnGiaTour.ForeColor = System.Drawing.Color.Black;
+            this.btnGiaTour.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            this.btnGiaTour.IconColor = System.Drawing.Color.Black;
+            this.btnGiaTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGiaTour.IconSize = 24;
+            this.btnGiaTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGiaTour.Location = new System.Drawing.Point(149, 0);
+            this.btnGiaTour.Name = "btnGiaTour";
+            this.btnGiaTour.Size = new System.Drawing.Size(142, 50);
+            this.btnGiaTour.TabIndex = 12;
+            this.btnGiaTour.Text = "GIÁ TOUR";
+            this.btnGiaTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGiaTour.UseVisualStyleBackColor = false;
+            this.btnGiaTour.Click += new System.EventHandler(this.btnGiaTour_Click);
             // 
             // btnLoaiTour
             // 
@@ -276,7 +302,7 @@
             this.btnThem.IconColor = System.Drawing.Color.White;
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 24;
-            this.btnThem.Location = new System.Drawing.Point(847, 0);
+            this.btnThem.Location = new System.Drawing.Point(886, 0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(130, 50);
             this.btnThem.TabIndex = 2;
@@ -298,7 +324,7 @@
             this.btnSua.IconColor = System.Drawing.Color.White;
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 24;
-            this.btnSua.Location = new System.Drawing.Point(977, 0);
+            this.btnSua.Location = new System.Drawing.Point(1016, 0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(130, 50);
             this.btnSua.TabIndex = 1;
@@ -306,6 +332,7 @@
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -319,7 +346,7 @@
             this.btnXoa.IconColor = System.Drawing.Color.White;
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 24;
-            this.btnXoa.Location = new System.Drawing.Point(1107, 0);
+            this.btnXoa.Location = new System.Drawing.Point(1146, 0);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(130, 50);
             this.btnXoa.TabIndex = 0;
@@ -333,7 +360,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 755);
+            this.ClientSize = new System.Drawing.Size(1296, 755);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gui_Tour";
@@ -361,12 +388,13 @@
         private FontAwesome.Sharp.IconButton btnLamMoi;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnGiaTour;
         private FontAwesome.Sharp.IconButton btnLoaiTour;
         private FontAwesome.Sharp.IconButton btnThem;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
         private System.Windows.Forms.TextBox txtTimKiem;
         private FontAwesome.Sharp.IconButton btnChiTiet;
+        private FontAwesome.Sharp.IconButton btnLichTrinh;
     }
 }

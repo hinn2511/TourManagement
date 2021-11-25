@@ -20,6 +20,40 @@ namespace TourManagement.BUS
             return result;
         }
 
+        public Tour LayThongTinTour(int tourId)
+        {
+            Dal_Tour dal_tour = new Dal_Tour();
+            var result = dal_tour.ChiTietTour(tourId);
+            return result;
+        }
+
+        public GiaTour LayGiaTour(int tourId)
+        {
+            Dal_GiaTour dal_GiaTour = new Dal_GiaTour();
+            var result = dal_GiaTour.GiaTourDangApDung(tourId);
+            return result;
+        }
+
+        public List<Dto_ThamQuan> LayLichTrinhThamQuan(int tourId)
+        {
+            Dal_ThamQuan dal_thamQuan = new Dal_ThamQuan();
+            var result = dal_thamQuan.LayDanhSachThamQuan(tourId);
+            return result;
+        }
+
+        public List<LoaiTour> LayDanhSachLoaiTour(string tenLoaiTour)
+        {
+            Dal_LoaiTour dal_loaiTour = new Dal_LoaiTour();
+            List<LoaiTour> dsLoaiTour = dal_loaiTour.LayDanhSachLoaiTour();
+            List<LoaiTour> result = new List<LoaiTour>();
+            foreach (var item in dsLoaiTour)
+            {
+                if (!item.TenLoai.Equals(tenLoaiTour))
+                    result.Add(item);
+            }
+            return result;
+        }
+
         public List<Dto_Tour> TimKiemTour(List<Dto_Tour> dsTour, string tukhoa)
         {
 
@@ -62,9 +96,6 @@ namespace TourManagement.BUS
                     }
                     return true;
                 }
-
-                //Neu them that bai tra ve false
-                return false;
             }
             return false;
 
@@ -78,10 +109,26 @@ namespace TourManagement.BUS
             return false;
         }
 
+        public bool SuaThongTinTour(Dto_Tour tourDaSua)
+        {
+            Dal_Tour dal_tour = new Dal_Tour();
+
+            var tour = dal_tour.ChiTietTour(tourDaSua.Id);
+
+            tour.TenTour = tourDaSua.TenTour;
+            tour.DacDiem = tourDaSua.DacDiem;
+            tour.LoaiTour_Id = tourDaSua.Loai_Id;
+
+            if (dal_tour.CapNhatTour(tour))
+                return true;
+            return false;
+        }
+
+
         public List<LoaiTour> LayDanhSachLoaiTour()
         {
             Dal_LoaiTour dal_loaiTour = new Dal_LoaiTour();
-            var result = dal_loaiTour.LayTatCaLoaiTour();
+            var result = dal_loaiTour.LayDanhSachLoaiTour();
             return result;
         }
     }

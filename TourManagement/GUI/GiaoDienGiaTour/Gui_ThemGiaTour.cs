@@ -1,19 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using TourManagement.BUS;
+using TourManagement.DTO;
 
-namespace TourManagement.GUI.GiaoDienTour
+namespace TourManagement.GUI.GiaoDienGiaTour
 {
-    public partial class Gui_ThemTour : Form
+    public partial class Gui_ThemGiaTour : Form
     {
+        Dto_Tour tourThemGia;
 
-
-        public Gui_ThemTour()
+        public Gui_ThemGiaTour(Dto_Tour tour)
         {
             InitializeComponent();
             DieuChinhNgayGiaTour();
-            CapNhatDanhSachLoaiTour();
+            tourThemGia = tour;
+            txtTenTour.Text = tour.TenTour;
         }
 
         private void DieuChinhNgayGiaTour()
@@ -28,27 +29,11 @@ namespace TourManagement.GUI.GiaoDienTour
             dtNgayKetThuc.MinDate = DateTime.Now;
         }
 
-        private void CapNhatDanhSachLoaiTour()
-        {
-            Bus_Tour bus_Tour = new Bus_Tour();
-            List<LoaiTour> loaiTours = new List<LoaiTour>();
-            loaiTours = bus_Tour.LayDanhSachLoaiTour();
-            foreach (var l in loaiTours)
-            {
-                cbxLoaiTour.Items.Add(l.TenLoai);
-            }
-        }
-
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             GiaTour giaTour = new GiaTour();
-            Tour tour = new Tour();
-            tour.LoaiTour_Id = cbxLoaiTour.SelectedIndex;
-            tour.TenTour = txtTenTour.Text;
-            tour.DacDiem = txtDacDiem.Text;
             giaTour.DangApDung = false;
-
+            giaTour.Tour_Id = tourThemGia.Id;
             giaTour.NgayBatDau = dtNgayBatDau.Value;
             giaTour.NgayKetThuc = dtNgayKetThuc.Value;
             decimal gia;
@@ -56,22 +41,19 @@ namespace TourManagement.GUI.GiaoDienTour
             {
                 MessageBox.Show("Giá tour không hợp lệ", "Lỗi", MessageBoxButtons.OK);
                 return;
+
             }
-
             giaTour.Gia = gia;
-            Bus_Tour bus_Tour = new Bus_Tour();
-            if (bus_Tour.ThemTourMoi(tour, giaTour))
+            Bus_GiaTour bus_giaTour = new Bus_GiaTour();
+            if (bus_giaTour.ThemGiaTour(giaTour))
             {
-                MessageBox.Show("Đã thêm tour thành công", "Thành công", MessageBoxButtons.OK);
+                MessageBox.Show("Đã thêm giá tour thành công", "Thành công", MessageBoxButtons.OK);
                 DialogResult = DialogResult.OK;
-
             }
             else
                 MessageBox.Show("Đã có lỗi xảy ra", "Thất bại", MessageBoxButtons.OK);
-
-
             Close();
-
+            return;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

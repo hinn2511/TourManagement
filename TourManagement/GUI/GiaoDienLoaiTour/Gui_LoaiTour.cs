@@ -87,7 +87,7 @@ namespace TourManagement.GUI.GiaoDienLoaiTour
                     CapNhatDanhSachLoaiTour();
                 }
             }
-            
+
         }
 
         private void btnTimKiem_Click(object sender, System.EventArgs e)

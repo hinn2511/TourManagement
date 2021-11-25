@@ -1,30 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using TourManagement.DTO;
 
 namespace TourManagement.DAL
 {
     internal class Dal_GiaTour
     {
-        public List<Dto_GiaTour> LayDanhSachGiaTour()
-        {
-            TourManagementDataContext context = new TourManagementDataContext();
+        //public List<GiaTour> LayDanhSachGiaTour()
+        //{
+        //    TourManagementDataContext context = new TourManagementDataContext();
 
-            List<Dto_GiaTour> dsGiaTour = (from giaTour in context.GiaTours
-                                           join tour in context.Tours on giaTour.Tour_Id equals tour.Id
-                                           select new Dto_GiaTour
-                                           {
+        //    List<GiaTour> dsGiaTour = context.GiaTours.Select(gt => gt).ToList();
 
-                                               Id = giaTour.Id,
-                                               NgayBatDau = giaTour.NgayBatDau,
-                                               NgayKetThuc = giaTour.NgayKetThuc,
-                                               Gia = giaTour.Gia,
-                                               TenTour = tour.TenTour,
-                                           }).ToList();
-
-            return dsGiaTour;
-        }
+        //    return dsGiaTour;
+        //}
 
         public List<GiaTour> LayDanhSachGiaTourTheoMaTour(int tourId)
         {
@@ -35,14 +24,37 @@ namespace TourManagement.DAL
             return dsGiaTour;
         }
 
-        public GiaTour ChiTietGiaTour(int id)
+        public GiaTour ChiTietGiaTour(int giaTourId)
         {
             TourManagementDataContext context = new TourManagementDataContext();
 
-            var giatour = context.GiaTours.FirstOrDefault(gt => gt.Id == id);
+            var giatour = context.GiaTours.FirstOrDefault(gt => gt.Id == giaTourId);
 
             return giatour;
         }
+
+        public GiaTour GiaTourDangApDung(int tourId)
+        {
+            TourManagementDataContext context = new TourManagementDataContext();
+
+            var giatour = context.GiaTours.FirstOrDefault(gt => gt.Tour_Id == tourId && gt.DangApDung);
+
+            return giatour;
+        }
+
+        public GiaTour LayGiaTourMoiNhat()
+        {
+            TourManagementDataContext context = new TourManagementDataContext();
+
+            var giaTourMoiNhat = context.GiaTours.OrderByDescending(s => s.Id)
+                     .FirstOrDefault();
+            if (giaTourMoiNhat != null)
+                return giaTourMoiNhat;
+
+            return null;
+
+        }
+
 
         public bool ThemGiaTour(GiaTour giaTour)
         {
@@ -59,19 +71,6 @@ namespace TourManagement.DAL
             {
                 return false;
             }
-        }
-
-        public GiaTour LayGiaTourMoiNhat()
-        {
-            TourManagementDataContext context = new TourManagementDataContext();
-
-            var giaTourMoiNhat = context.GiaTours.OrderByDescending(s => s.Id)
-                     .FirstOrDefault();
-            if (giaTourMoiNhat != null)
-                return giaTourMoiNhat;
-
-            return null;
-
         }
 
         public bool CapNhatGiaTour(GiaTour giaTour)
@@ -103,11 +102,11 @@ namespace TourManagement.DAL
         {
             TourManagementDataContext context = new TourManagementDataContext();
 
-            var giaTourDelete = context.Tours.First(t => t.Id == giaTourId);
+            var giaTourDelete = context.GiaTours.FirstOrDefault(gt => gt.Id == giaTourId);
 
             if (giaTourDelete != null)
 
-                context.Tours.DeleteOnSubmit(giaTourDelete);
+                context.GiaTours.DeleteOnSubmit(giaTourDelete);
 
             try
             {

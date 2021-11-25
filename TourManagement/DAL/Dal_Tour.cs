@@ -25,12 +25,22 @@ namespace TourManagement.DAL
                                         TenTour = tour.TenTour,
                                         DacDiem = tour.DacDiem,
                                         Loai = loaitour.TenLoai,
+                                        Loai_Id = loaitour.Id,
                                         Gia = giatour.Gia,
+                                        Gia_Id = giatour.Id,
                                     }).ToList();
             //Tra ve danh sach
             return tours;
         }
 
+        public Tour ChiTietTour(int id)
+        {
+            TourManagementDataContext context = new TourManagementDataContext();
+
+            var tour = context.Tours.FirstOrDefault(t => t.Id == id);
+
+            return tour;
+        }
 
 
         public bool ThemTour(Tour tour)

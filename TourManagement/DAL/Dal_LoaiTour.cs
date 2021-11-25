@@ -4,20 +4,15 @@ using System.Linq;
 
 namespace TourManagement.DAL
 {
-    public class Dto_LoaiTour
-    {
-        public int Id { get; set; }
-        public string TenLoai { get; set; }
-    }
 
     public class Dal_LoaiTour
     {
         TourManagementDataContext context = new TourManagementDataContext();
 
-        public List<LoaiTour> LayTatCaLoaiTour()
+        public List<LoaiTour> LayDanhSachLoaiTour()
         {
-            List<LoaiTour> types = context.LoaiTours.Select(lt => lt).ToList();
-            return types;
+            List<LoaiTour> loaiTour = context.LoaiTours.ToList();
+            return loaiTour;
         }
 
         public bool ThemLoaiTour(LoaiTour loaiTour)
