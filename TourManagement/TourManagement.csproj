@@ -80,7 +80,6 @@
     <Compile Include="DAL\Dal_NV.cs" />
     <Compile Include="DAL\Dal_ThamQuan.cs" />
     <Compile Include="DAL\Dal_Tour.cs" />
-    <Compile Include="DTO\Dto_GiaTour.cs" />
     <Compile Include="DTO\Dto_KH.cs" />
     <Compile Include="DTO\Dto_NV.cs" />
     <Compile Include="DTO\Dto_ThamQuan.cs" />
