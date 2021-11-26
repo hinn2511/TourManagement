@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.GridView = new System.Windows.Forms.DataGridView();
+            this.tourGridView = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -40,14 +40,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
-            this.btnLoaiChiPhi = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
+            this.btnLoaiChiPhi = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,26 +79,26 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.GridView);
+            this.panel7.Controls.Add(this.tourGridView);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 93);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1237, 592);
             this.panel7.TabIndex = 3;
             // 
-            // GridView
+            // tourGridView
             // 
-            this.GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridView.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridView.Location = new System.Drawing.Point(0, 0);
-            this.GridView.Name = "GridView";
-            this.GridView.ReadOnly = true;
-            this.GridView.RowHeadersWidth = 51;
-            this.GridView.RowTemplate.Height = 24;
-            this.GridView.Size = new System.Drawing.Size(1237, 592);
-            this.GridView.TabIndex = 0;
+            this.tourGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tourGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.tourGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tourGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tourGridView.Location = new System.Drawing.Point(0, 0);
+            this.tourGridView.Name = "tourGridView";
+            this.tourGridView.ReadOnly = true;
+            this.tourGridView.RowHeadersWidth = 51;
+            this.tourGridView.RowTemplate.Height = 24;
+            this.tourGridView.Size = new System.Drawing.Size(1237, 592);
+            this.tourGridView.TabIndex = 0;
             // 
             // panel6
             // 
@@ -151,7 +151,6 @@
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLamMoi
             // 
@@ -173,7 +172,6 @@
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // panel4
             // 
@@ -217,29 +215,6 @@
             this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChiTiet.UseVisualStyleBackColor = false;
-            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
-            // 
-            // btnLoaiChiPhi
-            // 
-            this.btnLoaiChiPhi.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
-            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.Black;
-            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.Black;
-            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLoaiChiPhi.IconSize = 24;
-            this.btnLoaiChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoaiChiPhi.Location = new System.Drawing.Point(0, 0);
-            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
-            this.btnLoaiChiPhi.Size = new System.Drawing.Size(194, 50);
-            this.btnLoaiChiPhi.TabIndex = 9;
-            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
-            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLoaiChiPhi.UseVisualStyleBackColor = false;
-            this.btnLoaiChiPhi.Click += new System.EventHandler(this.btnLoaiChiPhi_Click);
             // 
             // btnThem
             // 
@@ -261,7 +236,6 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -283,7 +257,6 @@
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -305,7 +278,27 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnLoaiChiPhi
+            // 
+            this.btnLoaiChiPhi.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
+            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLoaiChiPhi.IconSize = 24;
+            this.btnLoaiChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoaiChiPhi.Location = new System.Drawing.Point(0, 0);
+            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
+            this.btnLoaiChiPhi.Size = new System.Drawing.Size(194, 50);
+            this.btnLoaiChiPhi.TabIndex = 9;
+            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
+            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoaiChiPhi.UseVisualStyleBackColor = false;
             // 
             // Gui_ChiPhi
             // 
@@ -319,7 +312,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -332,7 +325,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.DataGridView GridView;
+        private System.Windows.Forms.DataGridView tourGridView;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnTimKiem;

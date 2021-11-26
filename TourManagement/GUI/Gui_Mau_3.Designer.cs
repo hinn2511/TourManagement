@@ -34,7 +34,11 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbxLoaiTour = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtThuocTinh2 = new System.Windows.Forms.TextBox();
             this.txtThuocTinh1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,7 +65,11 @@
             this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Controls.Add(this.btnThem);
             this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.cbxLoaiTour);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.txtThuocTinh2);
             this.panel3.Controls.Add(this.txtThuocTinh1);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 55);
@@ -71,7 +79,7 @@
             // 
             // txtGiaTour
             // 
-            this.txtGiaTour.Location = new System.Drawing.Point(164, 110);
+            this.txtGiaTour.Location = new System.Drawing.Point(164, 363);
             this.txtGiaTour.Multiline = true;
             this.txtGiaTour.Name = "txtGiaTour";
             this.txtGiaTour.Size = new System.Drawing.Size(673, 31);
@@ -111,11 +119,39 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(17, 122);
+            this.label3.Location = new System.Drawing.Point(17, 371);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "THUỘC TÍNH 4";
+            // 
+            // cbxLoaiTour
+            // 
+            this.cbxLoaiTour.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbxLoaiTour.FormattingEnabled = true;
+            this.cbxLoaiTour.Location = new System.Drawing.Point(164, 291);
+            this.cbxLoaiTour.Name = "cbxLoaiTour";
+            this.cbxLoaiTour.Size = new System.Drawing.Size(673, 34);
+            this.cbxLoaiTour.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(17, 294);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 19);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "THUỘC TÍNH 3";
+            // 
+            // txtThuocTinh2
+            // 
+            this.txtThuocTinh2.Location = new System.Drawing.Point(164, 96);
+            this.txtThuocTinh2.Multiline = true;
+            this.txtThuocTinh2.Name = "txtThuocTinh2";
+            this.txtThuocTinh2.Size = new System.Drawing.Size(673, 157);
+            this.txtThuocTinh2.TabIndex = 4;
             // 
             // txtThuocTinh1
             // 
@@ -124,6 +160,17 @@
             this.txtThuocTinh1.Name = "txtThuocTinh1";
             this.txtThuocTinh1.Size = new System.Drawing.Size(673, 31);
             this.txtThuocTinh1.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(17, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 19);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "THUỘC TÍNH 2";
             // 
             // label4
             // 
@@ -135,7 +182,6 @@
             this.label4.Size = new System.Drawing.Size(125, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "THUỘC TÍNH 1";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel2
             // 
@@ -179,11 +225,15 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtThuocTinh2;
         private System.Windows.Forms.TextBox txtThuocTinh1;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxLoaiTour;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtGiaTour;

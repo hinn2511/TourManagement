@@ -9,7 +9,7 @@ namespace TourManagement.GUI
 
         public Gui_Mau_3()
         {
-           
+            InitializeComponent();
         }
 
 
@@ -19,9 +19,5 @@ namespace TourManagement.GUI
             Close();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
