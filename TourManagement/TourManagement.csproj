@@ -68,19 +68,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\Bus_ChiPhi.cs" />
     <Compile Include="BUS\Bus_GiaTour.cs" />
+    <Compile Include="BUS\Bus_LoaiChiPhi.cs" />
     <Compile Include="BUS\Bus_ThamQuan.cs" />
     <Compile Include="BUS\Bus_KH.cs" />
     <Compile Include="BUS\Bus_LoaiTour.cs" />
     <Compile Include="BUS\Bus_NV.cs" />
     <Compile Include="BUS\Bus_Tour.cs" />
+    <Compile Include="BUS\Bus_DiaDiem.cs" />
+    <Compile Include="DAL\Dal_ChiPhi.cs" />
+    <Compile Include="DAL\Dal_DiaDiem.cs" />
     <Compile Include="DAL\Dal_GiaTour.cs" />
     <Compile Include="DAL\Dal_KH.cs" />
+    <Compile Include="DAL\Dal_LoaiChiPhi.cs" />
     <Compile Include="DAL\Dal_LoaiTour.cs" />
     <Compile Include="DAL\Dal_NV.cs" />
     <Compile Include="DAL\Dal_ThamQuan.cs" />
     <Compile Include="DAL\Dal_Tour.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="DTO\Dto_ChiPhi.cs" />
+    <Compile Include="DTO\Dto_DiaDiem.cs" />
+>>>>>>> Stashed changes
     <Compile Include="DTO\Dto_KH.cs" />
+    <Compile Include="DTO\Dto_LoaiChiPhi.cs" />
     <Compile Include="DTO\Dto_NV.cs" />
     <Compile Include="DTO\Dto_ThamQuan.cs" />
     <Compile Include="DTO\Dto_Tour.cs" />
@@ -90,17 +102,59 @@
     <Compile Include="GUI\GiaoDienChiPhi\Gui_ChiPhi.Designer.cs">
       <DependentUpon>Gui_ChiPhi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiaoDienChiPhi\Gui_SuaChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienChiPhi\Gui_SuaChiPhi.Designer.cs">
+      <DependentUpon>Gui_SuaChiPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienChiPhi\Gui_ThemChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienChiPhi\Gui_ThemChiPhi.Designer.cs">
+      <DependentUpon>Gui_ThemChiPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoDienDiaDiem\Gui_DiaDiem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\GiaoDienDiaDiem\Gui_DiaDiem.Designer.cs">
       <DependentUpon>Gui_DiaDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiaoDienDiaDiem\Gui_SuaDiaDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDiaDiem\Gui_SuaDiaDiem.Designer.cs">
+      <DependentUpon>Gui_SuaDiaDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDiaDiem\Gui_ThemDiaDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDiaDiem\Gui_ThemDiaDiem.Designer.cs">
+      <DependentUpon>Gui_ThemDiaDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.Designer.cs">
       <DependentUpon>Gui_DoanDuLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_LoaiChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_LoaiChiPhi.Designer.cs">
+      <DependentUpon>Gui_LoaiChiPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_SuaLoaiChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_SuaLoaiChiPhi.Designer.cs">
+      <DependentUpon>Gui_SuaLoaiChiPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_ThemLoaiChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_ThemLoaiChiPhi.Designer.cs">
+      <DependentUpon>Gui_ThemLoaiChiPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.cs">
       <SubType>Form</SubType>
@@ -244,11 +298,32 @@
     <EmbeddedResource Include="GUI\GiaoDienChiPhi\Gui_ChiPhi.resx">
       <DependentUpon>Gui_ChiPhi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienChiPhi\Gui_SuaChiPhi.resx">
+      <DependentUpon>Gui_SuaChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienChiPhi\Gui_ThemChiPhi.resx">
+      <DependentUpon>Gui_ThemChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienDiaDiem\Gui_DiaDiem.resx">
       <DependentUpon>Gui_DiaDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienDiaDiem\Gui_SuaDiaDiem.resx">
+      <DependentUpon>Gui_SuaDiaDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienDiaDiem\Gui_ThemDiaDiem.resx">
+      <DependentUpon>Gui_ThemDiaDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.resx">
       <DependentUpon>Gui_DoanDuLich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienLoaiChiPhi\Gui_LoaiChiPhi.resx">
+      <DependentUpon>Gui_LoaiChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienLoaiChiPhi\Gui_SuaLoaiChiPhi.resx">
+      <DependentUpon>Gui_SuaLoaiChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienLoaiChiPhi\Gui_ThemLoaiChiPhi.resx">
+      <DependentUpon>Gui_ThemLoaiChiPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.resx">
       <DependentUpon>Gui_ThamQuan.cs</DependentUpon>

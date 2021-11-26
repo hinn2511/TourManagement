@@ -33,6 +33,9 @@ namespace TourManagement
     partial void InsertChiPhi(ChiPhi instance);
     partial void UpdateChiPhi(ChiPhi instance);
     partial void DeleteChiPhi(ChiPhi instance);
+    partial void InsertTour(Tour instance);
+    partial void UpdateTour(Tour instance);
+    partial void DeleteTour(Tour instance);
     partial void InsertChiTietDoan(ChiTietDoan instance);
     partial void UpdateChiTietDoan(ChiTietDoan instance);
     partial void DeleteChiTietDoan(ChiTietDoan instance);
@@ -63,16 +66,13 @@ namespace TourManagement
     partial void InsertPhanCong(PhanCong instance);
     partial void UpdatePhanCong(PhanCong instance);
     partial void DeletePhanCong(PhanCong instance);
-    partial void InsertTour(Tour instance);
-    partial void UpdateTour(Tour instance);
-    partial void DeleteTour(Tour instance);
     partial void InsertThamQuan(ThamQuan instance);
     partial void UpdateThamQuan(ThamQuan instance);
     partial void DeleteThamQuan(ThamQuan instance);
     #endregion
 		
 		public TourManagementDataContext() : 
-				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString1, mappingSource)
+				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -106,6 +106,14 @@ namespace TourManagement
 			get
 			{
 				return this.GetTable<ChiPhi>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tour> Tours
+		{
+			get
+			{
+				return this.GetTable<Tour>();
 			}
 		}
 		
@@ -186,14 +194,6 @@ namespace TourManagement
 			get
 			{
 				return this.GetTable<PhanCong>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tour> Tours
-		{
-			get
-			{
-				return this.GetTable<Tour>();
 			}
 		}
 		
@@ -419,6 +419,289 @@ namespace TourManagement
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tour")]
+	public partial class Tour : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _TenTour;
+		
+		private string _DacDiem;
+		
+		private System.Nullable<int> _GiaTour_Id;
+		
+		private int _LoaiTour_Id;
+		
+		private EntitySet<DoanDuLich> _DoanDuLiches;
+		
+		private EntitySet<GiaTour> _GiaTours;
+		
+		private EntitySet<ThamQuan> _ThamQuans;
+		
+		private EntityRef<LoaiTour> _LoaiTour;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTenTourChanging(string value);
+    partial void OnTenTourChanged();
+    partial void OnDacDiemChanging(string value);
+    partial void OnDacDiemChanged();
+    partial void OnGiaTour_IdChanging(System.Nullable<int> value);
+    partial void OnGiaTour_IdChanged();
+    partial void OnLoaiTour_IdChanging(int value);
+    partial void OnLoaiTour_IdChanged();
+    #endregion
+		
+		public Tour()
+		{
+			this._DoanDuLiches = new EntitySet<DoanDuLich>(new Action<DoanDuLich>(this.attach_DoanDuLiches), new Action<DoanDuLich>(this.detach_DoanDuLiches));
+			this._GiaTours = new EntitySet<GiaTour>(new Action<GiaTour>(this.attach_GiaTours), new Action<GiaTour>(this.detach_GiaTours));
+			this._ThamQuans = new EntitySet<ThamQuan>(new Action<ThamQuan>(this.attach_ThamQuans), new Action<ThamQuan>(this.detach_ThamQuans));
+			this._LoaiTour = default(EntityRef<LoaiTour>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTour", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenTour
+		{
+			get
+			{
+				return this._TenTour;
+			}
+			set
+			{
+				if ((this._TenTour != value))
+				{
+					this.OnTenTourChanging(value);
+					this.SendPropertyChanging();
+					this._TenTour = value;
+					this.SendPropertyChanged("TenTour");
+					this.OnTenTourChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DacDiem", DbType="NVarChar(255)")]
+		public string DacDiem
+		{
+			get
+			{
+				return this._DacDiem;
+			}
+			set
+			{
+				if ((this._DacDiem != value))
+				{
+					this.OnDacDiemChanging(value);
+					this.SendPropertyChanging();
+					this._DacDiem = value;
+					this.SendPropertyChanged("DacDiem");
+					this.OnDacDiemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaTour_Id", DbType="Int")]
+		public System.Nullable<int> GiaTour_Id
+		{
+			get
+			{
+				return this._GiaTour_Id;
+			}
+			set
+			{
+				if ((this._GiaTour_Id != value))
+				{
+					this.OnGiaTour_IdChanging(value);
+					this.SendPropertyChanging();
+					this._GiaTour_Id = value;
+					this.SendPropertyChanged("GiaTour_Id");
+					this.OnGiaTour_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiTour_Id", DbType="Int NOT NULL")]
+		public int LoaiTour_Id
+		{
+			get
+			{
+				return this._LoaiTour_Id;
+			}
+			set
+			{
+				if ((this._LoaiTour_Id != value))
+				{
+					if (this._LoaiTour.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLoaiTour_IdChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiTour_Id = value;
+					this.SendPropertyChanged("LoaiTour_Id");
+					this.OnLoaiTour_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tour_DoanDuLich", Storage="_DoanDuLiches", ThisKey="Id", OtherKey="Tour_Id")]
+		public EntitySet<DoanDuLich> DoanDuLiches
+		{
+			get
+			{
+				return this._DoanDuLiches;
+			}
+			set
+			{
+				this._DoanDuLiches.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tour_GiaTour", Storage="_GiaTours", ThisKey="Id", OtherKey="Tour_Id")]
+		public EntitySet<GiaTour> GiaTours
+		{
+			get
+			{
+				return this._GiaTours;
+			}
+			set
+			{
+				this._GiaTours.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tour_ThamQuan", Storage="_ThamQuans", ThisKey="Id", OtherKey="Tour_Id")]
+		public EntitySet<ThamQuan> ThamQuans
+		{
+			get
+			{
+				return this._ThamQuans;
+			}
+			set
+			{
+				this._ThamQuans.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTour_Tour", Storage="_LoaiTour", ThisKey="LoaiTour_Id", OtherKey="Id", IsForeignKey=true)]
+		public LoaiTour LoaiTour
+		{
+			get
+			{
+				return this._LoaiTour.Entity;
+			}
+			set
+			{
+				LoaiTour previousValue = this._LoaiTour.Entity;
+				if (((previousValue != value) 
+							|| (this._LoaiTour.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LoaiTour.Entity = null;
+						previousValue.Tours.Remove(this);
+					}
+					this._LoaiTour.Entity = value;
+					if ((value != null))
+					{
+						value.Tours.Add(this);
+						this._LoaiTour_Id = value.Id;
+					}
+					else
+					{
+						this._LoaiTour_Id = default(int);
+					}
+					this.SendPropertyChanged("LoaiTour");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_DoanDuLiches(DoanDuLich entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tour = this;
+		}
+		
+		private void detach_DoanDuLiches(DoanDuLich entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tour = null;
+		}
+		
+		private void attach_GiaTours(GiaTour entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tour = this;
+		}
+		
+		private void detach_GiaTours(GiaTour entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tour = null;
+		}
+		
+		private void attach_ThamQuans(ThamQuan entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tour = this;
+		}
+		
+		private void detach_ThamQuans(ThamQuan entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tour = null;
 		}
 	}
 	
@@ -2251,289 +2534,6 @@ namespace TourManagement
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tour")]
-	public partial class Tour : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _TenTour;
-		
-		private string _DacDiem;
-		
-		private System.Nullable<int> _GiaTour_Id;
-		
-		private int _LoaiTour_Id;
-		
-		private EntitySet<DoanDuLich> _DoanDuLiches;
-		
-		private EntitySet<GiaTour> _GiaTours;
-		
-		private EntitySet<ThamQuan> _ThamQuans;
-		
-		private EntityRef<LoaiTour> _LoaiTour;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnTenTourChanging(string value);
-    partial void OnTenTourChanged();
-    partial void OnDacDiemChanging(string value);
-    partial void OnDacDiemChanged();
-    partial void OnGiaTour_IdChanging(System.Nullable<int> value);
-    partial void OnGiaTour_IdChanged();
-    partial void OnLoaiTour_IdChanging(int value);
-    partial void OnLoaiTour_IdChanged();
-    #endregion
-		
-		public Tour()
-		{
-			this._DoanDuLiches = new EntitySet<DoanDuLich>(new Action<DoanDuLich>(this.attach_DoanDuLiches), new Action<DoanDuLich>(this.detach_DoanDuLiches));
-			this._GiaTours = new EntitySet<GiaTour>(new Action<GiaTour>(this.attach_GiaTours), new Action<GiaTour>(this.detach_GiaTours));
-			this._ThamQuans = new EntitySet<ThamQuan>(new Action<ThamQuan>(this.attach_ThamQuans), new Action<ThamQuan>(this.detach_ThamQuans));
-			this._LoaiTour = default(EntityRef<LoaiTour>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTour", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenTour
-		{
-			get
-			{
-				return this._TenTour;
-			}
-			set
-			{
-				if ((this._TenTour != value))
-				{
-					this.OnTenTourChanging(value);
-					this.SendPropertyChanging();
-					this._TenTour = value;
-					this.SendPropertyChanged("TenTour");
-					this.OnTenTourChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DacDiem", DbType="NVarChar(255)")]
-		public string DacDiem
-		{
-			get
-			{
-				return this._DacDiem;
-			}
-			set
-			{
-				if ((this._DacDiem != value))
-				{
-					this.OnDacDiemChanging(value);
-					this.SendPropertyChanging();
-					this._DacDiem = value;
-					this.SendPropertyChanged("DacDiem");
-					this.OnDacDiemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaTour_Id", DbType="Int")]
-		public System.Nullable<int> GiaTour_Id
-		{
-			get
-			{
-				return this._GiaTour_Id;
-			}
-			set
-			{
-				if ((this._GiaTour_Id != value))
-				{
-					this.OnGiaTour_IdChanging(value);
-					this.SendPropertyChanging();
-					this._GiaTour_Id = value;
-					this.SendPropertyChanged("GiaTour_Id");
-					this.OnGiaTour_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiTour_Id", DbType="Int NOT NULL")]
-		public int LoaiTour_Id
-		{
-			get
-			{
-				return this._LoaiTour_Id;
-			}
-			set
-			{
-				if ((this._LoaiTour_Id != value))
-				{
-					if (this._LoaiTour.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnLoaiTour_IdChanging(value);
-					this.SendPropertyChanging();
-					this._LoaiTour_Id = value;
-					this.SendPropertyChanged("LoaiTour_Id");
-					this.OnLoaiTour_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tour_DoanDuLich", Storage="_DoanDuLiches", ThisKey="Id", OtherKey="Tour_Id")]
-		public EntitySet<DoanDuLich> DoanDuLiches
-		{
-			get
-			{
-				return this._DoanDuLiches;
-			}
-			set
-			{
-				this._DoanDuLiches.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tour_GiaTour", Storage="_GiaTours", ThisKey="Id", OtherKey="Tour_Id")]
-		public EntitySet<GiaTour> GiaTours
-		{
-			get
-			{
-				return this._GiaTours;
-			}
-			set
-			{
-				this._GiaTours.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tour_ThamQuan", Storage="_ThamQuans", ThisKey="Id", OtherKey="Tour_Id")]
-		public EntitySet<ThamQuan> ThamQuans
-		{
-			get
-			{
-				return this._ThamQuans;
-			}
-			set
-			{
-				this._ThamQuans.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTour_Tour", Storage="_LoaiTour", ThisKey="LoaiTour_Id", OtherKey="Id", IsForeignKey=true)]
-		public LoaiTour LoaiTour
-		{
-			get
-			{
-				return this._LoaiTour.Entity;
-			}
-			set
-			{
-				LoaiTour previousValue = this._LoaiTour.Entity;
-				if (((previousValue != value) 
-							|| (this._LoaiTour.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LoaiTour.Entity = null;
-						previousValue.Tours.Remove(this);
-					}
-					this._LoaiTour.Entity = value;
-					if ((value != null))
-					{
-						value.Tours.Add(this);
-						this._LoaiTour_Id = value.Id;
-					}
-					else
-					{
-						this._LoaiTour_Id = default(int);
-					}
-					this.SendPropertyChanged("LoaiTour");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_DoanDuLiches(DoanDuLich entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tour = this;
-		}
-		
-		private void detach_DoanDuLiches(DoanDuLich entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tour = null;
-		}
-		
-		private void attach_GiaTours(GiaTour entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tour = this;
-		}
-		
-		private void detach_GiaTours(GiaTour entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tour = null;
-		}
-		
-		private void attach_ThamQuans(ThamQuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tour = this;
-		}
-		
-		private void detach_ThamQuans(ThamQuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tour = null;
 		}
 	}
 	
