@@ -99,6 +99,7 @@
             this.nvGridView.RowTemplate.Height = 24;
             this.nvGridView.Size = new System.Drawing.Size(1237, 592);
             this.nvGridView.TabIndex = 0;
+            this.nvGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nvGridView_CellClick);
             // 
             // panel6
             // 
@@ -257,6 +258,7 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -299,6 +301,7 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // Gui_NhanVien
             // 

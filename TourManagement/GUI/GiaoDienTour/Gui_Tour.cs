@@ -108,6 +108,7 @@ namespace TourManagement.GUI.GiaoDienTour
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            DatTenDauDanhSach();
             tourGridView.DataSource = dsTour;
         }
 

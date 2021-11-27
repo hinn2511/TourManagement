@@ -36,11 +36,9 @@ namespace TourManagement.GUI.GiaoDienLoaiTour
         private void btnThem_Click(object sender, System.EventArgs e)
         {
             Gui_ThemLoaiTour themLoaiTourForm = new Gui_ThemLoaiTour();
-            var result = themLoaiTourForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                CapNhatDanhSachLoaiTour();
-            }
+            themLoaiTourForm.ShowDialog();
+            CapNhatDanhSachLoaiTour();
+            
         }
 
         private void btnXoa_Click(object sender, System.EventArgs e)
