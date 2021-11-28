@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gui_GiaoDienChinh));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnThoat = new FontAwesome.Sharp.IconButton();
-            this.btnChiPhi = new FontAwesome.Sharp.IconButton();
+            this.btnLoaiChiPhi = new FontAwesome.Sharp.IconButton();
             this.btnNhanVien = new FontAwesome.Sharp.IconButton();
             this.btnKhachHang = new FontAwesome.Sharp.IconButton();
             this.btnDoanDuLich = new FontAwesome.Sharp.IconButton();
@@ -56,7 +56,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.SandyBrown;
             this.panelMenu.Controls.Add(this.btnThoat);
-            this.panelMenu.Controls.Add(this.btnChiPhi);
+            this.panelMenu.Controls.Add(this.btnLoaiChiPhi);
             this.panelMenu.Controls.Add(this.btnNhanVien);
             this.panelMenu.Controls.Add(this.btnKhachHang);
             this.panelMenu.Controls.Add(this.btnDoanDuLich);
@@ -91,28 +91,28 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnChiPhi
+            // btnLoaiChiPhi
             // 
-            this.btnChiPhi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChiPhi.FlatAppearance.BorderSize = 0;
-            this.btnChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnChiPhi.ForeColor = System.Drawing.Color.White;
-            this.btnChiPhi.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
-            this.btnChiPhi.IconColor = System.Drawing.Color.White;
-            this.btnChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChiPhi.IconSize = 32;
-            this.btnChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChiPhi.Location = new System.Drawing.Point(0, 537);
-            this.btnChiPhi.Name = "btnChiPhi";
-            this.btnChiPhi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnChiPhi.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnChiPhi.Size = new System.Drawing.Size(237, 70);
-            this.btnChiPhi.TabIndex = 6;
-            this.btnChiPhi.Text = "CHI PHÍ";
-            this.btnChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChiPhi.UseVisualStyleBackColor = true;
-            this.btnChiPhi.Click += new System.EventHandler(this.btnChiPhi_Click);
+            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
+            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.White;
+            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.White;
+            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLoaiChiPhi.IconSize = 32;
+            this.btnLoaiChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoaiChiPhi.Location = new System.Drawing.Point(0, 537);
+            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
+            this.btnLoaiChiPhi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnLoaiChiPhi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnLoaiChiPhi.Size = new System.Drawing.Size(237, 70);
+            this.btnLoaiChiPhi.TabIndex = 6;
+            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
+            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoaiChiPhi.UseVisualStyleBackColor = true;
+            this.btnLoaiChiPhi.Click += new System.EventHandler(this.btnChiPhi_Click);
             // 
             // btnNhanVien
             // 
@@ -330,7 +330,7 @@
         private FontAwesome.Sharp.IconButton btnKhachHang;
         private FontAwesome.Sharp.IconButton btnDoanDuLich;
         private FontAwesome.Sharp.IconButton btnDiaDiem;
-        private FontAwesome.Sharp.IconButton btnChiPhi;
+        private FontAwesome.Sharp.IconButton btnLoaiChiPhi;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelContent;
