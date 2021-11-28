@@ -121,8 +121,8 @@ namespace TourManagement.GUI
         private void btnChiPhi_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new Gui_ChiPhi());
-            lblTitleChildForm.Text = "CHI PHÍ";
+            OpenChildForm(new Gui_LoaiChiPhi());
+            lblTitleChildForm.Text = "LOẠI CHI PHÍ";
         }
 
 
