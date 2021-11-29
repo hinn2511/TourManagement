@@ -77,7 +77,7 @@ namespace TourManagement.GUI.GiaoDienTour
         {
             if (currentIndex < 0)
             {
-                MessageBox.Show("Vui lòng chọn tour cần xem chi tiết", "Lỗi", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn tour cần được sửa", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
 

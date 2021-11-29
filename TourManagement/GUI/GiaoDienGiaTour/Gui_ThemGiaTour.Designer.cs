@@ -203,7 +203,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -229,7 +229,7 @@
             this.ClientSize = new System.Drawing.Size(879, 470);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_ThemGiaTour";
-            this.Text = "Gui_ThemTour";
+            this.Text = "Thêm Giá Tour";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

@@ -309,7 +309,7 @@
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelMenu);
             this.Name = "Gui_GiaoDienChinh";
-            this.Text = "Gui_GiaoDienChinh";
+            this.Text = "Trang Chủ";
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();

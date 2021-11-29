@@ -61,5 +61,9 @@ namespace TourManagement.GUI.GiaoDienThamQuan
             Close();
         }
 
+        private void Gui_ThemThamQuan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

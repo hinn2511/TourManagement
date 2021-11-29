@@ -44,18 +44,18 @@
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.lbCMND = new System.Windows.Forms.Label();
             this.lbHoTen = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.headerThemKH = new System.Windows.Forms.Panel();
+            this.lbThemKH = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.headerThemKH.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Linen;
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.headerThemKH);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -229,26 +229,26 @@
             this.lbHoTen.TabIndex = 1;
             this.lbHoTen.Text = "HỌ TÊN";
             // 
-            // panel2
+            // headerThemKH
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(867, 55);
-            this.panel2.TabIndex = 0;
+            this.headerThemKH.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.headerThemKH.Controls.Add(this.lbThemKH);
+            this.headerThemKH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerThemKH.Location = new System.Drawing.Point(0, 0);
+            this.headerThemKH.Name = "headerThemKH";
+            this.headerThemKH.Size = new System.Drawing.Size(867, 55);
+            this.headerThemKH.TabIndex = 0;
             // 
-            // label1
+            // lbThemKH
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HÀNH ĐỘNG";
+            this.lbThemKH.AutoSize = true;
+            this.lbThemKH.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbThemKH.ForeColor = System.Drawing.Color.White;
+            this.lbThemKH.Location = new System.Drawing.Point(12, 18);
+            this.lbThemKH.Name = "lbThemKH";
+            this.lbThemKH.Size = new System.Drawing.Size(209, 19);
+            this.lbThemKH.TabIndex = 0;
+            this.lbThemKH.Text = "THÊM KHÁCH HÀNG MỚI";
             // 
             // Gui_ThemKH
             // 
@@ -261,8 +261,8 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.headerThemKH.ResumeLayout(false);
+            this.headerThemKH.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,8 +275,8 @@
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label lbCMND;
         private System.Windows.Forms.Label lbHoTen;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel headerThemKH;
+        private System.Windows.Forms.Label lbThemKH;
         private System.Windows.Forms.Label lbGioiTinh;
         private System.Windows.Forms.Label lbDiaChi;
         private System.Windows.Forms.Button btnHuy;

@@ -40,10 +40,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
+            this.btnLoaiChiPhi = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
-            this.btnLoaiChiPhi = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -216,6 +216,27 @@
             this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChiTiet.UseVisualStyleBackColor = false;
             // 
+            // btnLoaiChiPhi
+            // 
+            this.btnLoaiChiPhi.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
+            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLoaiChiPhi.IconSize = 24;
+            this.btnLoaiChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoaiChiPhi.Location = new System.Drawing.Point(0, 0);
+            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
+            this.btnLoaiChiPhi.Size = new System.Drawing.Size(194, 50);
+            this.btnLoaiChiPhi.TabIndex = 9;
+            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
+            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoaiChiPhi.UseVisualStyleBackColor = false;
+            // 
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.MediumAquamarine;
@@ -279,27 +300,6 @@
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // btnLoaiChiPhi
-            // 
-            this.btnLoaiChiPhi.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
-            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.Black;
-            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.Black;
-            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLoaiChiPhi.IconSize = 24;
-            this.btnLoaiChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoaiChiPhi.Location = new System.Drawing.Point(0, 0);
-            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
-            this.btnLoaiChiPhi.Size = new System.Drawing.Size(194, 50);
-            this.btnLoaiChiPhi.TabIndex = 9;
-            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
-            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLoaiChiPhi.UseVisualStyleBackColor = false;
-            // 
             // Gui_ChiPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,7 +308,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gui_ChiPhi";
-            this.Text = "Gui_GiaTour";
+            this.Text = "Chi Phí";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

@@ -267,7 +267,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gui_LoaiChiPhi";
-            this.Text = "Gui_GiaTour";
+            this.Text = "Loại Chi Phí";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

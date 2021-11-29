@@ -290,7 +290,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gui_DiaDiem";
-            this.Text = "Gui_GiaTour";
+            this.Text = "Địa Điểm";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

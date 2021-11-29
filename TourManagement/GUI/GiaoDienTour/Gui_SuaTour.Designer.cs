@@ -190,7 +190,7 @@
             this.ClientSize = new System.Drawing.Size(867, 500);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_SuaTour";
-            this.Text = "Gui_ThemTour";
+            this.Text = "Sửa Tour";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
