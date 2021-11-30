@@ -8,9 +8,6 @@ namespace TourManagement.DAL
 
     public class Dal_ThamQuan
     {
-        //
-
-
         public List<DiaDiem> DanhSachDiaDiem()
         {
             TourManagementDataContext context = new TourManagementDataContext();
@@ -20,7 +17,6 @@ namespace TourManagement.DAL
             return dsDiaDiem;
         }
 
-        //
         public List<Dto_ThamQuan> LayDanhSachThamQuan(int tourId)
         {
             TourManagementDataContext context = new TourManagementDataContext();

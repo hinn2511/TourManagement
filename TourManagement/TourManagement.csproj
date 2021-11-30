@@ -71,6 +71,7 @@
     <Compile Include="BUS\Bus_DiaDiem.cs" />
     <Compile Include="BUS\Bus_GiaTour.cs" />
     <Compile Include="BUS\Bus_LoaiChiPhi.cs" />
+    <Compile Include="BUS\Bus_PhanCong.cs" />
     <Compile Include="BUS\Bus_ThamQuan.cs" />
     <Compile Include="BUS\Bus_KH.cs" />
     <Compile Include="BUS\Bus_LoaiTour.cs" />
@@ -82,12 +83,14 @@
     <Compile Include="DAL\Dal_LoaiChiPhi.cs" />
     <Compile Include="DAL\Dal_LoaiTour.cs" />
     <Compile Include="DAL\Dal_NV.cs" />
+    <Compile Include="DAL\Dal_PhanCong.cs" />
     <Compile Include="DAL\Dal_ThamQuan.cs" />
     <Compile Include="DAL\Dal_Tour.cs" />
     <Compile Include="DTO\Dto_DiaDiem.cs" />
     <Compile Include="DTO\Dto_KH.cs" />
     <Compile Include="DTO\Dto_LoaiChiPhi.cs" />
     <Compile Include="DTO\Dto_NV.cs" />
+    <Compile Include="DTO\Dto_PhanCong.cs" />
     <Compile Include="DTO\Dto_ThamQuan.cs" />
     <Compile Include="DTO\Dto_Tour.cs" />
     <Compile Include="GUI\GiaoDienChiPhi\Gui_ChiPhi.cs">
