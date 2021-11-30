@@ -52,7 +52,6 @@ namespace TourManagement.DAL
                 return true;
             }
             catch { return false; }
-            return false;
         }
 
         public LoaiChiPhi LayThongTinLoaiChiPhi(int id)

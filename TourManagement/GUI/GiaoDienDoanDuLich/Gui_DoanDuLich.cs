@@ -127,5 +127,12 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
             //chiTietDoanForm.ShowDialog();
             CapNhatDanhSachDoanDuLich();
         }
+
+        private void btnLoaiChiPhi_Click(object sender, System.EventArgs e)
+        {
+            Gui_LoaiChiPhi loaiChiPhiForm = new Gui_LoaiChiPhi();
+            loaiChiPhiForm.ShowDialog();
+            CapNhatDanhSachDoanDuLich();
+        }
     }
 }

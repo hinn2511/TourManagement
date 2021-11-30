@@ -28,8 +28,8 @@ namespace TourManagement.GUI.GiaoDienNhanVien
             dsNV = bus.LayDanhSachNV();
             nvGridView.DataSource = dsNV;
         }
-        
-        
+
+
         private void btnPhanCong_Click(object sender, System.EventArgs e)
         {
 

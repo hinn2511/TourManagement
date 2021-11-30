@@ -138,17 +138,17 @@ VALUES (N'Du lịch biển');
 INSERT INTO LoaiTour(TenLoai)
 VALUES (N'Du lịch núi');
 
-INSERT INTO GiaTour(NgayBatDau, NgayKetThuc, Gia, DangApDung)
-VALUES ('2021-11-20', '2021-08-20', 3000000, 0);
-INSERT INTO GiaTour(NgayBatDau, NgayKetThuc, Gia, DangApDung)
-VALUES ('2021-12-15', '2021-12-30', 2000000, 0);
+--INSERT INTO GiaTour(NgayBatDau, NgayKetThuc, Gia, DangApDung)
+--VALUES ('2021-11-20', '2021-08-20', 3000000, 0);
+--INSERT INTO GiaTour(NgayBatDau, NgayKetThuc, Gia, DangApDung)
+--VALUES ('2021-12-15', '2021-12-30', 2000000, 0);
 
-INSERT INTO Tour (TenTour, DacDiem, GiaTour_Id, LoaiTour_Id)
-VALUES (N'Vũng Tàu', N'Biển', 1, 1);
-INSERT INTO Tour (TenTour, DacDiem, GiaTour_Id, LoaiTour_Id)
-VALUES (N'Đà Lạt', N'Núi', 1, 2);
-INSERT INTO Tour (TenTour, DacDiem, GiaTour_Id, LoaiTour_Id)
-VALUES (N'Nha Trang', N'Biển', 2, 1);
+--INSERT INTO Tour (TenTour, DacDiem, GiaTour_Id, LoaiTour_Id)
+--VALUES (N'Vũng Tàu', N'Biển', 1, 1);
+--INSERT INTO Tour (TenTour, DacDiem, GiaTour_Id, LoaiTour_Id)
+--VALUES (N'Đà Lạt', N'Núi', 1, 2);
+--INSERT INTO Tour (TenTour, DacDiem, GiaTour_Id, LoaiTour_Id)
+--VALUES (N'Nha Trang', N'Biển', 2, 1);
 
 INSERT INTO GiaTour(NgayBatDau, NgayKetThuc, Gia, DangApDung)
 VALUES ('2021-11-20', '2021-08-20', 45000000, 0);

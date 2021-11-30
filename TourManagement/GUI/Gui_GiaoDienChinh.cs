@@ -2,7 +2,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using TourManagement.GUI.GiaoDienChiPhi;
 using TourManagement.GUI.GiaoDienDiaDiem;
 using TourManagement.GUI.GiaoDienDoanDuLich;
 using TourManagement.GUI.GiaoDienKhachHang;
