@@ -39,6 +39,7 @@
             this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLoaiChiPhi = new FontAwesome.Sharp.IconButton();
             this.btnChiPhi = new FontAwesome.Sharp.IconButton();
             this.btnDanhSachDoan = new FontAwesome.Sharp.IconButton();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
@@ -188,6 +189,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.btnLoaiChiPhi);
             this.panel2.Controls.Add(this.btnChiPhi);
             this.panel2.Controls.Add(this.btnDanhSachDoan);
             this.panel2.Controls.Add(this.btnChiTiet);
@@ -199,6 +201,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1237, 50);
             this.panel2.TabIndex = 0;
+            // 
+            // btnLoaiChiPhi
+            // 
+            this.btnLoaiChiPhi.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
+            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
+            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLoaiChiPhi.IconSize = 24;
+            this.btnLoaiChiPhi.Location = new System.Drawing.Point(350, 0);
+            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
+            this.btnLoaiChiPhi.Size = new System.Drawing.Size(160, 50);
+            this.btnLoaiChiPhi.TabIndex = 17;
+            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
+            this.btnLoaiChiPhi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoaiChiPhi.UseVisualStyleBackColor = false;
+            this.btnLoaiChiPhi.Click += new System.EventHandler(this.btnLoaiChiPhi_Click);
             // 
             // btnChiPhi
             // 
@@ -370,5 +394,6 @@
         private FontAwesome.Sharp.IconButton btnChiTiet;
         private FontAwesome.Sharp.IconButton btnDanhSachDoan;
         private FontAwesome.Sharp.IconButton btnChiPhi;
+        private FontAwesome.Sharp.IconButton btnLoaiChiPhi;
     }
 }

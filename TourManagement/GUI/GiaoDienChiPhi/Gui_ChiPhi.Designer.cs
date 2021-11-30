@@ -39,7 +39,6 @@
             this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.btnLoaiChiPhi = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();

@@ -23,8 +23,8 @@ namespace TourManagement.GUI
             KhachHang kh = new KhachHang();
             Bus_KH bus = new Bus_KH();
             kh.HoTen = txtHoTen.Text;
-            kh.CMND = txtCMND.Text; 
-            kh.SDT = txtSDT.Text;   
+            kh.CMND = txtCMND.Text;
+            kh.SDT = txtSDT.Text;
             kh.GioiTinh = txtGioiTinh.Text;
             kh.QuocTich = txtQT.Text;
             kh.DiaChi = txtDiaChi.Text;
