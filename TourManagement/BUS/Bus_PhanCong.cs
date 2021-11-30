@@ -90,14 +90,14 @@ namespace TourManagement.BUS
 
         }
 
-        public bool XoaThamQuan(Dto_ThamQuan thamQuan)
+        public bool XoaPC(Dto_PhanCong pC)
         {
-            Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
+            Dal_PhanCong dal_pc = new Dal_PhanCong();
 
-            int soLuongHienTai = dal_ThamQuan.SoLuongDiaDiemThamQuan(thamQuan.Tour_Id);
+            int soLuongHienTai = dal_pc.SoLuongNvPhanCong(pC.NV_Id);
 
-            List<Dto_ThamQuan> dsThamQuan = dal_ThamQuan.LayDanhSachThamQuan(thamQuan.Tour_Id);
-
+            List<Dto_PhanCong> dsPC = dal_pc.LayDanhSachPhanCong(pC.NV_Id);
+/*
             if (thamQuan.ThuTu != soLuongHienTai)
             {
                 for (int i = thamQuan.ThuTu - 1; i < soLuongHienTai; i++)
@@ -113,7 +113,7 @@ namespace TourManagement.BUS
 
             if (dal_ThamQuan.XoaThamQuan(thamQuan.Tour_Id, thamQuan.DiaDiem_Id))
                 return true;
-
+*/
             return false;
 
         }

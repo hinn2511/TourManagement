@@ -1,25 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tourmanagement" Class="TourManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3R5K64P\DB;Initial Catalog=tourmanagement;Integrated Security=True" SettingsObjectName="TourManagement.Properties.Settings" SettingsPropertyName="tourmanagementConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.DoanDuLich" Member="DoanDuLiches">
-    <Type Name="DoanDuLich">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JREQFRS\HLONG;Initial Catalog=tourmanagement;Integrated Security=True" SettingsObjectName="TourManagement.Properties.Settings" SettingsPropertyName="tourmanagementConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChiPhi" Member="ChiPhis">
+    <Type Name="ChiPhi">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDoanDuLich" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Tour_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NgayKhoiHanh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="DoanhThu" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Association Name="DoanDuLich_ChiTietDoan" Member="ChiTietDoans" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiTietDoan" />
-      <Association Name="DoanDuLich_ChiPhi" Member="ChiPhis" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiPhi" />
-      <Association Name="DoanDuLich_NoiDungTour" Member="NoiDungTour" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="NoiDungTour" Cardinality="One" />
-      <Association Name="DoanDuLich_PhanCong" Member="PhanCongs" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="PhanCong" />
-      <Association Name="Tour_DoanDuLich" Member="Tour" ThisKey="Tour_Id" OtherKey="Id" Type="Tour" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DiaDiem" Member="DiaDiems">
-    <Type Name="DiaDiem">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDiaDiem" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="DiaDiem_ThamQuan" Member="ThamQuans" ThisKey="Id" OtherKey="DiaDiem_Id" Type="ThamQuan" />
+      <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiChiPhi_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DoanDuLich_ChiPhi" Member="DoanDuLich" ThisKey="DoanDuLich_Id" OtherKey="Id" Type="DoanDuLich" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="LoaiChiPhi_ChiPhi" Member="LoaiChiPhi" ThisKey="LoaiChiPhi_Id" OtherKey="Id" Type="LoaiChiPhi" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ChiTietDoan" Member="ChiTietDoans">
@@ -30,14 +18,26 @@
       <Association Name="KhachHang_ChiTietDoan" Member="KhachHang" ThisKey="KhachHang_Id" OtherKey="Id" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ChiPhi" Member="ChiPhis">
-    <Type Name="ChiPhi">
+  <Table Name="dbo.DiaDiem" Member="DiaDiems">
+    <Type Name="DiaDiem">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoTien" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="LoaiChiPhi_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="DoanDuLich_ChiPhi" Member="DoanDuLich" ThisKey="DoanDuLich_Id" OtherKey="Id" Type="DoanDuLich" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="LoaiChiPhi_ChiPhi" Member="LoaiChiPhi" ThisKey="LoaiChiPhi_Id" OtherKey="Id" Type="LoaiChiPhi" IsForeignKey="true" />
+      <Column Name="TenDiaDiem" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DiaDiem_ThamQuan" Member="ThamQuans" ThisKey="Id" OtherKey="DiaDiem_Id" Type="ThamQuan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DoanDuLich" Member="DoanDuLiches">
+    <Type Name="DoanDuLich">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDoanDuLich" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tour_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKhoiHanh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DoanhThu" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="DoanDuLich_ChiPhi" Member="ChiPhis" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiPhi" />
+      <Association Name="DoanDuLich_ChiTietDoan" Member="ChiTietDoans" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiTietDoan" />
+      <Association Name="DoanDuLich_NoiDungTour" Member="NoiDungTour" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="NoiDungTour" Cardinality="One" />
+      <Association Name="DoanDuLich_PhanCong" Member="PhanCongs" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="PhanCong" />
+      <Association Name="Tour_DoanDuLich" Member="Tour" ThisKey="Tour_Id" OtherKey="Id" Type="Tour" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.GiaTour" Member="GiaTours">
