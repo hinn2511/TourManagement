@@ -21,19 +21,17 @@ namespace TourManagement.DAL
         {
             TourManagementDataContext context = new TourManagementDataContext();
 
-            List<Dto_ThamQuan> dsThamQuan = (from thamquan in context.ThamQuans
-                                             join diadiem in context.DiaDiems on thamquan.DiaDiem_Id equals diadiem.Id
-                                             join tour in context.Tours on thamquan.Tour_Id equals tour.Id
-                                             where thamquan.Tour_Id == tourId
-                                             orderby thamquan.ThuTu
-                                             select new Dto_ThamQuan
-                                             {
-                                                 Tour_Id = thamquan.Tour_Id,
-                                                 TenTour = tour.TenTour,
-                                                 DiaDiem_Id = thamquan.DiaDiem_Id,
-                                                 TenDiaDiem = diadiem.TenDiaDiem,
-                                                 ThuTu = thamquan.ThuTu
-                                             }).ToList();
+            List<Dto_ThamQuan> dsThamQuan = context.ThamQuans.Select(tq => new Dto_ThamQuan
+            {
+                Tour_Id = tq.Tour.Id,
+                TenTour = tq.Tour.TenTour,
+                DiaDiem_Id = tq.DiaDiem.Id,
+                TenDiaDiem = tq.DiaDiem.TenDiaDiem,
+                ThuTu = tq.ThuTu
+            })
+                                                .Where(tq => tq.Tour_Id == tourId)
+                                                .OrderBy(tq => tq.ThuTu)
+                                                .ToList();
             return dsThamQuan;
         }
 

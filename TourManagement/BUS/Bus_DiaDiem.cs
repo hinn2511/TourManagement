@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TourManagement.DAL;
 
 namespace TourManagement.BUS
@@ -12,7 +9,7 @@ namespace TourManagement.BUS
         Dal_DiaDiem dal = new Dal_DiaDiem();
 
         public List<DiaDiem> LayDanhSachDiaDiem()
-        {           
+        {
             return dal.DanhSachDiaDiem();
         }
 
@@ -38,9 +35,9 @@ namespace TourManagement.BUS
             return dal.LayThongTinDiaDiem(id);
         }
 
-        public List<DiaDiem> TimKiemDiaDiem (List<DiaDiem> dsDiaDiem, string key)
+        public List<DiaDiem> TimKiemDiaDiem(List<DiaDiem> dsDiaDiem, string key)
         {
-            var res = dsDiaDiem.Where(t=> t.TenDiaDiem.Contains(key)).ToList();
+            var res = dsDiaDiem.Where(t => t.TenDiaDiem.Contains(key)).ToList();
             return res;
         }
     }

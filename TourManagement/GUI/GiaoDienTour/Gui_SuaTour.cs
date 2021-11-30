@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
@@ -24,7 +25,7 @@ namespace TourManagement.GUI.GiaoDienTour
         private void LayDanhSachLoaiTour()
         {
             Bus_Tour bus = new Bus_Tour();
-            dsLoaiTour = bus.LayDanhSachLoaiTour(tour.Loai);
+            dsLoaiTour = bus.LayDanhSachLoaiTour();
             foreach (var item in dsLoaiTour)
             {
                 cbxLoaiTour.Items.Add(item.TenLoai);
@@ -42,6 +43,7 @@ namespace TourManagement.GUI.GiaoDienTour
             if (cbxLoaiTour.SelectedIndex > 0)
             {
                 tour.Loai_Id = dsLoaiTour[cbxLoaiTour.SelectedIndex].Id;
+                Debug.WriteLine(dsLoaiTour[cbxLoaiTour.SelectedIndex].TenLoai);
             }
 
         }

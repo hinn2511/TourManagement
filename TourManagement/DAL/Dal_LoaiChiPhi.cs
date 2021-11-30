@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TourManagement.DAL
 {
@@ -42,7 +39,7 @@ namespace TourManagement.DAL
             catch { return false; }
         }
 
-        public bool Xoa (int loaiChiPhiId)
+        public bool Xoa(int loaiChiPhiId)
         {
             var loaiChiPhiDel = context.LoaiChiPhis.FirstOrDefault(t => t.Id == loaiChiPhiId);
             if (loaiChiPhiDel != null)
@@ -58,7 +55,7 @@ namespace TourManagement.DAL
             return false;
         }
 
-        public LoaiChiPhi LayThongTinLoaiChiPhi (int id)
+        public LoaiChiPhi LayThongTinLoaiChiPhi(int id)
         {
             var loaiChiPhi = context.LoaiChiPhis.FirstOrDefault(t => t.Id == id);
             return loaiChiPhi;

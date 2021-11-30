@@ -1,6 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using TourManagement.BUS;
-using System.Collections.Generic;
 namespace TourManagement.GUI
 {
     public partial class Gui_LoaiChiPhi : Form
@@ -18,7 +18,8 @@ namespace TourManagement.GUI
             currentIndex = -1;
         }
 
-        private void CapNhatDanhSach() {
+        private void CapNhatDanhSach()
+        {
             Bus_LoaiChiPhi bus = new Bus_LoaiChiPhi();
             dsLoaiPhi = bus.LayDanhSachLoaiChiPhi();
             LoaiChiPhiGridView.DataSource = dsLoaiPhi;

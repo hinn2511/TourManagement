@@ -10,27 +10,17 @@ namespace TourManagement.DAL
         public List<Dto_Tour> LayDanhSachTour()
         {
             TourManagementDataContext context = new TourManagementDataContext();
-            //Thuc hien cau query
-            //Join 3 bang tour + gia tour + loai tour
-            //Tra ve danh sach Dto_Tour
-            List<Dto_Tour> tours = (from tour in context.Tours
-                                    join giatour in context.GiaTours on tour.GiaTour_Id equals giatour.Id
-                                    join loaitour in context.LoaiTours on tour.LoaiTour_Id equals loaitour.Id
-                                    select new Dto_Tour
-                                    {
-                                        //Lay cac thuoc tinh can thiet
-                                        //Ben trai la cac thuoc tinh trong dto
-                                        //Ben phai la thuoc tinh sau khi join
-                                        Id = tour.Id,
-                                        TenTour = tour.TenTour,
-                                        DacDiem = tour.DacDiem,
-                                        Loai = loaitour.TenLoai,
-                                        Loai_Id = loaitour.Id,
-                                        Gia = giatour.Gia,
-                                        Gia_Id = giatour.Id,
-                                    }).ToList();
-            //Tra ve danh sach
-            return tours;
+            List<Dto_Tour> dsTour = context.Tours.Select(t => new Dto_Tour
+            {
+                Id = t.Id,
+                TenTour = t.TenTour,
+                DacDiem = t.DacDiem,
+                Loai = t.LoaiTour.TenLoai,
+                Loai_Id = t.LoaiTour.Id,
+                Gia = t.GiaTours.FirstOrDefault(x => x.DangApDung).Gia,
+                Gia_Id = (int)t.GiaTour_Id,
+            }).ToList();
+            return dsTour;
         }
 
         public Tour ChiTietTour(int id)
@@ -46,20 +36,17 @@ namespace TourManagement.DAL
         public bool ThemTour(Tour tour)
         {
             TourManagementDataContext context = new TourManagementDataContext();
-            //Them dong moi trong database
+
             context.Tours.InsertOnSubmit(tour);
 
             try
             {
-                //Luu xuong database
                 context.SubmitChanges();
 
-                //Tra ve true khi thanh cong
                 return true;
             }
             catch (SqlException e)
             {
-                //Tra ve false khi that bai
                 return false;
             }
         }

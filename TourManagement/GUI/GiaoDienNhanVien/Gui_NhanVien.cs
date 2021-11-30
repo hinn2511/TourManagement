@@ -1,6 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using TourManagement.BUS;
-using System.Collections.Generic;
 namespace TourManagement.GUI.GiaoDienNhanVien
 {
     public partial class Gui_NhanVien : Form
@@ -14,7 +14,7 @@ namespace TourManagement.GUI.GiaoDienNhanVien
             InitializeComponent();
             CapNhatDanhSachNV();
             DatTenDauDanhSach();
-           
+
             currentIndex = -1;
         }
         private void DatTenDauDanhSach()

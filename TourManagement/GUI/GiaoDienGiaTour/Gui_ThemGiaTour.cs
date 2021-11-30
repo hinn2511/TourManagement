@@ -31,11 +31,6 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            GiaTour giaTour = new GiaTour();
-            giaTour.DangApDung = false;
-            giaTour.Tour_Id = tourThemGia.Id;
-            giaTour.NgayBatDau = dtNgayBatDau.Value;
-            giaTour.NgayKetThuc = dtNgayKetThuc.Value;
             decimal gia;
             if (!decimal.TryParse(txtGiaTour.Text, out gia))
             {
@@ -43,22 +38,24 @@ namespace TourManagement.GUI.GiaoDienGiaTour
                 return;
 
             }
+            GiaTour giaTour = new GiaTour();
+            giaTour.DangApDung = false;
+            giaTour.Tour_Id = tourThemGia.Id;
+            giaTour.NgayBatDau = dtNgayBatDau.Value;
+            giaTour.NgayKetThuc = dtNgayKetThuc.Value;
             giaTour.Gia = gia;
             Bus_GiaTour bus_giaTour = new Bus_GiaTour();
             if (bus_giaTour.ThemGiaTour(giaTour))
             {
                 MessageBox.Show("Đã thêm giá tour thành công", "Thành công", MessageBoxButtons.OK);
-                DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("Đã có lỗi xảy ra", "Thất bại", MessageBoxButtons.OK);
             Close();
-            return;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
             Close();
         }
 

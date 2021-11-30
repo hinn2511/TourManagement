@@ -7,20 +7,22 @@ namespace TourManagement.GUI.GiaoDienThamQuan
 {
     public partial class Gui_ThamQuan : Form
     {
-        List<Dto_Tour> dsTour;
         List<Dto_ThamQuan> dsThamQuan;
         int currentIndex;
+        Dto_Tour currentTour;
 
-        public Gui_ThamQuan()
+        public Gui_ThamQuan(Dto_Tour tour)
         {
             InitializeComponent();
-            LayDanhSachTour();
+            currentTour = tour;
+            CapNhatDanhSachThamQuan();
+            txtTenTour.Text = tour.TenTour;
             currentIndex = -1;
         }
-        private void CapNhatDanhSachThamQuan(int tourId)
+        private void CapNhatDanhSachThamQuan()
         {
             Bus_ThamQuan bus = new Bus_ThamQuan();
-            dsThamQuan = bus.LayDanhSachThamQuan(tourId);
+            dsThamQuan = bus.LayDanhSachThamQuan(currentTour.Id);
             thamQuanGridView.DataSource = dsThamQuan;
             DatTenDauDanhSach();
         }
@@ -34,36 +36,12 @@ namespace TourManagement.GUI.GiaoDienThamQuan
             thamQuanGridView.Columns["ThuTu"].HeaderText = "Thứ tự";
         }
 
-        private void LayDanhSachTour()
-        {
-            Bus_ThamQuan bus = new Bus_ThamQuan();
-            dsTour = bus.LayDanhSachTour();
-            foreach (var item in dsTour)
-            {
-                cbxTour.Items.Add(item.TenTour);
-            }
-
-        }
 
         private void btnThem_Click(object sender, System.EventArgs e)
         {
-            if (cbxTour.SelectedIndex < 0)
-            {
-                MessageBox.Show("Vui lòng chọn tour cần thêm lịch trình", "Lỗi", MessageBoxButtons.OK);
-                return;
-            }
-            Gui_ThemThamQuan themThamQuanForm = new Gui_ThemThamQuan(dsTour[cbxTour.SelectedIndex]);
+            Gui_ThemThamQuan themThamQuanForm = new Gui_ThemThamQuan(currentTour);
             themThamQuanForm.ShowDialog();
-            CapNhatDanhSachThamQuan(dsTour[cbxTour.SelectedIndex].Id);
-        }
-
-        private void cbxTour_DropDownClosed(object sender, System.EventArgs e)
-        {
-            if (cbxTour.SelectedItem != null)
-            {
-                CapNhatDanhSachThamQuan(dsTour[cbxTour.SelectedIndex].Id);
-            }
-
+            CapNhatDanhSachThamQuan();
         }
 
         private void giaTourGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -85,11 +63,11 @@ namespace TourManagement.GUI.GiaoDienThamQuan
                 return;
             }
             Bus_ThamQuan bus = new Bus_ThamQuan();
-            dsThamQuan = bus.LayDanhSachThamQuan(dsTour[cbxTour.SelectedIndex].Id);
+            dsThamQuan = bus.LayDanhSachThamQuan(currentTour.Id);
             if (bus.XoaThamQuan(dsThamQuan[currentIndex]))
             {
                 MessageBox.Show("Xóa lịch trình tham quan thành công", "Thành công", MessageBoxButtons.OK);
-                CapNhatDanhSachThamQuan(dsTour[cbxTour.SelectedIndex].Id);
+                CapNhatDanhSachThamQuan();
             }
             else
                 MessageBox.Show("Xóa lịch trình tham quan thất bại", "Lỗi", MessageBoxButtons.OK);
@@ -98,12 +76,6 @@ namespace TourManagement.GUI.GiaoDienThamQuan
 
         private void btnSua_Click(object sender, System.EventArgs e)
         {
-            if (cbxTour.SelectedIndex < 0)
-            {
-                MessageBox.Show("Vui lòng chọn tour cần sửa lịch trình", "Lỗi", MessageBoxButtons.OK);
-                return;
-            }
-
             if (currentIndex < 0)
             {
                 MessageBox.Show("Vui lòng chọn lịch trình cần sửa", "Lỗi", MessageBoxButtons.OK);
@@ -114,7 +86,7 @@ namespace TourManagement.GUI.GiaoDienThamQuan
 
             suaThamQuanForm.ShowDialog();
 
-            CapNhatDanhSachThamQuan(dsTour[cbxTour.SelectedIndex].Id);
+            CapNhatDanhSachThamQuan();
 
         }
 

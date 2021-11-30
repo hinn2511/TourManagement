@@ -93,26 +93,26 @@
             // 
             // btnLoaiChiPhi
             // 
-            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
-            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.White;
-            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
-            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.White;
-            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLoaiChiPhi.IconSize = 32;
-            this.btnLoaiChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoaiChiPhi.Location = new System.Drawing.Point(0, 537);
-            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
-            this.btnLoaiChiPhi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLoaiChiPhi.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnLoaiChiPhi.Size = new System.Drawing.Size(237, 70);
-            this.btnLoaiChiPhi.TabIndex = 6;
-            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
-            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLoaiChiPhi.UseVisualStyleBackColor = true;
-            this.btnLoaiChiPhi.Click += new System.EventHandler(this.btnChiPhi_Click);
+            this.btnChiPhi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChiPhi.FlatAppearance.BorderSize = 0;
+            this.btnChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChiPhi.ForeColor = System.Drawing.Color.White;
+            this.btnChiPhi.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+            this.btnChiPhi.IconColor = System.Drawing.Color.White;
+            this.btnChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnChiPhi.IconSize = 32;
+            this.btnChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChiPhi.Location = new System.Drawing.Point(0, 537);
+            this.btnChiPhi.Name = "btnChiPhi";
+            this.btnChiPhi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnChiPhi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnChiPhi.Size = new System.Drawing.Size(237, 70);
+            this.btnChiPhi.TabIndex = 6;
+            this.btnChiPhi.Text = "LOẠI CHI PHÍ";
+            this.btnChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChiPhi.UseVisualStyleBackColor = true;
+            this.btnChiPhi.Click += new System.EventHandler(this.btnChiPhi_Click);
             // 
             // btnNhanVien
             // 

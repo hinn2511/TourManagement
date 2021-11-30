@@ -34,7 +34,7 @@ namespace TourManagement.GUI.GiaoDienGiaTour
             giaTour.NgayKetThuc = dtNgayKetThuc.Value;
             if (giaTour.NgayBatDau > giaTour.NgayKetThuc)
             {
-                MessageBox.Show("Ngày áp dụng hoặc ngày kết thúc giá tour không hợp lệ", "Lỗi", MessageBoxButtons.OK);
+                MessageBox.Show("Ngày áp dụng hoặc ngày kết thúc không hợp lệ", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
             decimal gia;
@@ -49,7 +49,6 @@ namespace TourManagement.GUI.GiaoDienGiaTour
             if (bus_giaTour.SuaGiaTour(giaTour))
             {
                 MessageBox.Show("Đã sửa giá tour thành công", "Thành công", MessageBoxButtons.OK);
-                DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("Đã có lỗi xảy ra", "Thất bại", MessageBoxButtons.OK);
@@ -58,7 +57,6 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
             Close();
         }
 

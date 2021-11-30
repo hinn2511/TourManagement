@@ -184,7 +184,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.btnLoaiChiPhi);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.btnSua);
@@ -195,26 +194,26 @@
             this.panel2.Size = new System.Drawing.Size(1237, 50);
             this.panel2.TabIndex = 0;
             // 
-            // btnChiTiet
+            // btnLoaiChiPhi
             // 
-            this.btnChiTiet.BackColor = System.Drawing.Color.Orange;
-            this.btnChiTiet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnChiTiet.FlatAppearance.BorderSize = 0;
-            this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChiTiet.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnChiTiet.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.btnChiTiet.IconColor = System.Drawing.Color.White;
-            this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChiTiet.IconSize = 24;
-            this.btnChiTiet.Location = new System.Drawing.Point(717, 0);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(130, 50);
-            this.btnChiTiet.TabIndex = 13;
-            this.btnChiTiet.Text = "CHI TIẾT";
-            this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChiTiet.UseVisualStyleBackColor = false;
+            this.btnLoaiChiPhi.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLoaiChiPhi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLoaiChiPhi.FlatAppearance.BorderSize = 0;
+            this.btnLoaiChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLoaiChiPhi.ForeColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnLoaiChiPhi.IconColor = System.Drawing.Color.Black;
+            this.btnLoaiChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLoaiChiPhi.IconSize = 24;
+            this.btnLoaiChiPhi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoaiChiPhi.Location = new System.Drawing.Point(0, 0);
+            this.btnLoaiChiPhi.Name = "btnLoaiChiPhi";
+            this.btnLoaiChiPhi.Size = new System.Drawing.Size(194, 50);
+            this.btnLoaiChiPhi.TabIndex = 9;
+            this.btnLoaiChiPhi.Text = "LOẠI CHI PHÍ";
+            this.btnLoaiChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoaiChiPhi.UseVisualStyleBackColor = false;
             // 
             // btnLoaiChiPhi
             // 
@@ -257,6 +256,7 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -336,7 +336,6 @@
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private FontAwesome.Sharp.IconButton btnChiTiet;
         private FontAwesome.Sharp.IconButton btnLoaiChiPhi;
     }
 }

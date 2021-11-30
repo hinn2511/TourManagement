@@ -43,7 +43,6 @@ namespace TourManagement.GUI.GiaoDienThamQuan
             if (bus.SuaLichTrinhThamQuan(thamQuan, (int)cbxThuTu.SelectedItem))
             {
                 MessageBox.Show("Đã cập nhật lịch trình thành công", "Thành công", MessageBoxButtons.OK);
-                DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("Đã có lỗi xảy ra", "Thất bại", MessageBoxButtons.OK);

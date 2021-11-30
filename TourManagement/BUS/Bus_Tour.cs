@@ -10,13 +10,10 @@ namespace TourManagement.BUS
     {
         public List<Dto_Tour> LayDanhSachTour()
         {
-            //Goi lop dal
             Dal_Tour dal_tour = new Dal_Tour();
 
-            //Gan result = ket qua tra ve tu dal
             var result = dal_tour.LayDanhSachTour();
 
-            //Tra ve result
             return result;
         }
 
@@ -41,61 +38,38 @@ namespace TourManagement.BUS
             return result;
         }
 
-        public List<LoaiTour> LayDanhSachLoaiTour(string tenLoaiTour)
-        {
-            Dal_LoaiTour dal_loaiTour = new Dal_LoaiTour();
-            List<LoaiTour> dsLoaiTour = dal_loaiTour.LayDanhSachLoaiTour();
-            List<LoaiTour> result = new List<LoaiTour>();
-            foreach (var item in dsLoaiTour)
-            {
-                if (!item.TenLoai.Equals(tenLoaiTour))
-                    result.Add(item);
-            }
-            return result;
-        }
-
         public List<Dto_Tour> TimKiemTour(List<Dto_Tour> dsTour, string tukhoa)
         {
 
-            //Gan result = ket qua tra ve tu 
-            //dsTour.Where(t => t.TenTour.Contains(tukhoa)) => Tim trong list co ten tour nao co chua tu khoa can tim kiem
             var result = dsTour.Where(t => t.TenTour.Contains(tukhoa)).ToList();
-            //Tra ve result
             return result;
         }
 
 
         public bool ThemTourMoi(Tour tour, GiaTour gia)
         {
-            //Goi lop dal
             Dal_Tour dal_tour = new Dal_Tour();
 
             Dal_GiaTour dal_giaTour = new Dal_GiaTour();
 
-            //Tao gia tour moi
             if (dal_giaTour.ThemGiaTour(gia))
-
-            //Neu thanh cong 
             {
-                //Neu them thanh cong tim gia tour da tao
-                var giaTourMoi = dal_giaTour.LayGiaTourMoiNhat();
 
-                //Them gia tour id vao tour
-                tour.GiaTour_Id = giaTourMoi.Id;
-
-                //Them tour
-                if (dal_tour.ThemTour(tour))
+                var giaTourMoiNhat = dal_giaTour.LayGiaTourMoiNhat();
+                if (giaTourMoiNhat != null)
                 {
-                    //Cap nhat tour id trong gia tour
-                    //Ap dung gia tour
-                    if (giaTourMoi != null)
+                    tour.GiaTour_Id = giaTourMoiNhat.Id;
+
+                    if (dal_tour.ThemTour(tour))
                     {
-                        giaTourMoi.Tour_Id = tour.Id;
-                        giaTourMoi.DangApDung = true;
-                        dal_giaTour.CapNhatGiaTour(giaTourMoi);
+
+                        giaTourMoiNhat.Tour_Id = tour.Id;
+                        giaTourMoiNhat.DangApDung = true;
+                        dal_giaTour.CapNhatGiaTour(giaTourMoiNhat);
+                        return true;
                     }
-                    return true;
                 }
+
             }
             return false;
 
