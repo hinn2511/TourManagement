@@ -34,5 +34,10 @@ namespace TourManagement.GUI.GiaoDienLoaiTour
             else
                 MessageBox.Show("Đã có lỗi xảy ra", "Thất bại", MessageBoxButtons.OK);
         }
+
+        private void Gui_ThemLoaiTour_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

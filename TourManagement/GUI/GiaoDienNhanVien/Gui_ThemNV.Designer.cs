@@ -32,7 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtTenTourr = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.lbHoTen = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Controls.Add(this.btnThem);
-            this.panel3.Controls.Add(this.txtTenTourr);
+            this.panel3.Controls.Add(this.txtHoTen);
             this.panel3.Controls.Add(this.lbHoTen);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 55);
@@ -93,14 +93,15 @@
             this.btnThem.TabIndex = 11;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtTenTourr
+            // txtHoTen
             // 
-            this.txtTenTourr.Location = new System.Drawing.Point(164, 46);
-            this.txtTenTourr.Multiline = true;
-            this.txtTenTourr.Name = "txtTenTourr";
-            this.txtTenTourr.Size = new System.Drawing.Size(673, 31);
-            this.txtTenTourr.TabIndex = 3;
+            this.txtHoTen.Location = new System.Drawing.Point(164, 46);
+            this.txtHoTen.Multiline = true;
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(673, 31);
+            this.txtHoTen.TabIndex = 3;
             // 
             // lbHoTen
             // 
@@ -156,7 +157,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtTenTourr;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;

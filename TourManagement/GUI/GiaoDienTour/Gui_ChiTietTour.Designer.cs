@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.thamQuanGridView = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNgayKetThuc = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thamQuanGridView)).BeginInit();
@@ -89,6 +89,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(867, 786);
             this.panel3.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(793, 375);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 19);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "VNĐ";
             // 
             // thamQuanGridView
             // 
@@ -271,17 +282,6 @@
             this.label1.Text = "CHI TIẾT TOUR";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(793, 375);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 19);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "VNĐ";
-            // 
             // Gui_ChiTietTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,7 +289,7 @@
             this.ClientSize = new System.Drawing.Size(867, 841);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_ChiTietTour";
-            this.Text = "Gui_ThemTour";
+            this.Text = "Chi Tiết Tour";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

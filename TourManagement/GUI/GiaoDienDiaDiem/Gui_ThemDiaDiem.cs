@@ -28,7 +28,7 @@ namespace TourManagement.GUI
             diaDiem.TenDiaDiem = txtTenDiaDiem.Text;
             if (bus.ThemDiaDiem(diaDiem))
             {
-                MessageBox.Show("Đã thêm loại tour thành công", "Thành công", MessageBoxButtons.OK);
+                MessageBox.Show("Đã thêm địa điểm thành công", "Thành công", MessageBoxButtons.OK);
                 DialogResult = DialogResult.OK;
                 Close();
             }

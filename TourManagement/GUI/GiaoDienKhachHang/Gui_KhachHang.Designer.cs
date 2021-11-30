@@ -98,6 +98,7 @@
             this.khGridView.RowTemplate.Height = 24;
             this.khGridView.Size = new System.Drawing.Size(1237, 592);
             this.khGridView.TabIndex = 0;
+            this.khGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.khGridView_CellClick);
             // 
             // panel6
             // 
@@ -233,6 +234,7 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -275,6 +277,7 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // Gui_KhachHang
             // 
@@ -284,7 +287,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gui_KhachHang";
-            this.Text = "Gui_GiaTour";
+            this.Text = "Khách Hàng";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

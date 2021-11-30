@@ -20,13 +20,13 @@ namespace TourManagement.GUI.GiaoDienKhachHang
         }
         private void DatTenDauDanhSach()
         {
-            khGridView.Columns[0].HeaderText = "Mã Khách Hàng";
-            khGridView.Columns[1].HeaderText = "Họ Tên ";
-            khGridView.Columns[2].HeaderText = "CMND";
-            khGridView.Columns[3].HeaderText = "Địa Chỉ";
-            khGridView.Columns[4].HeaderText = "Giới tính";
-            khGridView.Columns[5].HeaderText = "Số điện thoại";
-            khGridView.Columns[6].HeaderText = "Quốc tịch";
+            khGridView.Columns["Id"].HeaderText = "Mã Khách Hàng";
+            khGridView.Columns["HoTen"].HeaderText = "Họ Tên ";
+            khGridView.Columns["CMND"].HeaderText = "CMND";
+            khGridView.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            khGridView.Columns["GioiTinh"].HeaderText = "Giới tính";
+            khGridView.Columns["SDT"].HeaderText = "Số điện thoại";
+            khGridView.Columns["QuocTich"].HeaderText = "Quốc tịch";
         }
         private void CapNhatDanhSachKH()
         {
@@ -34,16 +34,13 @@ namespace TourManagement.GUI.GiaoDienKhachHang
             dsKH = bus.LayDanhSachKH();
             khGridView.DataSource = dsKH;
         }
-        private void actionThemKH(object sender, System.EventArgs e)
+        private void btnThem_Click(object sender, System.EventArgs e)
         {
             Gui_ThemKH themKHForm = new Gui_ThemKH();
-            var result = themKHForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                CapNhatDanhSachKH();
-            }
+            themKHForm.ShowDialog();
+            CapNhatDanhSachKH();
         }
-        private void actionXoaKH(object sender, System.EventArgs e)
+        private void btnXoa_Click(object sender, System.EventArgs e)
         {
             if (currentIndex < 0)
                 MessageBox.Show("Vui lòng chọn khách hàng cần xóa", "Lỗi", MessageBoxButtons.OK);
@@ -59,7 +56,16 @@ namespace TourManagement.GUI.GiaoDienKhachHang
                     khGridView.DataSource = dsKH;
                 }
             }
+        }
+        private void khGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
 
+            if (khGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                currentIndex = e.RowIndex;
+            }
         }
     }
 }

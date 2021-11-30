@@ -222,7 +222,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gui_ThamQuan";
-            this.Text = "Gui_GiaTour";
+            this.Text = "Tham Quan";
             this.panelTen.ResumeLayout(false);
             this.panelTen.PerformLayout();
             this.panel1.ResumeLayout(false);

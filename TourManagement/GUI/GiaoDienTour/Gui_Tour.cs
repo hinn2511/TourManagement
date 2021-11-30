@@ -75,7 +75,7 @@ namespace TourManagement.GUI.GiaoDienTour
         {
             if (currentIndex < 0)
             {
-                MessageBox.Show("Vui lòng chọn tour cần xem chi tiết", "Lỗi", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn tour cần được sửa", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
 
@@ -107,6 +107,7 @@ namespace TourManagement.GUI.GiaoDienTour
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            DatTenDauDanhSach();
             tourGridView.DataSource = dsTour;
         }
 

@@ -1,6 +1,5 @@
 ﻿using System.Windows.Forms;
 using TourManagement.BUS;
-using TourManagement.DTO;
 using System.Collections.Generic;
 namespace TourManagement.GUI.GiaoDienNhanVien
 {
@@ -20,8 +19,8 @@ namespace TourManagement.GUI.GiaoDienNhanVien
         }
         private void DatTenDauDanhSach()
         {
-            nvGridView.Columns[0].HeaderText = "Mã Nhân Viên";
-            nvGridView.Columns[1].HeaderText = "Họ Tên ";
+            nvGridView.Columns["Id"].HeaderText = "Mã Nhân Viên";
+            nvGridView.Columns["HoTen"].HeaderText = "Họ Tên ";
         }
         private void CapNhatDanhSachNV()
         {
@@ -29,16 +28,21 @@ namespace TourManagement.GUI.GiaoDienNhanVien
             dsNV = bus.LayDanhSachNV();
             nvGridView.DataSource = dsNV;
         }
-        private void actionThemNV(object sender, System.EventArgs e)
+        
+        
+        private void btnPhanCong_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, System.EventArgs e)
         {
             Gui_ThemNV themNVForm = new Gui_ThemNV();
-            var result = themNVForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                CapNhatDanhSachNV();
-            }
+            themNVForm.ShowDialog();
+            CapNhatDanhSachNV();
         }
-        private void actionXoaNV(object sender, System.EventArgs e)
+
+        private void btnXoa_Click(object sender, System.EventArgs e)
         {
             if (currentIndex < 0)
                 MessageBox.Show("Vui lòng chọn nhân viên cần xóa", "Lỗi", MessageBoxButtons.OK);
@@ -54,11 +58,16 @@ namespace TourManagement.GUI.GiaoDienNhanVien
                     nvGridView.DataSource = dsNV;
                 }
             }
-
         }
-        private void btnPhanCong_Click(object sender, System.EventArgs e)
+        private void nvGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
 
+            if (nvGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                currentIndex = e.RowIndex;
+            }
         }
     }
 }

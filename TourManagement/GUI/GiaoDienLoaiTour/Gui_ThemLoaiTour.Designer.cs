@@ -142,7 +142,8 @@
             this.ClientSize = new System.Drawing.Size(862, 238);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_ThemLoaiTour";
-            this.Text = "Gui_ThemTour";
+            this.Text = "Thêm Loại Tour";
+            this.Load += new System.EventHandler(this.Gui_ThemLoaiTour_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

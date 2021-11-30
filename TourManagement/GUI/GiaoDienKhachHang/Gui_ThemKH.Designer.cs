@@ -30,32 +30,32 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtGiaTour = new System.Windows.Forms.TextBox();
+            this.lbQuocTich = new System.Windows.Forms.Label();
+            this.txtQT = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.lbSDT = new System.Windows.Forms.Label();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.lbGioiTinh = new System.Windows.Forms.Label();
             this.lbDiaChi = new System.Windows.Forms.Label();
-            this.txtDacDiem = new System.Windows.Forms.TextBox();
-            this.txtTenTour = new System.Windows.Forms.TextBox();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.lbCMND = new System.Windows.Forms.Label();
             this.lbHoTen = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbSDT = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lbQuocTich = new System.Windows.Forms.Label();
+            this.headerThemKH = new System.Windows.Forms.Panel();
+            this.lbThemKH = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.headerThemKH.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Linen;
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.headerThemKH);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -66,17 +66,17 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.Controls.Add(this.lbQuocTich);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtQT);
+            this.panel3.Controls.Add(this.txtDiaChi);
+            this.panel3.Controls.Add(this.txtSDT);
             this.panel3.Controls.Add(this.lbSDT);
-            this.panel3.Controls.Add(this.txtGiaTour);
+            this.panel3.Controls.Add(this.txtGioiTinh);
             this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Controls.Add(this.btnThem);
             this.panel3.Controls.Add(this.lbGioiTinh);
             this.panel3.Controls.Add(this.lbDiaChi);
-            this.panel3.Controls.Add(this.txtDacDiem);
-            this.panel3.Controls.Add(this.txtTenTour);
+            this.panel3.Controls.Add(this.txtCMND);
+            this.panel3.Controls.Add(this.txtHoTen);
             this.panel3.Controls.Add(this.lbCMND);
             this.panel3.Controls.Add(this.lbHoTen);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,13 +85,59 @@
             this.panel3.Size = new System.Drawing.Size(867, 515);
             this.panel3.TabIndex = 1;
             // 
-            // txtGiaTour
+            // lbQuocTich
             // 
-            this.txtGiaTour.Location = new System.Drawing.Point(164, 218);
-            this.txtGiaTour.Multiline = true;
-            this.txtGiaTour.Name = "txtGiaTour";
-            this.txtGiaTour.Size = new System.Drawing.Size(673, 31);
-            this.txtGiaTour.TabIndex = 13;
+            this.lbQuocTich.AutoSize = true;
+            this.lbQuocTich.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbQuocTich.ForeColor = System.Drawing.Color.Black;
+            this.lbQuocTich.Location = new System.Drawing.Point(17, 354);
+            this.lbQuocTich.Name = "lbQuocTich";
+            this.lbQuocTich.Size = new System.Drawing.Size(102, 19);
+            this.lbQuocTich.TabIndex = 18;
+            this.lbQuocTich.Text = "QUỐC TỊCH";
+            // 
+            // txtQT
+            // 
+            this.txtQT.Location = new System.Drawing.Point(164, 342);
+            this.txtQT.Multiline = true;
+            this.txtQT.Name = "txtQT";
+            this.txtQT.Size = new System.Drawing.Size(673, 31);
+            this.txtQT.TabIndex = 17;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(164, 160);
+            this.txtDiaChi.Multiline = true;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(673, 31);
+            this.txtDiaChi.TabIndex = 16;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(164, 281);
+            this.txtSDT.Multiline = true;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(673, 31);
+            this.txtSDT.TabIndex = 15;
+            // 
+            // lbSDT
+            // 
+            this.lbSDT.AutoSize = true;
+            this.lbSDT.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbSDT.ForeColor = System.Drawing.Color.Black;
+            this.lbSDT.Location = new System.Drawing.Point(17, 293);
+            this.lbSDT.Name = "lbSDT";
+            this.lbSDT.Size = new System.Drawing.Size(132, 19);
+            this.lbSDT.TabIndex = 14;
+            this.lbSDT.Text = "SỐ ĐIỆN THOẠI";
+            // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.Location = new System.Drawing.Point(164, 218);
+            this.txtGioiTinh.Multiline = true;
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(673, 31);
+            this.txtGioiTinh.TabIndex = 13;
             // 
             // btnHuy
             // 
@@ -121,6 +167,7 @@
             this.btnThem.TabIndex = 11;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lbGioiTinh
             // 
@@ -144,21 +191,21 @@
             this.lbDiaChi.TabIndex = 5;
             this.lbDiaChi.Text = "ĐỊA CHỈ";
             // 
-            // txtDacDiem
+            // txtCMND
             // 
-            this.txtDacDiem.Location = new System.Drawing.Point(164, 96);
-            this.txtDacDiem.Multiline = true;
-            this.txtDacDiem.Name = "txtDacDiem";
-            this.txtDacDiem.Size = new System.Drawing.Size(673, 35);
-            this.txtDacDiem.TabIndex = 4;
+            this.txtCMND.Location = new System.Drawing.Point(164, 96);
+            this.txtCMND.Multiline = true;
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(673, 35);
+            this.txtCMND.TabIndex = 4;
             // 
-            // txtTenTour
+            // txtHoTen
             // 
-            this.txtTenTour.Location = new System.Drawing.Point(164, 30);
-            this.txtTenTour.Multiline = true;
-            this.txtTenTour.Name = "txtTenTour";
-            this.txtTenTour.Size = new System.Drawing.Size(673, 36);
-            this.txtTenTour.TabIndex = 3;
+            this.txtHoTen.Location = new System.Drawing.Point(164, 30);
+            this.txtHoTen.Multiline = true;
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(673, 36);
+            this.txtHoTen.TabIndex = 3;
             // 
             // lbCMND
             // 
@@ -170,7 +217,6 @@
             this.lbCMND.Size = new System.Drawing.Size(58, 19);
             this.lbCMND.TabIndex = 2;
             this.lbCMND.Text = "CMND";
-            this.lbCMND.Click += new System.EventHandler(this.lbCMND_Click);
             // 
             // lbHoTen
             // 
@@ -183,72 +229,26 @@
             this.lbHoTen.TabIndex = 1;
             this.lbHoTen.Text = "HỌ TÊN";
             // 
-            // panel2
+            // headerThemKH
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(867, 55);
-            this.panel2.TabIndex = 0;
+            this.headerThemKH.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.headerThemKH.Controls.Add(this.lbThemKH);
+            this.headerThemKH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerThemKH.Location = new System.Drawing.Point(0, 0);
+            this.headerThemKH.Name = "headerThemKH";
+            this.headerThemKH.Size = new System.Drawing.Size(867, 55);
+            this.headerThemKH.TabIndex = 0;
             // 
-            // label1
+            // lbThemKH
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HÀNH ĐỘNG";
-            // 
-            // lbSDT
-            // 
-            this.lbSDT.AutoSize = true;
-            this.lbSDT.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbSDT.ForeColor = System.Drawing.Color.Black;
-            this.lbSDT.Location = new System.Drawing.Point(17, 293);
-            this.lbSDT.Name = "lbSDT";
-            this.lbSDT.Size = new System.Drawing.Size(132, 19);
-            this.lbSDT.TabIndex = 14;
-            this.lbSDT.Text = "SỐ ĐIỆN THOẠI";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(164, 281);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(673, 31);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(164, 160);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(673, 31);
-            this.textBox2.TabIndex = 16;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(164, 342);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(673, 31);
-            this.textBox3.TabIndex = 17;
-            // 
-            // lbQuocTich
-            // 
-            this.lbQuocTich.AutoSize = true;
-            this.lbQuocTich.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbQuocTich.ForeColor = System.Drawing.Color.Black;
-            this.lbQuocTich.Location = new System.Drawing.Point(17, 354);
-            this.lbQuocTich.Name = "lbQuocTich";
-            this.lbQuocTich.Size = new System.Drawing.Size(102, 19);
-            this.lbQuocTich.TabIndex = 18;
-            this.lbQuocTich.Text = "QUỐC TỊCH";
+            this.lbThemKH.AutoSize = true;
+            this.lbThemKH.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbThemKH.ForeColor = System.Drawing.Color.White;
+            this.lbThemKH.Location = new System.Drawing.Point(12, 18);
+            this.lbThemKH.Name = "lbThemKH";
+            this.lbThemKH.Size = new System.Drawing.Size(209, 19);
+            this.lbThemKH.TabIndex = 0;
+            this.lbThemKH.Text = "THÊM KHÁCH HÀNG MỚI";
             // 
             // Gui_ThemKH
             // 
@@ -257,12 +257,12 @@
             this.ClientSize = new System.Drawing.Size(867, 570);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_ThemKH";
-            this.Text = "Gui_ThemTour";
+            this.Text = "Thêm Khách Hàng mới";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.headerThemKH.ResumeLayout(false);
+            this.headerThemKH.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -271,21 +271,21 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtDacDiem;
-        private System.Windows.Forms.TextBox txtTenTour;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label lbCMND;
         private System.Windows.Forms.Label lbHoTen;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel headerThemKH;
+        private System.Windows.Forms.Label lbThemKH;
         private System.Windows.Forms.Label lbGioiTinh;
         private System.Windows.Forms.Label lbDiaChi;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtGiaTour;
+        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label lbQuocTich;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQT;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label lbSDT;
     }
 }
