@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TourManagement.DAL;
 using TourManagement.DTO;
 
