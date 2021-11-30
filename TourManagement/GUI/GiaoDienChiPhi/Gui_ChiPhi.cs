@@ -10,11 +10,9 @@ namespace TourManagement.GUI.GiaoDienChiPhi
             InitializeComponent();
         }
 
+        private void btnThem_Click(object sender, System.EventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }

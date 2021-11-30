@@ -1,6 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using TourManagement.BUS;
-using System.Collections.Generic;
 
 namespace TourManagement.GUI.GiaoDienDiaDiem
 {
@@ -48,16 +48,16 @@ namespace TourManagement.GUI.GiaoDienDiaDiem
                 MessageBox.Show("Vui lòng chọn địa điểm cần xóa", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            
-                Bus_DiaDiem bus = new Bus_DiaDiem();
-                var res = bus.XoaDiaDiem(dsDiaDiem[currentIndex].Id);
-                if (res)
-                {
-                    MessageBox.Show("Đã xoá địa điểm thành công", "Xoá thành công", MessageBoxButtons.OK);
-                    dsDiaDiem.RemoveAt(currentIndex);
-                    DiaDiemGridView.DataSource = null;
-                    DiaDiemGridView.DataSource = dsDiaDiem;
-                }
+
+            Bus_DiaDiem bus = new Bus_DiaDiem();
+            var res = bus.XoaDiaDiem(dsDiaDiem[currentIndex].Id);
+            if (res)
+            {
+                MessageBox.Show("Đã xoá địa điểm thành công", "Xoá thành công", MessageBoxButtons.OK);
+                dsDiaDiem.RemoveAt(currentIndex);
+                DiaDiemGridView.DataSource = null;
+                DiaDiemGridView.DataSource = dsDiaDiem;
+            }
             CapNhatDanhSachDiaDiem();
         }
 

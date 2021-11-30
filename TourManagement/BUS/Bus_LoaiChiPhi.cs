@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TourManagement.DAL;
 
 namespace TourManagement.BUS
@@ -22,7 +19,7 @@ namespace TourManagement.BUS
 
         public bool XoaLoaiChiPhi(int id)
         {
-            return dal.Xoa (id);
+            return dal.Xoa(id);
         }
 
         public bool CapNhatLoaiChiPhi(LoaiChiPhi loaiChiPhi)
@@ -30,15 +27,15 @@ namespace TourManagement.BUS
             return dal.CapNhat(loaiChiPhi);
         }
 
-        public LoaiChiPhi LayThongTinLoaiChiPhi (int id)
+        public LoaiChiPhi LayThongTinLoaiChiPhi(int id)
         {
             return dal.LayThongTinLoaiChiPhi(id);
         }
 
-        public List<LoaiChiPhi> TimKiem (List<LoaiChiPhi> dsLoaiChiPhi, string key)
+        public List<LoaiChiPhi> TimKiem(List<LoaiChiPhi> dsLoaiChiPhi, string key)
         {
-            return dsLoaiChiPhi.Where (t => t.TenLoai.Contains (key)).ToList();
-           
+            return dsLoaiChiPhi.Where(t => t.TenLoai.Contains(key)).ToList();
+
         }
     }
 }

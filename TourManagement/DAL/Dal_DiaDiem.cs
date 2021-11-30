@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TourManagement.DAL
 {
@@ -62,7 +59,7 @@ namespace TourManagement.DAL
                     context.SubmitChanges();
                     return true;
                 }
-                catch  { return false; }
+                catch { return false; }
             }
             return false;
         }

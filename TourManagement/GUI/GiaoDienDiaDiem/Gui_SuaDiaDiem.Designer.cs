@@ -116,7 +116,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -131,9 +131,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 19);
+            this.label1.Size = new System.Drawing.Size(120, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Sửa Địa điểm";
+            this.label1.Text = "SỬA ĐỊA ĐIỂM";
             // 
             // Gui_SuaDiaDiem
             // 
@@ -142,7 +142,7 @@
             this.ClientSize = new System.Drawing.Size(867, 249);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_SuaDiaDiem";
-            this.Text = "Gui_ThemTour";
+            this.Text = "Sửa Địa Điểm";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
