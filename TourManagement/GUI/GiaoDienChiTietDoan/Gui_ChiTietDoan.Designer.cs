@@ -1,6 +1,6 @@
-﻿namespace TourManagement.GUI.GiaoDienGiaTour
+﻿namespace TourManagement.GUI.GiaoDienChiTietDoan
 {
-    partial class Gui_GiaTour
+    partial class Gui_ChiTietDoan
     {
         /// <summary>
         /// Required designer variable.
@@ -33,19 +33,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.giaTourGridView = new System.Windows.Forms.DataGridView();
+            this.chiTietDoanGridView = new System.Windows.Forms.DataGridView();
             this.panelDuoiTimKiem = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.txtTenTour = new System.Windows.Forms.Label();
-            this.btnApDung = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
-            this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.panelTen.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.giaTourGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDoanGridView)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,9 +64,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 25);
+            this.label1.Size = new System.Drawing.Size(409, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "GIÁ TOUR";
+            this.label1.Text = "DANH SÁCH THAM GIA ĐOÀN DU LỊCH";
             // 
             // panel1
             // 
@@ -94,27 +92,27 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.giaTourGridView);
+            this.panel8.Controls.Add(this.chiTietDoanGridView);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(10, 80);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1207, 512);
             this.panel8.TabIndex = 11;
             // 
-            // giaTourGridView
+            // chiTietDoanGridView
             // 
-            this.giaTourGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.giaTourGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.giaTourGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.giaTourGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.giaTourGridView.Location = new System.Drawing.Point(0, 0);
-            this.giaTourGridView.Name = "giaTourGridView";
-            this.giaTourGridView.ReadOnly = true;
-            this.giaTourGridView.RowHeadersWidth = 51;
-            this.giaTourGridView.RowTemplate.Height = 24;
-            this.giaTourGridView.Size = new System.Drawing.Size(1207, 512);
-            this.giaTourGridView.TabIndex = 1;
-            this.giaTourGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.giaTourGridView_CellClick);
+            this.chiTietDoanGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.chiTietDoanGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.chiTietDoanGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chiTietDoanGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chiTietDoanGridView.Location = new System.Drawing.Point(0, 0);
+            this.chiTietDoanGridView.Name = "chiTietDoanGridView";
+            this.chiTietDoanGridView.ReadOnly = true;
+            this.chiTietDoanGridView.RowHeadersWidth = 51;
+            this.chiTietDoanGridView.RowTemplate.Height = 24;
+            this.chiTietDoanGridView.Size = new System.Drawing.Size(1207, 512);
+            this.chiTietDoanGridView.TabIndex = 1;
+            this.chiTietDoanGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.giaTourGridView_CellClick);
             // 
             // panelDuoiTimKiem
             // 
@@ -128,9 +126,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Transparent;
             this.panelMenu.Controls.Add(this.txtTenTour);
-            this.panelMenu.Controls.Add(this.btnApDung);
             this.panelMenu.Controls.Add(this.btnThem);
-            this.panelMenu.Controls.Add(this.btnSua);
             this.panelMenu.Controls.Add(this.btnXoa);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.Location = new System.Drawing.Point(10, 10);
@@ -150,28 +146,6 @@
             this.txtTenTour.TabIndex = 4;
             this.txtTenTour.Text = "TOUR";
             // 
-            // btnApDung
-            // 
-            this.btnApDung.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnApDung.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnApDung.FlatAppearance.BorderSize = 0;
-            this.btnApDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApDung.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnApDung.ForeColor = System.Drawing.Color.White;
-            this.btnApDung.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnApDung.IconColor = System.Drawing.Color.White;
-            this.btnApDung.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnApDung.IconSize = 24;
-            this.btnApDung.Location = new System.Drawing.Point(651, 0);
-            this.btnApDung.Name = "btnApDung";
-            this.btnApDung.Size = new System.Drawing.Size(166, 50);
-            this.btnApDung.TabIndex = 3;
-            this.btnApDung.Text = "ÁP DỤNG";
-            this.btnApDung.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnApDung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnApDung.UseVisualStyleBackColor = false;
-            this.btnApDung.Click += new System.EventHandler(this.btnApDung_Click);
-            // 
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.MediumAquamarine;
@@ -184,7 +158,7 @@
             this.btnThem.IconColor = System.Drawing.Color.White;
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 24;
-            this.btnThem.Location = new System.Drawing.Point(817, 0);
+            this.btnThem.Location = new System.Drawing.Point(947, 0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(130, 50);
             this.btnThem.TabIndex = 2;
@@ -193,28 +167,6 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSua.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            this.btnSua.IconColor = System.Drawing.Color.White;
-            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSua.IconSize = 24;
-            this.btnSua.Location = new System.Drawing.Point(947, 0);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(130, 50);
-            this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "SỬA";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -238,21 +190,21 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // Gui_GiaTour
+            // Gui_DanhSachThamGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 672);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Gui_GiaTour";
+            this.Name = "Gui_DanhSachThamGia";
             this.Text = "Gui_GiaTour";
             this.panelTen.ResumeLayout(false);
             this.panelTen.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.giaTourGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDoanGridView)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -266,13 +218,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.DataGridView giaTourGridView;
+        private System.Windows.Forms.DataGridView chiTietDoanGridView;
         private System.Windows.Forms.Panel panelDuoiTimKiem;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnThem;
-        private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
-        private FontAwesome.Sharp.IconButton btnApDung;
         private System.Windows.Forms.Label txtTenTour;
     }
 }

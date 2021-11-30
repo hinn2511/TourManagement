@@ -7,16 +7,16 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 {
     public partial class Gui_GiaTour : Form
     {
-        List<Dto_Tour> dsTour;
         List<GiaTour> dsGiaTour;
         int currentIndex;
-        int currentTourPriceId;
-        int currentTourId;
+        Dto_Tour currentTour;
 
-        public Gui_GiaTour()
+        public Gui_GiaTour(Dto_Tour tour)
         {
             InitializeComponent();
-            LayDanhSachTour();
+            currentTour = tour;
+            txtTenTour.Text = currentTour.TenTour;
+            CapNhatDanhSachGiaTour();
             currentIndex = -1;
         }
 
@@ -33,50 +33,22 @@ namespace TourManagement.GUI.GiaoDienGiaTour
             giaTourGridView.Columns["NgayKetThuc"].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
-        private void LayDanhSachTour()
-        {
-            Bus_GiaTour bus = new Bus_GiaTour();
-            dsTour = bus.LayDanhSachTour();
-            foreach (var item in dsTour)
-            {
-                cbxTour.Items.Add(item.TenTour);
-            }
-
-        }
-
         private void CapNhatDanhSachGiaTour()
         {
             Bus_GiaTour bus = new Bus_GiaTour();
-            dsGiaTour = bus.LayDanhSachGiaTour(currentTourId);
+            dsGiaTour = bus.LayDanhSachGiaTour(currentTour.Id);
             giaTourGridView.DataSource = dsGiaTour;
-
+            DatTenDauDanhSach();
         }
 
 
         private void btnThem_Click(object sender, System.EventArgs e)
         {
-            if (cbxTour.SelectedIndex < 0)
-            {
-                MessageBox.Show("Vui lòng chọn tour cần thêm giá", "Lỗi", MessageBoxButtons.OK);
-                return;
-            }
-            Tour tour = new Tour();
-            Gui_ThemGiaTour themGiaTourForm = new Gui_ThemGiaTour(dsTour[cbxTour.SelectedIndex]);
-            var result = themGiaTourForm.ShowDialog();
-            if (result == DialogResult.OK)
-                CapNhatDanhSachGiaTour();
+            Gui_ThemGiaTour themGiaTourForm = new Gui_ThemGiaTour(currentTour);
+            themGiaTourForm.ShowDialog();
+            CapNhatDanhSachGiaTour();
         }
 
-        private void cbxTour_DropDownClosed(object sender, System.EventArgs e)
-        {
-            if (cbxTour.SelectedItem != null)
-            {
-                currentTourId = dsTour[cbxTour.SelectedIndex].Id;
-                CapNhatDanhSachGiaTour();
-                DatTenDauDanhSach();
-            }
-
-        }
 
         private void giaTourGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -85,9 +57,6 @@ namespace TourManagement.GUI.GiaoDienGiaTour
             if (giaTourGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 currentIndex = e.RowIndex;
-
-                currentTourPriceId = int.Parse(giaTourGridView.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
-
             }
         }
 
@@ -107,7 +76,7 @@ namespace TourManagement.GUI.GiaoDienGiaTour
             }
 
             Bus_GiaTour bus = new Bus_GiaTour();
-            var result = bus.XoaGiaTour(currentTourPriceId);
+            var result = bus.XoaGiaTour(dsGiaTour[currentIndex].Id);
 
             if (result)
             {
@@ -122,25 +91,14 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 
         private void btnSua_Click(object sender, System.EventArgs e)
         {
-            if (cbxTour.SelectedIndex < 0)
-            {
-                MessageBox.Show("Vui lòng chọn tour cần sửa giá", "Lỗi", MessageBoxButtons.OK);
-                return;
-            }
             if (currentIndex < 0)
             {
                 MessageBox.Show("Vui lòng chọn giá tour cần sửa", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            Tour tour = new Tour();
-            tour.Id = dsTour[cbxTour.SelectedIndex].Id;
-            tour.TenTour = dsTour[cbxTour.SelectedIndex].TenTour;
-            Gui_SuaGiaTour suaGiaTourForm = new Gui_SuaGiaTour(dsGiaTour[currentIndex], dsTour[cbxTour.SelectedIndex]);
-            var result = suaGiaTourForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                CapNhatDanhSachGiaTour();
-            }
+            Gui_SuaGiaTour suaGiaTourForm = new Gui_SuaGiaTour(dsGiaTour[currentIndex], currentTour);
+            suaGiaTourForm.ShowDialog();
+            CapNhatDanhSachGiaTour();
 
         }
 
@@ -148,16 +106,18 @@ namespace TourManagement.GUI.GiaoDienGiaTour
         {
             if (currentIndex < 0)
             {
-                MessageBox.Show("Vui lòng chọn tour cần xóa", "Lỗi", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn giá tour cần áp dụng", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
+
             if (dsGiaTour[currentIndex].DangApDung)
             {
                 MessageBox.Show("Giá tour chọn đã áp dụng. Vui lòng chọn giá tour khác", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
+
             Bus_GiaTour bus = new Bus_GiaTour();
-            var result = bus.ApDungGiaTour(dsTour[cbxTour.SelectedIndex].Id, currentTourPriceId);
+            var result = bus.ApDungGiaTour(currentTour.Id, dsGiaTour[currentIndex].Id);
             if (!result)
                 MessageBox.Show("Không thể áp dụng giá tour", "Lỗi", MessageBoxButtons.OK);
             else

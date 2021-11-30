@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.tourGridView = new System.Windows.Forms.DataGridView();
+            this.doanDuLichGridView = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -39,6 +39,8 @@
             this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnChiPhi = new FontAwesome.Sharp.IconButton();
+            this.btnDanhSachDoan = new FontAwesome.Sharp.IconButton();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
@@ -46,7 +48,7 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doanDuLichGridView)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -78,26 +80,27 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.tourGridView);
+            this.panel7.Controls.Add(this.doanDuLichGridView);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 93);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1237, 592);
             this.panel7.TabIndex = 3;
             // 
-            // tourGridView
+            // doanDuLichGridView
             // 
-            this.tourGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tourGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.tourGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tourGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tourGridView.Location = new System.Drawing.Point(0, 0);
-            this.tourGridView.Name = "tourGridView";
-            this.tourGridView.ReadOnly = true;
-            this.tourGridView.RowHeadersWidth = 51;
-            this.tourGridView.RowTemplate.Height = 24;
-            this.tourGridView.Size = new System.Drawing.Size(1237, 592);
-            this.tourGridView.TabIndex = 0;
+            this.doanDuLichGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.doanDuLichGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.doanDuLichGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.doanDuLichGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.doanDuLichGridView.Location = new System.Drawing.Point(0, 0);
+            this.doanDuLichGridView.Name = "doanDuLichGridView";
+            this.doanDuLichGridView.ReadOnly = true;
+            this.doanDuLichGridView.RowHeadersWidth = 51;
+            this.doanDuLichGridView.RowTemplate.Height = 24;
+            this.doanDuLichGridView.Size = new System.Drawing.Size(1237, 592);
+            this.doanDuLichGridView.TabIndex = 0;
+            this.doanDuLichGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.doanDuLichGridView_CellClick);
             // 
             // panel6
             // 
@@ -150,6 +153,7 @@
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLamMoi
             // 
@@ -171,6 +175,7 @@
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // panel4
             // 
@@ -183,6 +188,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.btnChiPhi);
+            this.panel2.Controls.Add(this.btnDanhSachDoan);
             this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.btnSua);
@@ -192,6 +199,50 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1237, 50);
             this.panel2.TabIndex = 0;
+            // 
+            // btnChiPhi
+            // 
+            this.btnChiPhi.BackColor = System.Drawing.Color.Transparent;
+            this.btnChiPhi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnChiPhi.FlatAppearance.BorderSize = 0;
+            this.btnChiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChiPhi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChiPhi.ForeColor = System.Drawing.Color.Black;
+            this.btnChiPhi.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.btnChiPhi.IconColor = System.Drawing.Color.Black;
+            this.btnChiPhi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnChiPhi.IconSize = 24;
+            this.btnChiPhi.Location = new System.Drawing.Point(236, 0);
+            this.btnChiPhi.Name = "btnChiPhi";
+            this.btnChiPhi.Size = new System.Drawing.Size(114, 50);
+            this.btnChiPhi.TabIndex = 16;
+            this.btnChiPhi.Text = "CHI PHÍ";
+            this.btnChiPhi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChiPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChiPhi.UseVisualStyleBackColor = false;
+            this.btnChiPhi.Click += new System.EventHandler(this.btnChiPhi_Click);
+            // 
+            // btnDanhSachDoan
+            // 
+            this.btnDanhSachDoan.BackColor = System.Drawing.Color.Transparent;
+            this.btnDanhSachDoan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDanhSachDoan.FlatAppearance.BorderSize = 0;
+            this.btnDanhSachDoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhSachDoan.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDanhSachDoan.ForeColor = System.Drawing.Color.Black;
+            this.btnDanhSachDoan.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
+            this.btnDanhSachDoan.IconColor = System.Drawing.Color.Black;
+            this.btnDanhSachDoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDanhSachDoan.IconSize = 24;
+            this.btnDanhSachDoan.Location = new System.Drawing.Point(0, 0);
+            this.btnDanhSachDoan.Name = "btnDanhSachDoan";
+            this.btnDanhSachDoan.Size = new System.Drawing.Size(236, 50);
+            this.btnDanhSachDoan.TabIndex = 15;
+            this.btnDanhSachDoan.Text = "DANH SÁCH THAM GIA";
+            this.btnDanhSachDoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDanhSachDoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDanhSachDoan.UseVisualStyleBackColor = false;
+            this.btnDanhSachDoan.Click += new System.EventHandler(this.btnDanhSachDoan_Click);
             // 
             // btnChiTiet
             // 
@@ -234,6 +285,7 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -255,6 +307,7 @@
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -276,6 +329,7 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // Gui_DoanDuLich
             // 
@@ -289,7 +343,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tourGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doanDuLichGridView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -302,7 +356,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.DataGridView tourGridView;
+        private System.Windows.Forms.DataGridView doanDuLichGridView;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnTimKiem;
@@ -314,5 +368,7 @@
         private FontAwesome.Sharp.IconButton btnXoa;
         private System.Windows.Forms.TextBox txtTimKiem;
         private FontAwesome.Sharp.IconButton btnChiTiet;
+        private FontAwesome.Sharp.IconButton btnDanhSachDoan;
+        private FontAwesome.Sharp.IconButton btnChiPhi;
     }
 }

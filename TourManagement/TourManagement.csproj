@@ -68,9 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\Bus_ChiTietDoan.cs" />
     <Compile Include="BUS\Bus_DiaDiem.cs" />
     <Compile Include="BUS\Bus_GiaTour.cs" />
     <Compile Include="BUS\Bus_LoaiChiPhi.cs" />
+    <Compile Include="BUS\Bus_DoanDuLich.cs" />
     <Compile Include="BUS\Bus_ThamQuan.cs" />
     <Compile Include="BUS\Bus_KH.cs" />
     <Compile Include="BUS\Bus_LoaiTour.cs" />
@@ -80,14 +82,17 @@
     <Compile Include="DAL\Dal_GiaTour.cs" />
     <Compile Include="DAL\Dal_KH.cs" />
     <Compile Include="DAL\Dal_LoaiChiPhi.cs" />
+    <Compile Include="DAL\Dal_DoanDuLich.cs" />
+    <Compile Include="DAL\Dal_ChiTietDoan.cs" />
     <Compile Include="DAL\Dal_LoaiTour.cs" />
     <Compile Include="DAL\Dal_NV.cs" />
     <Compile Include="DAL\Dal_ThamQuan.cs" />
     <Compile Include="DAL\Dal_Tour.cs" />
-    <Compile Include="DTO\Dto_DiaDiem.cs" />
+    <Compile Include="DTO\Dto_DoanDuLich.cs" />
     <Compile Include="DTO\Dto_KH.cs" />
     <Compile Include="DTO\Dto_LoaiChiPhi.cs" />
     <Compile Include="DTO\Dto_NV.cs" />
+    <Compile Include="DTO\Dto_ChiTietDoan.cs" />
     <Compile Include="DTO\Dto_ThamQuan.cs" />
     <Compile Include="DTO\Dto_Tour.cs" />
     <Compile Include="GUI\GiaoDienChiPhi\Gui_ChiPhi.cs">
@@ -119,6 +124,30 @@
     </Compile>
     <Compile Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.Designer.cs">
       <DependentUpon>Gui_DoanDuLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDoanDuLich\Gui_SuaDoanDuLich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDoanDuLich\Gui_SuaDoanDuLich.Designer.cs">
+      <DependentUpon>Gui_SuaDoanDuLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDoanDuLich\Gui_ThemDoanDuLich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDoanDuLich\Gui_ThemDoanDuLich.Designer.cs">
+      <DependentUpon>Gui_ThemDoanDuLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienChiTietDoan\Gui_ChiTietDoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienChiTietDoan\Gui_ChiTietDoan.Designer.cs">
+      <DependentUpon>Gui_ChiTietDoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienChiTietDoan\Gui_ThemChiTietDoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienChiTietDoan\Gui_ThemChiTietDoan.Designer.cs">
+      <DependentUpon>Gui_ThemChiTietDoan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_LoaiChiPhi.cs">
       <SubType>Form</SubType>
@@ -291,6 +320,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.resx">
       <DependentUpon>Gui_DoanDuLich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienDoanDuLich\Gui_SuaDoanDuLich.resx">
+      <DependentUpon>Gui_SuaDoanDuLich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienDoanDuLich\Gui_ThemDoanDuLich.resx">
+      <DependentUpon>Gui_ThemDoanDuLich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienChiTietDoan\Gui_ChiTietDoan.resx">
+      <DependentUpon>Gui_ChiTietDoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienChiTietDoan\Gui_ThemChiTietDoan.resx">
+      <DependentUpon>Gui_ThemChiTietDoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienLoaiChiPhi\Gui_LoaiChiPhi.resx">
       <DependentUpon>Gui_LoaiChiPhi.cs</DependentUpon>

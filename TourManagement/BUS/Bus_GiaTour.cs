@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using TourManagement.DAL;
-using TourManagement.DTO;
 
 namespace TourManagement.BUS
 {
     internal class Bus_GiaTour
     {
-        public List<Dto_Tour> LayDanhSachTour()
+        public string LayTenTour(int tourId)
         {
             Dal_Tour dal_tour = new Dal_Tour();
 
-            var result = dal_tour.LayDanhSachTour();
+            var result = dal_tour.ChiTietTour(tourId).TenTour;
 
             return result;
         }

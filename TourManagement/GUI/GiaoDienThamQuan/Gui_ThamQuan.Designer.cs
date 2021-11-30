@@ -36,8 +36,7 @@
             this.thamQuanGridView = new System.Windows.Forms.DataGridView();
             this.panelDuoiTimKiem = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.cbxTour = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtTenTour = new System.Windows.Forms.Label();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
@@ -127,8 +126,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Transparent;
-            this.panelMenu.Controls.Add(this.cbxTour);
-            this.panelMenu.Controls.Add(this.label2);
+            this.panelMenu.Controls.Add(this.txtTenTour);
             this.panelMenu.Controls.Add(this.btnThem);
             this.panelMenu.Controls.Add(this.btnSua);
             this.panelMenu.Controls.Add(this.btnXoa);
@@ -138,27 +136,17 @@
             this.panelMenu.Size = new System.Drawing.Size(1207, 50);
             this.panelMenu.TabIndex = 7;
             // 
-            // cbxTour
+            // txtTenTour
             // 
-            this.cbxTour.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbxTour.FormattingEnabled = true;
-            this.cbxTour.Location = new System.Drawing.Point(117, 4);
-            this.cbxTour.Name = "cbxTour";
-            this.cbxTour.Size = new System.Drawing.Size(372, 40);
-            this.cbxTour.TabIndex = 2;
-            this.cbxTour.DropDownClosed += new System.EventHandler(this.cbxTour_DropDownClosed);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Chọn tour";
+            this.txtTenTour.AutoSize = true;
+            this.txtTenTour.BackColor = System.Drawing.Color.Transparent;
+            this.txtTenTour.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenTour.ForeColor = System.Drawing.Color.Black;
+            this.txtTenTour.Location = new System.Drawing.Point(3, 15);
+            this.txtTenTour.Name = "txtTenTour";
+            this.txtTenTour.Size = new System.Drawing.Size(89, 19);
+            this.txtTenTour.TabIndex = 1;
+            this.txtTenTour.Text = "Chọn tour";
             // 
             // btnThem
             // 
@@ -260,7 +248,6 @@
         private FontAwesome.Sharp.IconButton btnThem;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
-        private System.Windows.Forms.ComboBox cbxTour;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtTenTour;
     }
 }

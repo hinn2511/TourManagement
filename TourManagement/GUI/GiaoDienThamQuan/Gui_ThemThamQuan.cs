@@ -38,21 +38,19 @@ namespace TourManagement.GUI.GiaoDienThamQuan
                 MessageBox.Show("Vui lòng chọn địa điểm", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
+
             ThamQuan thamQuan = new ThamQuan();
             thamQuan.Tour_Id = tourThemLichTrinh.Id;
-
             thamQuan.DiaDiem_Id = dsDiaDiem[cbxDiaDiem.SelectedIndex].Id;
 
             Bus_ThamQuan bus = new Bus_ThamQuan();
             if (bus.ThemThamQuan(thamQuan))
             {
                 MessageBox.Show("Đã thêm lịch trình tham quan thành công", "Thành công", MessageBoxButtons.OK);
-                DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("Đã có lỗi xảy ra", "Thất bại", MessageBoxButtons.OK);
             Close();
-            return;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

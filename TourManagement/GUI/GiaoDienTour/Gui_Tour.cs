@@ -21,8 +21,6 @@ namespace TourManagement.GUI.GiaoDienTour
         {
             InitializeComponent();
             CapNhatDanhSachTour();
-
-            //Gan bang -1 de kiem tra nguoi dung da chon tour hay chua
             currentIndex = -1;
         }
 
@@ -104,6 +102,7 @@ namespace TourManagement.GUI.GiaoDienTour
             var result = bus.TimKiemTour(dsTour, txtTimKiem.Text);
             tourGridView.DataSource = null;
             tourGridView.DataSource = result;
+            DatTenDauDanhSach();
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -120,32 +119,39 @@ namespace TourManagement.GUI.GiaoDienTour
 
         private void btnGiaTour_Click(object sender, EventArgs e)
         {
-            Gui_GiaTour giaTourForm = new Gui_GiaTour();
+            if (currentIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn tour cần xem giá tour", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            Gui_GiaTour giaTourForm = new Gui_GiaTour(dsTour[currentIndex]);
             giaTourForm.ShowDialog();
             CapNhatDanhSachTour();
         }
 
         private void btnLichTrinh_Click(object sender, EventArgs e)
         {
-            Gui_ThamQuan thamQuanForm = new Gui_ThamQuan();
+            if (currentIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn tour cần xem lịch trình", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            Gui_ThamQuan thamQuanForm = new Gui_ThamQuan(dsTour[currentIndex]);
             thamQuanForm.ShowDialog();
             CapNhatDanhSachTour();
         }
 
         private void tourGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Neu nguoi dung chon vao ten thuoc tinh tren bang thi khong co gi xay ra
             if (e.RowIndex < 0)
                 return;
 
-            //Neu chon vao tour thi luu vi tri cua tour tren bang
             if (tourGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 currentIndex = e.RowIndex;
             }
         }
 
-        //Khi nguoi dung nhan enter khi search
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -155,6 +161,7 @@ namespace TourManagement.GUI.GiaoDienTour
 
                 tourGridView.DataSource = null;
                 tourGridView.DataSource = result;
+                DatTenDauDanhSach();
             }
         }
 

@@ -4,7 +4,7 @@ CREATE DATABASE tourmanagement
 --Chay dong` nay tiep theo 
 USE tourmanagement
 
---DROP DATABASE tourmanagement
+DROP DATABASE tourmanagement
 
 --Chay het cac dong` con` lai
 CREATE TABLE Tour (
@@ -43,6 +43,7 @@ CREATE TABLE ThamQuan (
 
 CREATE TABLE DoanDuLich (
     Id int IDENTITY(1,1) PRIMARY KEY,
+	TenDoanDuLich nvarchar(50) NOT NULL,
     Tour_Id int NOT NULL,
 	NgayKhoiHanh date NOT NULL,
     NgayKetThuc date NOT NULL,
@@ -52,8 +53,8 @@ CREATE TABLE DoanDuLich (
 CREATE TABLE NoiDungTour (
     DoanDuLich_Id int PRIMARY KEY,
     HanhTrinh nvarchar(255) NOT NULL,
-	KhachSan nvarchar(50) NOT NULL,
-    DiaDiem_Id int NOT NULL,
+	KhachSan nvarchar(255) NOT NULL,
+    DiaDiem nvarchar(255) NOT NULL,
 );
 
 CREATE TABLE KhachHang (
@@ -97,40 +98,37 @@ CREATE TABLE LoaiChiPhi (
 );
 
 ALTER TABLE Tour
-ADD FOREIGN KEY (LoaiTour_Id) REFERENCES LoaiTour(Id);
+ADD FOREIGN KEY (LoaiTour_Id) REFERENCES LoaiTour(Id) ON DELETE CASCADE;
 
 ALTER TABLE ThamQuan
-ADD FOREIGN KEY (Tour_Id) REFERENCES Tour(Id);
+ADD FOREIGN KEY (Tour_Id) REFERENCES Tour(Id) ON DELETE CASCADE;
 
 ALTER TABLE ThamQuan
-ADD FOREIGN KEY (DiaDiem_Id) REFERENCES DiaDiem(Id);
+ADD FOREIGN KEY (DiaDiem_Id) REFERENCES DiaDiem(Id) ON DELETE CASCADE;
 
 ALTER TABLE GiaTour
 ADD FOREIGN KEY (Tour_Id) REFERENCES Tour(Id) ON DELETE CASCADE;
 
 ALTER TABLE DoanDuLich
-ADD FOREIGN KEY (Tour_Id) REFERENCES Tour(Id);
+ADD FOREIGN KEY (Tour_Id) REFERENCES Tour(Id) ON DELETE CASCADE;
 
 ALTER TABLE NoiDungTour
-ADD FOREIGN KEY (DiaDiem_Id) REFERENCES DiaDiem(Id);
-
-ALTER TABLE NoiDungTour
-ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id);
+ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id) ON DELETE CASCADE;
 
 ALTER TABLE ChiTietDoan
-ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id);
+ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id) ON DELETE CASCADE;
 
 ALTER TABLE ChiTietDoan
-ADD FOREIGN KEY (KhachHang_Id) REFERENCES KhachHang(Id);
+ADD FOREIGN KEY (KhachHang_Id) REFERENCES KhachHang(Id) ON DELETE CASCADE;
 
 ALTER TABLE PhanCong
-ADD FOREIGN KEY (NhanVien_Id) REFERENCES NhanVien(Id);
+ADD FOREIGN KEY (NhanVien_Id) REFERENCES NhanVien(Id) ON DELETE CASCADE;
 
 ALTER TABLE PhanCong
-ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id);
+ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id) ON DELETE CASCADE;
 
 ALTER TABLE ChiPhi
-ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id);
+ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id) ON DELETE CASCADE;
 
 ALTER TABLE ChiPhi
 ADD FOREIGN KEY (LoaiChiPhi_Id) REFERENCES LoaiChiPhi(Id);
