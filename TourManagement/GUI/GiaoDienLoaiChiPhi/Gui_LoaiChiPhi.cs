@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using TourManagement.BUS;
 namespace TourManagement.GUI
@@ -89,6 +90,7 @@ namespace TourManagement.GUI
             if (LoaiChiPhiGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 currentIndex = e.RowIndex;
+                Debug.WriteLine(currentIndex);
                 currentId = int.Parse(LoaiChiPhiGridView.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
 
             }
