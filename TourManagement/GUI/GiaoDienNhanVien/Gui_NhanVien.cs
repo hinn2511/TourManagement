@@ -32,7 +32,8 @@ namespace TourManagement.GUI.GiaoDienNhanVien
 
         private void btnPhanCong_Click(object sender, System.EventArgs e)
         {
-
+            Gui_PhanCong gui_PhanCong = new Gui_PhanCong();
+            gui_PhanCong.ShowDialog(this);
         }
 
         private void btnThem_Click(object sender, System.EventArgs e)

@@ -170,6 +170,12 @@
     <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_ThemLoaiChiPhi.designer.cs">
       <DependentUpon>Gui_ThemLoaiChiPhi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiaoDienNhanVien\Gui_PhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienNhanVien\Gui_PhanCong.Designer.cs">
+      <DependentUpon>Gui_PhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienLoaiChiPhi\Gui_ThemLoaiChiPhi.resx">
       <DependentUpon>Gui_ThemLoaiChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienNhanVien\Gui_PhanCong.resx">
+      <DependentUpon>Gui_PhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.resx">
       <DependentUpon>Gui_ThamQuan.cs</DependentUpon>
