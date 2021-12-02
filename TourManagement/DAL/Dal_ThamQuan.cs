@@ -21,7 +21,7 @@ namespace TourManagement.DAL
         {
             TourManagementDataContext context = new TourManagementDataContext();
 
-            List<Dto_ThamQuan> dsThamQuan = context.ThamQuans.Select(tq => new Dto_ThamQuan
+            List<Dto_ThamQuan> dsThamQuan = context.ThamQuans.Where(tq => tq.Tour_Id == tourId).Select(tq => new Dto_ThamQuan
             {
                 Tour_Id = tq.Tour.Id,
                 TenTour = tq.Tour.TenTour,
@@ -29,7 +29,7 @@ namespace TourManagement.DAL
                 TenDiaDiem = tq.DiaDiem.TenDiaDiem,
                 ThuTu = tq.ThuTu
             })
-                                                .Where(tq => tq.Tour_Id == tourId)
+                                                
                                                 .OrderBy(tq => tq.ThuTu)
                                                 .ToList();
             return dsThamQuan;

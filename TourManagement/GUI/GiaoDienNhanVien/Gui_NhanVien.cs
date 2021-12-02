@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using TourManagement.BUS;
+using TourManagement.DTO;
 namespace TourManagement.GUI.GiaoDienNhanVien
 {
     public partial class Gui_NhanVien : Form
     {
-        private List<NhanVien> dsNV = new List<NhanVien>();
+        private List<Dto_NV> dsNV = new List<Dto_NV>();
 
         int currentIndex;
 
@@ -32,7 +33,12 @@ namespace TourManagement.GUI.GiaoDienNhanVien
 
         private void btnPhanCong_Click(object sender, System.EventArgs e)
         {
-            Gui_PhanCong gui_PhanCong = new Gui_PhanCong();
+            if (currentIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần xem phân công!", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            Gui_PhanCong gui_PhanCong = new Gui_PhanCong(dsNV[currentIndex]);
             gui_PhanCong.ShowDialog(this);
         }
 

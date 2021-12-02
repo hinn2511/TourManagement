@@ -5,6 +5,7 @@
         public int NV_Id { get; set; }
         public string HoTen { get; set; }
         public int DoanDuLich_Id { get; set; }
+        public string TenDoan { get; set; }
         public string NhiemVu { get; set; }
     }
 }

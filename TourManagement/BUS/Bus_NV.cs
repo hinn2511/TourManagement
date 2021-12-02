@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-
 using TourManagement.DAL;
-
+using TourManagement.DTO;
 namespace TourManagement.BUS
 {
     internal class Bus_NV
     {
-        public List<NhanVien> LayDanhSachNV()
+        public List<Dto_NV> LayDanhSachNV()
         {
             Dal_NV dal = new Dal_NV();
             return dal.LayDanhSachNV();
