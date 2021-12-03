@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
+using TourManagement.GUI.GiaoDienChiPhi;
 using TourManagement.GUI.GiaoDienChiTietDoan;
 
 namespace TourManagement.GUI.GiaoDienDoanDuLich
@@ -123,8 +125,9 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
                 MessageBox.Show("Vui lòng chọn đoàn du lịch xem chi phí", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            //Gui_ChiPhi chiTietDoanForm = new Gui_ChiTietDoan(dsDoanDuLich[currentIndex]);
-            //chiTietDoanForm.ShowDialog();
+            Gui_ChiPhi chiTietDoanForm = new Gui_ChiPhi(dsDoanDuLich[currentIndex]);
+            Debug.WriteLine(currentIndex);
+            chiTietDoanForm.ShowDialog();
             CapNhatDanhSachDoanDuLich();
         }
 

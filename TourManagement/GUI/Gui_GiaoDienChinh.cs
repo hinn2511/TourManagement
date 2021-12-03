@@ -6,6 +6,7 @@ using TourManagement.GUI.GiaoDienDiaDiem;
 using TourManagement.GUI.GiaoDienDoanDuLich;
 using TourManagement.GUI.GiaoDienKhachHang;
 using TourManagement.GUI.GiaoDienNhanVien;
+using TourManagement.GUI.GiaoDienThongKe;
 using TourManagement.GUI.GiaoDienTour;
 
 namespace TourManagement.GUI
@@ -117,14 +118,6 @@ namespace TourManagement.GUI
             lblTitleChildForm.Text = "NHÂN VIÊN";
         }
 
-        private void btnChiPhi_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-            OpenChildForm(new Gui_LoaiChiPhi());
-            lblTitleChildForm.Text = "LOẠI CHI PHÍ";
-        }
-
-
         private void imgLogo_Click(object sender, EventArgs e)
         {
             Reset();
@@ -133,6 +126,13 @@ namespace TourManagement.GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new Gui_ThongKe());
+            lblTitleChildForm.Text = "THỐNG KÊ";
         }
     }
 }

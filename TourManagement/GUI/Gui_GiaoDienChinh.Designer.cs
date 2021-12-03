@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gui_GiaoDienChinh));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.btnThoat = new FontAwesome.Sharp.IconButton();
             this.btnNhanVien = new FontAwesome.Sharp.IconButton();
             this.btnKhachHang = new FontAwesome.Sharp.IconButton();
@@ -43,7 +44,6 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelForm = new System.Windows.Forms.Panel();
-            this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -68,6 +68,28 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(237, 800);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
+            this.btnThongKe.IconColor = System.Drawing.Color.White;
+            this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThongKe.IconSize = 32;
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 537);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnThongKe.Size = new System.Drawing.Size(237, 70);
+            this.btnThongKe.TabIndex = 8;
+            this.btnThongKe.Text = "THỐNG KÊ";
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnThoat
             // 
@@ -277,27 +299,6 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(1264, 712);
             this.panelForm.TabIndex = 1;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
-            this.btnThongKe.IconColor = System.Drawing.Color.White;
-            this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThongKe.IconSize = 32;
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 537);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnThongKe.Size = new System.Drawing.Size(237, 70);
-            this.btnThongKe.TabIndex = 8;
-            this.btnThongKe.Text = "THỐNG KÊ";
-            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThongKe.UseVisualStyleBackColor = true;
             // 
             // Gui_GiaoDienChinh
             // 

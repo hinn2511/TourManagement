@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TourManagement.DTO
+﻿namespace TourManagement.DTO
 {
     public class Dto_ChiPhi
     {
@@ -12,7 +6,7 @@ namespace TourManagement.DTO
         public int DoanDuLich_Id { get; set; }
         public string TenDoan { get; set; }
         public int LoaiChiPhi_id { get; set; }
-        public string TenLoai { get; set; }
+        public string TenLoaiChiPhi { get; set; }
         public decimal SoTien { get; set; }
     }
 }

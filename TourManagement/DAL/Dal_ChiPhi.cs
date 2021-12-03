@@ -8,15 +8,15 @@ namespace TourManagement.DAL
     {
         TourManagementDataContext context = new TourManagementDataContext();
 
-        public List<Dto_ChiPhi> LayDsChiPhi()
+        public List<Dto_ChiPhi> LayDsChiPhiTheoDoan(int doanDuLichId)
         {
-            List<Dto_ChiPhi> chiPhi = context.ChiPhis.Select(cp => new Dto_ChiPhi
+            List<Dto_ChiPhi> chiPhi = context.ChiPhis.Where(cp => cp.DoanDuLich_Id == doanDuLichId).Select(cp => new Dto_ChiPhi
             {
                 Id = cp.Id,
                 TenDoan = cp.DoanDuLich.TenDoanDuLich,
-                DoanDuLich_Id  = cp.DoanDuLich_Id,
-                TenLoai = cp.LoaiChiPhi.TenLoai,
-                LoaiChiPhi_id   = cp.LoaiChiPhi_Id,
+                DoanDuLich_Id = cp.DoanDuLich_Id,
+                TenLoaiChiPhi = cp.LoaiChiPhi.TenLoai,
+                LoaiChiPhi_id = cp.LoaiChiPhi_Id,
                 SoTien = cp.SoTien
             }).ToList();
             return chiPhi;

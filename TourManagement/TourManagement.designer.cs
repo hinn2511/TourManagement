@@ -72,7 +72,7 @@ namespace TourManagement
     #endregion
 		
 		public TourManagementDataContext() : 
-				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString1, mappingSource)
+				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
