@@ -8,30 +8,18 @@ namespace TourManagement.DAL
 
     public class Dal_PhanCong
     {
-        public List<DoanDuLich> DanhSachDoanDuLich()
-        {
-            TourManagementDataContext context = new TourManagementDataContext();
-
-            var dsDoanDuLich = context.DoanDuLiches.ToList();
-
-            return dsDoanDuLich;
-        }
-
         public List<Dto_PhanCong> LayDanhSachPhanCong(int NvId)
         {
             TourManagementDataContext context = new TourManagementDataContext();
 
-            List<Dto_PhanCong> dsPhanCong = (from phancong in context.PhanCongs
-                                             join nhanvien in context.NhanViens on phancong.NhanVien_Id equals nhanvien.Id
-                                             join doandulich in context.DoanDuLiches on phancong.DoanDuLich_Id equals doandulich.Id
-                                             where phancong.NhanVien_Id == NvId
-                                             select new Dto_PhanCong
-                                             {
-                                                 NV_Id = phancong.NhanVien_Id,
-                                                 HoTen = nhanvien.HoTen,
-                                                 DoanDuLich_Id = phancong.DoanDuLich_Id,
-                                                 NhiemVu = phancong.NhiemVu
-                                             }).ToList();
+            List<Dto_PhanCong> dsPhanCong = context.PhanCongs.Where(pc => pc.NhanVien_Id == NvId).Select(pc => new Dto_PhanCong
+            {
+                NV_Id = pc.NhanVien_Id,
+                HoTen = pc.NhanVien.HoTen,
+                DoanDuLich_Id = pc.DoanDuLich_Id,
+                TenDoan = pc.DoanDuLich.TenDoanDuLich,
+                NhiemVu = pc.NhiemVu
+            }).ToList();
             return dsPhanCong;
         }
 

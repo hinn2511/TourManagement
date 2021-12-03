@@ -6,22 +6,11 @@ namespace TourManagement.BUS
 {
     public class Bus_PhanCong
     {
-        public List<NhanVien> LayDanhSachNV()
-        {
-            Dal_NV dal_nv = new Dal_NV();
-
-            var result = dal_nv.LayDanhSachNV();
-
-            return result;
-        }
-
         public List<Dto_PhanCong> LayDanhSachPhanCong(int NvId)
         {
             Dal_PhanCong dal_PC = new Dal_PhanCong();
 
-            var result = dal_PC.LayDanhSachPhanCong(NvId);
-
-            return result;
+            return dal_PC.LayDanhSachPhanCong(NvId);
         }
 
         public int LaySoLuongNV(int NvId)

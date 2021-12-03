@@ -1,15 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-
+using TourManagement.DTO;
 namespace TourManagement.DAL
 {
     internal class Dal_NV
     {
         TourManagementDataContext context = new TourManagementDataContext();
-        public List<NhanVien> LayDanhSachNV()
+        public List<Dto_NV> LayDanhSachNV()
         {
-            List<NhanVien> Nv = context.NhanViens.Select(nv => nv).ToList();
+            List<Dto_NV> Nv = context.NhanViens.Select(nv => new Dto_NV
+            {
+                Id = nv.Id,
+                HoTen = nv.HoTen 
+            }).ToList();
             return Nv;
         }
         public bool ThemNV(NhanVien nhanVien)
