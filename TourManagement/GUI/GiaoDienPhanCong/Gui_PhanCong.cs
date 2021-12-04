@@ -8,9 +8,9 @@ namespace TourManagement.GUI
     {
         List<Dto_PhanCong> dsPC;
         int currentIndex;
-        Dto_NV currentNvPc;
+        NhanVien currentNvPc;
 
-        public Gui_PhanCong(Dto_NV NvPc)
+        public Gui_PhanCong(NhanVien NvPc)
         {   
             InitializeComponent();
             currentNvPc = NvPc;

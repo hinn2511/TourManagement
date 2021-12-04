@@ -7,13 +7,9 @@ namespace TourManagement.DAL
     internal class Dal_NV
     {
         TourManagementDataContext context = new TourManagementDataContext();
-        public List<Dto_NV> LayDanhSachNV()
+        public List<NhanVien> LayDanhSachNV()
         {
-            List<Dto_NV> Nv = context.NhanViens.Select(nv => new Dto_NV
-            {
-                Id = nv.Id,
-                HoTen = nv.HoTen 
-            }).ToList();
+            List<NhanVien> Nv = context.NhanViens.ToList();
             return Nv;
         }
         public bool ThemNV(NhanVien nhanVien)

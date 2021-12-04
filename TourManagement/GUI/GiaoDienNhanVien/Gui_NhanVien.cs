@@ -6,7 +6,7 @@ namespace TourManagement.GUI.GiaoDienNhanVien
 {
     public partial class Gui_NhanVien : Form
     {
-        private List<Dto_NV> dsNV = new List<Dto_NV>();
+        private List<NhanVien> dsNV = new List<NhanVien>();
 
         int currentIndex;
 

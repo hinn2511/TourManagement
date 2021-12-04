@@ -5,7 +5,7 @@ namespace TourManagement.BUS
 {
     internal class Bus_NV
     {
-        public List<Dto_NV> LayDanhSachNV()
+        public List<NhanVien> LayDanhSachNV()
         {
             Dal_NV dal = new Dal_NV();
             return dal.LayDanhSachNV();
