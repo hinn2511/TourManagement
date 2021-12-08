@@ -4,12 +4,18 @@ using TourManagement.DAL;
 
 namespace TourManagement.BUS
 {
-    internal class Bus_LoaiTour
+    public class Bus_LoaiTour
     {
         public List<LoaiTour> LayDanhSachLoaiTour()
         {
             Dal_LoaiTour dal = new Dal_LoaiTour();
             return dal.LayDanhSachLoaiTour();
+        }
+
+        public LoaiTour LayChiTietLoaiTour(int id)
+        {
+            Dal_LoaiTour dal = new Dal_LoaiTour();
+            return dal.ChiTietLoaiTour(id);
         }
 
         public bool ThemLoaiTour(LoaiTour loaiTour)

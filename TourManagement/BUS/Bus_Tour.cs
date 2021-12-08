@@ -62,7 +62,6 @@ namespace TourManagement.BUS
 
                     if (dal_tour.ThemTour(tour))
                     {
-
                         giaTourMoiNhat.Tour_Id = tour.Id;
                         giaTourMoiNhat.DangApDung = true;
                         dal_giaTour.CapNhatGiaTour(giaTourMoiNhat);
@@ -87,17 +86,20 @@ namespace TourManagement.BUS
         {
             Dal_Tour dal_tour = new Dal_Tour();
 
-            var tour = dal_tour.ChiTietTour(tourDaSua.Id);
-
-            tour.TenTour = tourDaSua.TenTour;
-            tour.DacDiem = tourDaSua.DacDiem;
-            tour.LoaiTour_Id = tourDaSua.Loai_Id;
-
-            if (dal_tour.CapNhatTour(tour))
+            if (dal_tour.CapNhatTour(DtoToEntity(tourDaSua)))
                 return true;
             return false;
         }
 
+        public Tour DtoToEntity(Dto_Tour dto)
+        {
+            Tour t = new Tour();    
+            t.Id = dto.Id;
+            t.LoaiTour_Id = dto.Loai_Id;
+            t.GiaTour_Id = dto.Gia_Id;
+            t.TenTour = dto.TenTour;
+            return t;
+        }
 
         public List<LoaiTour> LayDanhSachLoaiTour()
         {

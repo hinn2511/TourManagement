@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
@@ -46,6 +47,7 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
             currentDoanDuLich.NgayKhoiHanh = dtNgayKhoiHanh.Value;
             currentDoanDuLich.NgayKetThuc = dtNgayKetThuc.Value;
             currentDoanDuLich.TenDoan = txtTenDoan.Text;
+            Debug.WriteLine(currentDoanDuLich.TenDoan);
             if (currentDoanDuLich.NgayKhoiHanh > currentDoanDuLich.NgayKetThuc)
             {
                 MessageBox.Show("Ngày khởi hành hoặc ngày kết thúc không hợp lệ", "Lỗi", MessageBoxButtons.OK);
@@ -57,6 +59,8 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
             }
 
             Bus_DoanDuLich bus = new Bus_DoanDuLich();
+           
+
             if (bus.CapNhatDoanDuLich(currentDoanDuLich))
             {
                 MessageBox.Show("Đã sửa đoàn du lịch thành công", "Thành công", MessageBoxButtons.OK);

@@ -15,6 +15,11 @@ namespace TourManagement.DAL
             return loaiTour;
         }
 
+        public LoaiTour ChiTietLoaiTour(int id)
+        {
+            return context.LoaiTours.FirstOrDefault(lt => lt.Id == id);
+        }
+
         public bool ThemLoaiTour(LoaiTour loaiTour)
         {
             TourManagementDataContext context = new TourManagementDataContext();

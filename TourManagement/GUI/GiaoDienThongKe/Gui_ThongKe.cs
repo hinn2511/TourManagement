@@ -11,9 +11,9 @@ namespace TourManagement.GUI.GiaoDienThongKe
         {
             InitializeComponent();
             btnThongKeTour.BackColor = Color.LightSalmon;
+            btnThongKeTour.IconColor = Color.White;
             btnThongKeTour.ForeColor = Color.White;
-            btnThongKeTour.ForeColor = Color.White;
-            OpenChildForm(new Gui_ThongKeTour());
+            OpenChildForm(new Gui_ThongKeLoiNhuanTour());
         }
 
         private void OpenChildForm(Form childForm)
@@ -34,12 +34,14 @@ namespace TourManagement.GUI.GiaoDienThongKe
 
         private void Reset()
         {
-           btnThongKeDoan.BackColor = Color.Transparent;
-           btnThongKeDoan.ForeColor = Color.Black;
+            btnThongKeDoan.BackColor = Color.Transparent;
+            btnThongKeDoan.ForeColor = Color.Black;
             btnThongKeDoan.IconColor = Color.Black;
+
             btnThongKeNhanVien.BackColor = Color.Transparent;
-           btnThongKeNhanVien.ForeColor = Color.Black;
+            btnThongKeNhanVien.ForeColor = Color.Black;
             btnThongKeNhanVien.IconColor = Color.Black;
+
             btnThongKeTour.BackColor = Color.Transparent;
             btnThongKeTour.IconColor = Color.Black;
             btnThongKeTour.ForeColor = Color.Black;
@@ -47,16 +49,16 @@ namespace TourManagement.GUI.GiaoDienThongKe
 
         private void btnThongKeTour_Click(object sender, System.EventArgs e)
         {
-            OpenChildForm(new Gui_ThongKeTour());
+            OpenChildForm(new Gui_ThongKeLoiNhuanTour());
             Reset();
             btnThongKeTour.BackColor = Color.LightSalmon;
-            btnThongKeTour.ForeColor = Color.White;
+            btnThongKeTour.IconColor = Color.White;
             btnThongKeTour.ForeColor = Color.White;
         }
 
         private void btnThongKeDoan_Click(object sender, System.EventArgs e)
         {
-            OpenChildForm(new Gui_ThongKeDoan());
+            OpenChildForm(new Gui_ThongKeChiPhiTours());
             Reset();
             btnThongKeDoan.BackColor = Color.LightSalmon;
             btnThongKeDoan.ForeColor = Color.White;

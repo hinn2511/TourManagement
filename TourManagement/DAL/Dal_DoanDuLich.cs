@@ -72,6 +72,7 @@ namespace TourManagement.DAL
 
             if (DoanDuLichUpdate != null)
             {
+                DoanDuLich.TenDoanDuLich = DoanDuLich.TenDoanDuLich;
                 DoanDuLichUpdate.Tour_Id = DoanDuLich.Tour_Id;
                 DoanDuLichUpdate.NgayKhoiHanh = DoanDuLich.NgayKhoiHanh;
                 DoanDuLichUpdate.NgayKetThuc = DoanDuLich.NgayKetThuc;

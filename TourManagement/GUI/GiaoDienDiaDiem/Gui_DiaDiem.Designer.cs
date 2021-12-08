@@ -39,7 +39,6 @@
             this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
@@ -98,7 +97,7 @@
             this.DiaDiemGridView.RowTemplate.Height = 24;
             this.DiaDiemGridView.Size = new System.Drawing.Size(1237, 592);
             this.DiaDiemGridView.TabIndex = 0;
-            this.DiaDiemGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiaDiemGridView_CellContentClick);
+            this.DiaDiemGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiaDiemGridView_CellClick);
             // 
             // panel6
             // 
@@ -185,7 +184,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnXoa);
@@ -194,27 +192,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1237, 50);
             this.panel2.TabIndex = 0;
-            // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.BackColor = System.Drawing.Color.Orange;
-            this.btnChiTiet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnChiTiet.FlatAppearance.BorderSize = 0;
-            this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChiTiet.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnChiTiet.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.btnChiTiet.IconColor = System.Drawing.Color.White;
-            this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChiTiet.IconSize = 24;
-            this.btnChiTiet.Location = new System.Drawing.Point(717, 0);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(130, 50);
-            this.btnChiTiet.TabIndex = 13;
-            this.btnChiTiet.Text = "CHI TIẾT";
-            this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChiTiet.UseVisualStyleBackColor = false;
             // 
             // btnThem
             // 
@@ -318,6 +295,5 @@
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private FontAwesome.Sharp.IconButton btnChiTiet;
     }
 }

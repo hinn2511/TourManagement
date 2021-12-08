@@ -16,8 +16,6 @@ namespace TourManagement.GUI.GiaoDienChiTietDoan
             InitializeComponent();
             currentDoanDuLich = doanDuLich;
             CapNhatDanhSachKhachHang();
-
-            //txtTenTour.Text = tour.TenTour;
         }
 
         private void CapNhatDanhSachKhachHang()
@@ -32,19 +30,6 @@ namespace TourManagement.GUI.GiaoDienChiTietDoan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //decimal gia;
-            //if (!decimal.TryParse(txtGiaTour.Text, out gia))
-            //{
-            //    MessageBox.Show("Giá tour không hợp lệ", "Lỗi", MessageBoxButtons.OK);
-            //    return;
-
-            //}
-            //GiaTour giaTour = new GiaTour();
-            //giaTour.DangApDung = false;
-            //giaTour.Tour_Id = tourThemGia.Id;
-            //giaTour.NgayBatDau = dtNgayBatDau.Value;
-            //giaTour.NgayKetThuc = dtNgayKetThuc.Value;
-            //giaTour.Gia = gia;
             Dto_ChiTietDoan chiTietDoanMoi = new Dto_ChiTietDoan();
             chiTietDoanMoi.KhachHang_Id = dsKhachHangChuaThamGia[cbxKhachHang.SelectedIndex].Id;
             chiTietDoanMoi.DoanDuLich_Id = currentDoanDuLich.Id;

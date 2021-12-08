@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagement", "TourManagement\TourManagement.csproj", "{26744A94-707F-469F-B3ED-DED8993DEDE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7DF3BC75-0A8A-4ACA-B434-03C93B2B55F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{26744A94-707F-469F-B3ED-DED8993DEDE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26744A94-707F-469F-B3ED-DED8993DEDE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26744A94-707F-469F-B3ED-DED8993DEDE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF3BC75-0A8A-4ACA-B434-03C93B2B55F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF3BC75-0A8A-4ACA-B434-03C93B2B55F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF3BC75-0A8A-4ACA-B434-03C93B2B55F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF3BC75-0A8A-4ACA-B434-03C93B2B55F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -55,7 +55,7 @@ namespace TourManagement.DAL
         {
             TourManagementDataContext context = new TourManagementDataContext();
             // Tim dong tour can update trong database
-            var tourUpdate = context.Tours.First(t => t.Id == tour.Id);
+            var tourUpdate = context.Tours.FirstOrDefault(t => t.Id == tour.Id);
 
             //Neu tim thay
             if (tourUpdate != null)

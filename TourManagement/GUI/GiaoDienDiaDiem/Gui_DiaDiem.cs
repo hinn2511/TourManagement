@@ -29,7 +29,7 @@ namespace TourManagement.GUI.GiaoDienDiaDiem
             DiaDiemGridView.Columns[1].HeaderText = "Tên địa điểm";
         }
 
-        public void DiaDiemGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void DiaDiemGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
