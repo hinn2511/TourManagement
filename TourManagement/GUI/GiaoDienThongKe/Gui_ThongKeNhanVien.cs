@@ -10,7 +10,7 @@ namespace TourManagement.GUI.GiaoDienThongKe
     {
         
 
-        List<Dto_NV> dsNhanVien;
+        List<NhanVien> dsNhanVien;
         List<Dto_ThongKePhanCongNV> dsThongKeNhanVien;
 
         public Gui_ThongKeNhanVien()
