@@ -77,13 +77,6 @@
       <Association Name="LoaiTour_Tour" Member="Tours" ThisKey="Id" OtherKey="LoaiTour_Id" Type="Tour" />
     </Type>
   </Table>
-  <Table Name="dbo.NhanVien" Member="NhanViens">
-    <Type Name="NhanVien">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="NhanVien_PhanCong" Member="PhanCongs" ThisKey="Id" OtherKey="NhanVien_Id" Type="PhanCong" />
-    </Type>
-  </Table>
   <Table Name="dbo.NoiDungTour" Member="NoiDungTours">
     <Type Name="NoiDungTour">
       <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -122,6 +115,13 @@
       <Association Name="Tour_GiaTour" Member="GiaTours" ThisKey="Id" OtherKey="Tour_Id" Type="GiaTour" />
       <Association Name="Tour_ThamQuan" Member="ThamQuans" ThisKey="Id" OtherKey="Tour_Id" Type="ThamQuan" />
       <Association Name="LoaiTour_Tour" Member="LoaiTour" ThisKey="LoaiTour_Id" OtherKey="Id" Type="LoaiTour" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_PhanCong" Member="PhanCongs" ThisKey="Id" OtherKey="NhanVien_Id" Type="PhanCong" />
     </Type>
   </Table>
 </Database>
