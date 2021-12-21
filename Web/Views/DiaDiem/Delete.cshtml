@@ -1,0 +1,33 @@
+﻿@model TourManagement.DiaDiem
+@{
+    ViewBag.Title = "Xóa địa điểm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa địa điểm</h2>
+
+<h3>Bạn có chắc muốn xóa địa điểm  này?</h3>
+<div>
+    <h4>Địa điểm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên địa điểm
+        </dt>
+
+        <dd>
+            @Model.TenDiaDiem
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về danh sách", "Index")
+        </div>
+    }
+</div>

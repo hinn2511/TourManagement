@@ -1,0 +1,33 @@
+﻿@model TourManagement.LoaiChiPhi
+@{
+    ViewBag.Title = "Xóa một loại chi phí";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa loại chi phí</h2>
+
+<h3>Bạn có chắc muốn xóa loại chi phí này?</h3>
+<div>
+    <h4>Loại chi phí</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên loại chi phí
+        </dt>
+
+        <dd>
+            @Model.TenLoai
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về danh sách", "Index")
+        </div>
+    }
+</div>

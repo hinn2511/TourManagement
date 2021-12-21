@@ -1,0 +1,54 @@
+﻿@model List<TourManagement.DiaDiem>
+
+@{
+    ViewData["Title"] = "Địa điểm";
+}
+
+<h2>Quản lý địa điểm</h2>
+
+<p>
+    @Html.ActionLink("Thêm địa điểm mới", "Create")
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Tìm kiếm theo tên: <input type="text" name="SearchString" />
+            <input type="submit" value="Tìm kiếm" class="btn btn-default" /> |
+            @Html.ActionLink("Làm mới", "Index")
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã địa điểm
+            </th>
+            <th>
+                Tên địa điểm
+            </th>
+            <th>
+                Hành động
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDiaDiem)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit/" + @item.Id, @item.Id, item)  |
+                    @Html.ActionLink("Xóa", "Delete/" + @item.Id, @item.Id, item)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
