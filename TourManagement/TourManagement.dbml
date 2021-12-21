@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tourmanagement" Class="TourManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JREQFRS\HLONG;Initial Catalog=tourmanagement;Integrated Security=True" SettingsObjectName="TourManagement.Properties.Settings" SettingsPropertyName="tourmanagementConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3R5K64P\DB;Initial Catalog=tourmanagement;Integrated Security=True" SettingsObjectName="TourManagement.Properties.Settings" SettingsPropertyName="tourmanagementConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiPhi" Member="ChiPhis">
     <Type Name="ChiPhi">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -14,6 +14,7 @@
     <Type Name="ChiTietDoan">
       <Column Name="KhachHang_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DoanDuLich_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayThamGia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="DoanDuLich_ChiTietDoan" Member="DoanDuLich" ThisKey="DoanDuLich_Id" OtherKey="Id" Type="DoanDuLich" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="KhachHang_ChiTietDoan" Member="KhachHang" ThisKey="KhachHang_Id" OtherKey="Id" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -46,7 +47,6 @@
       <Column Name="NgayBatDau" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Gia" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="DangApDung" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Tour_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Tour_GiaTour" Member="Tour" ThisKey="Tour_Id" OtherKey="Id" Type="Tour" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
@@ -116,7 +116,6 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenTour" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DacDiem" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="GiaTour_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LoaiTour_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Tour_DoanDuLich" Member="DoanDuLiches" ThisKey="Id" OtherKey="Tour_Id" Type="DoanDuLich" />
       <Association Name="Tour_GiaTour" Member="GiaTours" ThisKey="Id" OtherKey="Tour_Id" Type="GiaTour" />

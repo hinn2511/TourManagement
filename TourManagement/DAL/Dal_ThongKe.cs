@@ -14,10 +14,7 @@ namespace TourManagement.DAL
                     .Select(dll => new Dto_ThongKeLoiNhuanTour
                     {
                         TenDoanDuLich = dll.TenDoanDuLich,
-                        DoanhThu = decimal.Round(context.ChiTietDoans.Where(ctd => ctd.DoanDuLich_Id == dll.Id).Count() *
-                                                context.GiaTours.FirstOrDefault(gt => gt.Tour_Id == dll.Tour_Id && gt.DangApDung).Gia,
-                                                0,
-                                                MidpointRounding.AwayFromZero),
+                        DoanhThu = dll.DoanhThu,
                         ChiPhi = context.ChiPhis.Where(cp => cp.DoanDuLich_Id == dll.Id).Any() ?
                             context.ChiPhis.Where(cp => cp.DoanDuLich_Id == dll.Id).Select(cp => cp.SoTien).Sum() : 0,
                         SoLuongKhach = context.ChiTietDoans.Where(ctd => ctd.DoanDuLich_Id == dll.Id).Count()

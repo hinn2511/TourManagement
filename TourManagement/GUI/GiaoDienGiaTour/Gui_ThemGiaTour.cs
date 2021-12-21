@@ -31,6 +31,13 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (dtNgayBatDau.Value > dtNgayKetThuc.Value)
+            {
+                MessageBox.Show("Thòi gian áp dụng không hợp lệ", "Lỗi", MessageBoxButtons.OK);
+                return;
+
+            }
+
             decimal gia;
             if (!decimal.TryParse(txtGiaTour.Text, out gia))
             {
@@ -38,13 +45,17 @@ namespace TourManagement.GUI.GiaoDienGiaTour
                 return;
 
             }
-            GiaTour giaTour = new GiaTour();
-            giaTour.DangApDung = false;
+            Bus_GiaTour bus_giaTour = new Bus_GiaTour();
+            if(!bus_giaTour.KiemTraNgayGiaTour(tourThemGia.Id, dtNgayBatDau.Value, dtNgayKetThuc.Value))
+            {
+                MessageBox.Show("Thời gian áp dụng giá tour trùng nhau", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            Dto_GiaTour giaTour = new Dto_GiaTour();
             giaTour.Tour_Id = tourThemGia.Id;
             giaTour.NgayBatDau = dtNgayBatDau.Value;
             giaTour.NgayKetThuc = dtNgayKetThuc.Value;
             giaTour.Gia = gia;
-            Bus_GiaTour bus_giaTour = new Bus_GiaTour();
             if (bus_giaTour.ThemGiaTour(giaTour))
             {
                 MessageBox.Show("Đã thêm giá tour thành công", "Thành công", MessageBoxButtons.OK);

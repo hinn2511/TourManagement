@@ -1,0 +1,121 @@
+﻿@model Web.Models.TourDetail
+
+@{
+    ViewBag.Title = "Chi tiết tour du lịch";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Tour du lịch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã tour
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tour.Id)
+
+        </dd>
+        <dt>
+            Tên tour
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tour.TenTour)
+        </dd>
+
+        <dt>
+            Đặc điểm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tour.DacDiem)
+        </dd>
+
+        <dt>
+            Loại tour
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tour.LoaiTour.TenLoai)
+        </dd>
+
+    </dl>
+
+    <h4>Giá</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model.gia != null)
+        {
+            <dt>
+                Giá (VNĐ)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.gia.Gia)
+            </dd>
+            <dt>
+                Áp dụng từ ngày
+            </dt>
+
+            <dd>
+                @Html.ValueFor(model => model.gia.NgayBatDau, "{0:dd/MM/yyyy}")
+            </dd>
+            <dt>
+                Đến ngày
+            </dt>
+
+            <dd>
+                @Html.ValueFor(model => model.gia.NgayKetThuc, "{0:dd/MM/yyyy}")
+            </dd>
+        }
+        else
+        {
+            <p class="text-muted">Chưa áp dụng giá</p>
+
+        }
+    </dl>
+
+
+    <h4>Lịch trình tham quan</h4>
+    <hr />
+    @if (Model.dsThamQuan.Count() == 0)
+    {
+        <p class="text-muted">Chưa có lịch trình tham quan</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Tên địa điểm
+                    </th>
+                    <th>
+                        Thứ tự
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.dsThamQuan)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenDiaDiem)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ThuTu)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.tour.Id }) |
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

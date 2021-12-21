@@ -72,7 +72,7 @@ namespace TourManagement
     #endregion
 		
 		public TourManagementDataContext() : 
-				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString1, mappingSource)
+				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -432,6 +432,8 @@ namespace TourManagement
 		
 		private int _DoanDuLich_Id;
 		
+		private System.DateTime _NgayThamGia;
+		
 		private EntityRef<DoanDuLich> _DoanDuLich;
 		
 		private EntityRef<KhachHang> _KhachHang;
@@ -444,6 +446,8 @@ namespace TourManagement
     partial void OnKhachHang_IdChanged();
     partial void OnDoanDuLich_IdChanging(int value);
     partial void OnDoanDuLich_IdChanged();
+    partial void OnNgayThamGiaChanging(System.DateTime value);
+    partial void OnNgayThamGiaChanged();
     #endregion
 		
 		public ChiTietDoan()
@@ -497,6 +501,26 @@ namespace TourManagement
 					this._DoanDuLich_Id = value;
 					this.SendPropertyChanged("DoanDuLich_Id");
 					this.OnDoanDuLich_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayThamGia", DbType="Date NOT NULL")]
+		public System.DateTime NgayThamGia
+		{
+			get
+			{
+				return this._NgayThamGia;
+			}
+			set
+			{
+				if ((this._NgayThamGia != value))
+				{
+					this.OnNgayThamGiaChanging(value);
+					this.SendPropertyChanging();
+					this._NgayThamGia = value;
+					this.SendPropertyChanged("NgayThamGia");
+					this.OnNgayThamGiaChanged();
 				}
 			}
 		}
@@ -1057,8 +1081,6 @@ namespace TourManagement
 		
 		private decimal _Gia;
 		
-		private bool _DangApDung;
-		
 		private System.Nullable<int> _Tour_Id;
 		
 		private EntityRef<Tour> _Tour;
@@ -1075,8 +1097,6 @@ namespace TourManagement
     partial void OnNgayKetThucChanged();
     partial void OnGiaChanging(decimal value);
     partial void OnGiaChanged();
-    partial void OnDangApDungChanging(bool value);
-    partial void OnDangApDungChanged();
     partial void OnTour_IdChanging(System.Nullable<int> value);
     partial void OnTour_IdChanged();
     #endregion
@@ -1163,26 +1183,6 @@ namespace TourManagement
 					this._Gia = value;
 					this.SendPropertyChanged("Gia");
 					this.OnGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DangApDung", DbType="Bit NOT NULL")]
-		public bool DangApDung
-		{
-			get
-			{
-				return this._DangApDung;
-			}
-			set
-			{
-				if ((this._DangApDung != value))
-				{
-					this.OnDangApDungChanging(value);
-					this.SendPropertyChanging();
-					this._DangApDung = value;
-					this.SendPropertyChanged("DangApDung");
-					this.OnDangApDungChanged();
 				}
 			}
 		}
@@ -2413,8 +2413,6 @@ namespace TourManagement
 		
 		private string _DacDiem;
 		
-		private System.Nullable<int> _GiaTour_Id;
-		
 		private int _LoaiTour_Id;
 		
 		private EntitySet<DoanDuLich> _DoanDuLiches;
@@ -2435,8 +2433,6 @@ namespace TourManagement
     partial void OnTenTourChanged();
     partial void OnDacDiemChanging(string value);
     partial void OnDacDiemChanged();
-    partial void OnGiaTour_IdChanging(System.Nullable<int> value);
-    partial void OnGiaTour_IdChanged();
     partial void OnLoaiTour_IdChanging(int value);
     partial void OnLoaiTour_IdChanged();
     #endregion
@@ -2506,26 +2502,6 @@ namespace TourManagement
 					this._DacDiem = value;
 					this.SendPropertyChanged("DacDiem");
 					this.OnDacDiemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaTour_Id", DbType="Int")]
-		public System.Nullable<int> GiaTour_Id
-		{
-			get
-			{
-				return this._GiaTour_Id;
-			}
-			set
-			{
-				if ((this._GiaTour_Id != value))
-				{
-					this.OnGiaTour_IdChanging(value);
-					this.SendPropertyChanging();
-					this._GiaTour_Id = value;
-					this.SendPropertyChanged("GiaTour_Id");
-					this.OnGiaTour_IdChanged();
 				}
 			}
 		}

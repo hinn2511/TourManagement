@@ -96,6 +96,7 @@
     <Compile Include="DAL\Dal_Tour.cs" />
     <Compile Include="DTO\Dto_ChiPhi.cs" />
     <Compile Include="DTO\Dto_DoanDuLich.cs" />
+    <Compile Include="DTO\Dto_GiaTour.cs" />
     <Compile Include="DTO\Dto_KH.cs" />
     <Compile Include="DTO\Dto_LoaiChiPhi.cs" />
     <Compile Include="DTO\Dto_NV.cs" />

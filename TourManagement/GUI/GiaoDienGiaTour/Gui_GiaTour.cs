@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
@@ -7,7 +8,7 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 {
     public partial class Gui_GiaTour : Form
     {
-        List<GiaTour> dsGiaTour;
+        List<Dto_GiaTour> dsGiaTour;
         int currentIndex;
         Dto_Tour currentTour;
 
@@ -22,7 +23,6 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 
         private void DatTenDauDanhSach()
         {
-            giaTourGridView.Columns["Tour"].Visible = false;
             giaTourGridView.Columns["Tour_Id"].Visible = false;
             giaTourGridView.Columns["Id"].HeaderText = "Mã giá";
             giaTourGridView.Columns["Gia"].HeaderText = "Giá (VNĐ)";
@@ -68,10 +68,17 @@ namespace TourManagement.GUI.GiaoDienGiaTour
                 MessageBox.Show("Vui lòng chọn tour cần xóa", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
+            DateTime now = DateTime.Now;
+
+            if (dsGiaTour[currentIndex].NgayKetThuc < now)
+            {
+                MessageBox.Show("Không thể xóa giá tour đã áp dụng", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
 
             if (dsGiaTour[currentIndex].DangApDung)
             {
-                MessageBox.Show("Không thể xóa giá tour đang chọn. Vui lòng áp dụng giá tour khác trước khi xóa", "Lỗi", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể xóa giá tour đang áp dụng", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
 
@@ -96,33 +103,19 @@ namespace TourManagement.GUI.GiaoDienGiaTour
                 MessageBox.Show("Vui lòng chọn giá tour cần sửa", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
+
+            DateTime now = DateTime.Now;
+            if (dsGiaTour[currentIndex].NgayKetThuc < now)
+            {
+                MessageBox.Show("Không thể sửa giá tour đã áp dụng", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             Gui_SuaGiaTour suaGiaTourForm = new Gui_SuaGiaTour(dsGiaTour[currentIndex], currentTour);
             suaGiaTourForm.ShowDialog();
             CapNhatDanhSachGiaTour();
 
         }
 
-        private void btnApDung_Click(object sender, System.EventArgs e)
-        {
-            if (currentIndex < 0)
-            {
-                MessageBox.Show("Vui lòng chọn giá tour cần áp dụng", "Lỗi", MessageBoxButtons.OK);
-                return;
-            }
-
-            if (dsGiaTour[currentIndex].DangApDung)
-            {
-                MessageBox.Show("Giá tour chọn đã áp dụng. Vui lòng chọn giá tour khác", "Lỗi", MessageBoxButtons.OK);
-                return;
-            }
-
-            Bus_GiaTour bus = new Bus_GiaTour();
-            var result = bus.ApDungGiaTour(currentTour.Id, dsGiaTour[currentIndex].Id);
-            if (!result)
-                MessageBox.Show("Không thể áp dụng giá tour", "Lỗi", MessageBoxButtons.OK);
-            else
-                MessageBox.Show("Đã áp dụng giá tour thành công", "Thành công", MessageBoxButtons.OK);
-            CapNhatDanhSachGiaTour();
-        }
+    
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
@@ -7,9 +8,9 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 {
     public partial class Gui_SuaGiaTour : Form
     {
-        GiaTour giaTour;
+        Dto_GiaTour giaTour;
 
-        public Gui_SuaGiaTour(GiaTour giaTourCanSua, Dto_Tour tourCanSua)
+        public Gui_SuaGiaTour(Dto_GiaTour giaTourCanSua, Dto_Tour tourCanSua)
         {
             InitializeComponent();
             giaTour = giaTourCanSua;
@@ -32,11 +33,13 @@ namespace TourManagement.GUI.GiaoDienGiaTour
         {
             giaTour.NgayBatDau = dtNgayBatDau.Value;
             giaTour.NgayKetThuc = dtNgayKetThuc.Value;
+
             if (giaTour.NgayBatDau > giaTour.NgayKetThuc)
             {
                 MessageBox.Show("Ngày áp dụng hoặc ngày kết thúc không hợp lệ", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
+
             decimal gia;
             if (!decimal.TryParse(txtGiaTour.Text, out gia))
             {
@@ -45,7 +48,9 @@ namespace TourManagement.GUI.GiaoDienGiaTour
 
             }
             giaTour.Gia = gia;
+
             Bus_GiaTour bus_giaTour = new Bus_GiaTour();
+
             if (bus_giaTour.SuaGiaTour(giaTour))
             {
                 MessageBox.Show("Đã sửa giá tour thành công", "Thành công", MessageBoxButtons.OK);

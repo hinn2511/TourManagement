@@ -15,6 +15,7 @@ namespace TourManagement.DAL
             List<Dto_ChiTietDoan> ChiTietDoan = context.ChiTietDoans.Where(ctd => ctd.DoanDuLich_Id == doanId).Select(ctd => new Dto_ChiTietDoan
             {
                 TenKhachHang = ctd.KhachHang.HoTen,
+                NgayThamGia = ctd.NgayThamGia,
                 KhachHang_Id = ctd.KhachHang_Id,
                 DoanDuLich_Id = ctd.DoanDuLich_Id
             }).ToList();

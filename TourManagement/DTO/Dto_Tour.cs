@@ -8,7 +8,7 @@
         public int Loai_Id { get; set; }
         public string Loai { get; set; }
         public int Gia_Id { get; set; }
-        public decimal Gia { get; set; }
+        public string Gia { get; set; }
 
     }
 }

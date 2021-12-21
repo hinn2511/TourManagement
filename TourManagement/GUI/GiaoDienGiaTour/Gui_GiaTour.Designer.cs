@@ -37,7 +37,6 @@
             this.panelDuoiTimKiem = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.txtTenTour = new System.Windows.Forms.Label();
-            this.btnApDung = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
@@ -128,7 +127,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Transparent;
             this.panelMenu.Controls.Add(this.txtTenTour);
-            this.panelMenu.Controls.Add(this.btnApDung);
             this.panelMenu.Controls.Add(this.btnThem);
             this.panelMenu.Controls.Add(this.btnSua);
             this.panelMenu.Controls.Add(this.btnXoa);
@@ -149,28 +147,6 @@
             this.txtTenTour.Size = new System.Drawing.Size(56, 19);
             this.txtTenTour.TabIndex = 4;
             this.txtTenTour.Text = "TOUR";
-            // 
-            // btnApDung
-            // 
-            this.btnApDung.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnApDung.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnApDung.FlatAppearance.BorderSize = 0;
-            this.btnApDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApDung.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnApDung.ForeColor = System.Drawing.Color.White;
-            this.btnApDung.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnApDung.IconColor = System.Drawing.Color.White;
-            this.btnApDung.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnApDung.IconSize = 24;
-            this.btnApDung.Location = new System.Drawing.Point(651, 0);
-            this.btnApDung.Name = "btnApDung";
-            this.btnApDung.Size = new System.Drawing.Size(166, 50);
-            this.btnApDung.TabIndex = 3;
-            this.btnApDung.Text = "ÁP DỤNG";
-            this.btnApDung.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnApDung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnApDung.UseVisualStyleBackColor = false;
-            this.btnApDung.Click += new System.EventHandler(this.btnApDung_Click);
             // 
             // btnThem
             // 
@@ -272,7 +248,6 @@
         private FontAwesome.Sharp.IconButton btnThem;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
-        private FontAwesome.Sharp.IconButton btnApDung;
         private System.Windows.Forms.Label txtTenTour;
     }
 }

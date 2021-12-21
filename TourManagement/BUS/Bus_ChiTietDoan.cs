@@ -17,7 +17,17 @@ namespace TourManagement.BUS
         public bool XoaChiTietDoan(Dto_ChiTietDoan chiTietDoan)
         {
             Dal_ChiTietDoan dal_ChiTietDoan = new Dal_ChiTietDoan();
-            return dal_ChiTietDoan.XoaChiTietDoan(chiTietDoan.DoanDuLich_Id, chiTietDoan.KhachHang_Id);
+            if (dal_ChiTietDoan.XoaChiTietDoan(chiTietDoan.DoanDuLich_Id, chiTietDoan.KhachHang_Id))
+            {
+                Dal_DoanDuLich dal_doanDuLich = new Dal_DoanDuLich();
+                var doan = dal_doanDuLich.ChiTietDoanDuLich(chiTietDoan.DoanDuLich_Id);
+                Dal_GiaTour dal_GiaTour = new Dal_GiaTour();
+                decimal gia = dal_GiaTour.GiaTourApDungTrongThoiGian(doan.Tour_Id, chiTietDoan.NgayThamGia).Gia;
+                doan.DoanhThu = doan.DoanhThu - gia;
+                if (dal_doanDuLich.CapNhatDoanDuLich(doan))
+                    return true;
+            }
+            return false;
         }
 
         public bool ThemChiTietDoan(Dto_ChiTietDoan chiTietDoan)
@@ -26,15 +36,14 @@ namespace TourManagement.BUS
             ChiTietDoan ctd = new ChiTietDoan();
             ctd.KhachHang_Id = chiTietDoan.KhachHang_Id;
             ctd.DoanDuLich_Id = chiTietDoan.DoanDuLich_Id;
+            ctd.NgayThamGia = System.DateTime.Now;
             if (dal_chiTietDoan.ThemChiTietDoan(ctd))
             {
-                Dal_DoanDuLich dal_doanDuLich = new Dal_DoanDuLich();
+               Dal_DoanDuLich dal_doanDuLich = new Dal_DoanDuLich();
                 var doan = dal_doanDuLich.ChiTietDoanDuLich(chiTietDoan.DoanDuLich_Id);
                 Dal_GiaTour dal_GiaTour = new Dal_GiaTour();
-                decimal gia = dal_GiaTour.GiaTourDangApDung(doan.Tour_Id).Gia;
-                Debug.WriteLine(gia);
+               decimal gia = dal_GiaTour.GiaTourDangApDung(doan.Tour_Id).Gia;
                 doan.DoanhThu = doan.DoanhThu + gia;
-                Debug.WriteLine(gia);
                 if (dal_doanDuLich.CapNhatDoanDuLich(doan))
                     return true;
             }

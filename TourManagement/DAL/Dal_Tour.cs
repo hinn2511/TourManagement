@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using TourManagement.DTO;
 
@@ -10,6 +12,9 @@ namespace TourManagement.DAL
         public List<Dto_Tour> LayDanhSachTour()
         {
             TourManagementDataContext context = new TourManagementDataContext();
+
+            DateTime now = DateTime.Now;
+
             List<Dto_Tour> dsTour = context.Tours.Select(t => new Dto_Tour
             {
                 Id = t.Id,
@@ -17,8 +22,8 @@ namespace TourManagement.DAL
                 DacDiem = t.DacDiem,
                 Loai = t.LoaiTour.TenLoai,
                 Loai_Id = t.LoaiTour.Id,
-                Gia = t.GiaTours.FirstOrDefault(x => x.DangApDung).Gia,
-                Gia_Id = (int)t.GiaTour_Id,
+                Gia = (t.GiaTours.FirstOrDefault(gt => gt.NgayBatDau <= now && gt.NgayKetThuc >= now) != null) ? t.GiaTours.FirstOrDefault(gt => gt.NgayBatDau <= now && gt.NgayKetThuc >= now).Gia.ToString() : "Chưa áp dụng giá",
+                Gia_Id = (t.GiaTours.FirstOrDefault(gt => gt.NgayBatDau <= now && gt.NgayKetThuc >= now) != null) ? t.GiaTours.FirstOrDefault(gt => gt.NgayBatDau <= now && gt.NgayKetThuc >= now).Id : -1,
             }).ToList();
             return dsTour;
         }
@@ -47,6 +52,7 @@ namespace TourManagement.DAL
             }
             catch (SqlException e)
             {
+                Console.WriteLine(e.InnerException);
                 return false;
             }
         }
@@ -56,14 +62,13 @@ namespace TourManagement.DAL
             TourManagementDataContext context = new TourManagementDataContext();
             // Tim dong tour can update trong database
             var tourUpdate = context.Tours.FirstOrDefault(t => t.Id == tour.Id);
-
+            Debug.WriteLine(tour.DacDiem);
             //Neu tim thay
             if (tourUpdate != null)
             {
                 //Gan gia tri moi
                 tourUpdate.TenTour = tour.TenTour;
                 tourUpdate.DacDiem = tour.DacDiem;
-                tourUpdate.GiaTour_Id = tour.GiaTour_Id;
                 tourUpdate.LoaiTour_Id = tour.LoaiTour_Id;
             }
             try

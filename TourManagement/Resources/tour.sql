@@ -11,7 +11,6 @@ CREATE TABLE Tour (
     Id int IDENTITY(1,1) PRIMARY KEY,
     TenTour nvarchar(50) NOT NULL,
     DacDiem nvarchar(255),
-	GiaTour_Id int,
     LoaiTour_Id int NOT NULL
 );
 
@@ -20,7 +19,6 @@ CREATE TABLE GiaTour (
     NgayBatDau date NOT NULL,
     NgayKetThuc date NOT NULL,
 	Gia decimal(18,0) NOT NULL,
-	DangApDung bit NOT NULL,
 	Tour_Id int
 );
 
@@ -70,6 +68,7 @@ CREATE TABLE KhachHang (
 CREATE TABLE ChiTietDoan (
     KhachHang_Id int NOT NULL,
 	DoanDuLich_Id int NOT NULL,
+	NgayThamGia date NOT NULL,
     CONSTRAINT PK_ChiTietDoan PRIMARY KEY (KhachHang_Id,DoanDuLich_Id)
 );
 

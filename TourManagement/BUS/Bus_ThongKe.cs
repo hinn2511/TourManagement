@@ -19,7 +19,7 @@ namespace TourManagement.BUS
             return dal_DoanDuLich.LayDanhSachDoanDuLich();
         }
 
-        public List<Dto_NV> LayDanhSachNhanVien()
+        public List<NhanVien> LayDanhSachNhanVien()
         {
             Dal_NV dal_NV = new Dal_NV();
             return dal_NV.LayDanhSachNV();

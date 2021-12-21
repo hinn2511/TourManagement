@@ -46,32 +46,33 @@ namespace TourManagement.BUS
         }
 
 
-        public bool ThemTourMoi(Tour tour, GiaTour gia)
+        public bool ThemTourMoi(Dto_Tour tour)
         {
             Dal_Tour dal_tour = new Dal_Tour();
 
-            Dal_GiaTour dal_giaTour = new Dal_GiaTour();
+            //Dal_GiaTour dal_giaTour = new Dal_GiaTour();
 
-            if (dal_giaTour.ThemGiaTour(gia))
-            {
+            //if (dal_giaTour.ThemGiaTour(gia))
+            //{
 
-                var giaTourMoiNhat = dal_giaTour.LayGiaTourMoiNhat();
-                if (giaTourMoiNhat != null)
-                {
-                    tour.GiaTour_Id = giaTourMoiNhat.Id;
+            //    var giaTourMoiNhat = dal_giaTour.LayGiaTourMoiNhat();
+            //    if (giaTourMoiNhat != null)
+            //    {
+            //        tour.Gia_Id = giaTourMoiNhat.Id;
 
-                    if (dal_tour.ThemTour(tour))
-                    {
-                        giaTourMoiNhat.Tour_Id = tour.Id;
-                        giaTourMoiNhat.DangApDung = true;
-                        dal_giaTour.CapNhatGiaTour(giaTourMoiNhat);
-                        return true;
-                    }
-                }
+            //        if (dal_tour.ThemTour(convertToEntity(tour)))
+            //        {
+            //            giaTourMoiNhat.Tour_Id = tour.Id;
+            //            giaTourMoiNhat.DangApDung = true;
+            //            dal_giaTour.CapNhatGiaTour(giaTourMoiNhat);
+            //            return true;
+            //        }
+            //    }
 
-            }
+            //}
+            if (dal_tour.ThemTour(convertToEntity(tour)))
+                return true;
             return false;
-
         }
 
         public bool XoaTour(int id)
@@ -86,19 +87,9 @@ namespace TourManagement.BUS
         {
             Dal_Tour dal_tour = new Dal_Tour();
 
-            if (dal_tour.CapNhatTour(DtoToEntity(tourDaSua)))
+            if (dal_tour.CapNhatTour(convertToEntity(tourDaSua)))
                 return true;
             return false;
-        }
-
-        public Tour DtoToEntity(Dto_Tour dto)
-        {
-            Tour t = new Tour();    
-            t.Id = dto.Id;
-            t.LoaiTour_Id = dto.Loai_Id;
-            t.GiaTour_Id = dto.Gia_Id;
-            t.TenTour = dto.TenTour;
-            return t;
         }
 
         public List<LoaiTour> LayDanhSachLoaiTour()
@@ -106,6 +97,26 @@ namespace TourManagement.BUS
             Dal_LoaiTour dal_loaiTour = new Dal_LoaiTour();
             var result = dal_loaiTour.LayDanhSachLoaiTour();
             return result;
+        }
+
+        public Tour convertToEntity(Dto_Tour dto)
+        {
+            Tour t = new Tour();
+            t.Id = dto.Id;
+            t.TenTour = dto.TenTour;
+            t.DacDiem = dto.DacDiem;
+            t.LoaiTour_Id = dto.Loai_Id;
+            return t;
+        }
+
+        public Dto_Tour convertToDto(Tour t)
+        {
+            Dto_Tour dto = new Dto_Tour();
+            dto.Id = t.Id;
+            dto.TenTour = t.TenTour;
+            dto.DacDiem = t.DacDiem;
+            dto.Loai_Id = t.LoaiTour_Id;
+            return dto;
         }
     }
 }
