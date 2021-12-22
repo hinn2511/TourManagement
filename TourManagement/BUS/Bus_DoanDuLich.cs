@@ -6,7 +6,7 @@ using TourManagement.DTO;
 
 namespace TourManagement.BUS
 {
-    internal class Bus_DoanDuLich
+    public class Bus_DoanDuLich
     {
         public List<Dto_DoanDuLich> LayDanhSachDoanDuLich()
         {
