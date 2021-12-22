@@ -43,29 +43,20 @@ namespace TourManagement.GUI.GiaoDienThongKe
         {
             Bus_ThongKe bus = new Bus_ThongKe();
             dsThongKeLoiNhuanTour = bus.LayKetQuaThongKeLoiNhuan(dsTour[cbxTour.SelectedIndex].Id, dtTuNgay.Value, dtDenNgay.Value);
-            decimal tongDoanhThu = bus.TinhTongDoanhThu(dsThongKeLoiNhuanTour);
-            decimal tongChiPhi = bus.TinhTongChiPhi(dsThongKeLoiNhuanTour);
-            decimal tongLoiNhuan = bus.TinhTongLoiNhuan(tongDoanhThu, tongChiPhi);
-
-            if (dsThongKeLoiNhuanTour == null)
+            if(dsThongKeLoiNhuanTour != null)
             {
-                Console.WriteLine("Null !!!");
-            }
-            else
-            {
-                Console.WriteLine("Not Null !!!");
-                foreach (var author in dsThongKeLoiNhuanTour)
-                {
-                    Console.WriteLine(author);
-                }
-            }
+                decimal tongDoanhThu = bus.TinhTongDoanhThu(dsThongKeLoiNhuanTour);
+                decimal tongChiPhi = bus.TinhTongChiPhi(dsThongKeLoiNhuanTour);
+                decimal tongLoiNhuan = bus.TinhTongLoiNhuan(tongDoanhThu, tongChiPhi);
 
-            txtDoanhThu.Text = tongDoanhThu.ToString();
-            txtChiPhi.Text = tongChiPhi.ToString();
-            txtLoiNhuan.Text = tongLoiNhuan.ToString();
+                txtDoanhThu.Text = tongDoanhThu.ToString();
+                txtChiPhi.Text = tongChiPhi.ToString();
+                txtLoiNhuan.Text = tongLoiNhuan.ToString();
 
-            thongKeDoanGridView.DataSource = dsThongKeLoiNhuanTour;
-            DatTenDauDanhSach();
+                thongKeDoanGridView.DataSource = dsThongKeLoiNhuanTour;
+                DatTenDauDanhSach();
+            }
+            
         }
 
         private void DatTenDauDanhSach()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
@@ -45,18 +46,22 @@ namespace TourManagement.GUI.GiaoDienThongKe
         {
             Bus_ThongKe bus = new Bus_ThongKe();
             dsThongKeChiPhiTour = bus.LayKetQuaThongKeChiPhi(dsTour[cbxTour.SelectedIndex].Id, dtTuNgay.Value, dtDenNgay.Value);
-            Dto_ThongKeChiPhiTour cpCaoNhat = bus.ChiPhiCaoNhat(dsThongKeChiPhiTour);
-            Dto_ThongKeChiPhiTour cpThapNhat = bus.ChiPhiThapNhat(dsThongKeChiPhiTour);
-            decimal tongCacChiPhi = bus.TinhTongChiPhi(dsThongKeChiPhiTour);
-           
-            txtChiPhiThapNhat.Text = cpThapNhat.LoaiChiPhi.ToString();
-            txtSoTienThapNhat.Text = cpThapNhat.TongSoTien.ToString();
-            txtChiPhiCaoNhat.Text = cpCaoNhat.LoaiChiPhi.ToString();
-            txtSoTienCaoNhat.Text = cpCaoNhat.TongSoTien.ToString();
-            txtTongCacChiPhi.Text = tongCacChiPhi.ToString();
+            if(dsThongKeChiPhiTour != null)
+            {
+                Dto_ThongKeChiPhiTour cpCaoNhat = bus.ChiPhiCaoNhat(dsThongKeChiPhiTour);
+                Dto_ThongKeChiPhiTour cpThapNhat = bus.ChiPhiThapNhat(dsThongKeChiPhiTour);
+                decimal tongCacChiPhi = bus.TinhTongChiPhi(dsThongKeChiPhiTour);
 
-            thongKeDoanGridView.DataSource = dsThongKeChiPhiTour;
-            DatTenDauDanhSach();
+                txtChiPhiThapNhat.Text = cpThapNhat.LoaiChiPhi.ToString();
+                txtSoTienThapNhat.Text = cpThapNhat.TongSoTien.ToString();
+                txtChiPhiCaoNhat.Text = cpCaoNhat.LoaiChiPhi.ToString();
+                txtSoTienCaoNhat.Text = cpCaoNhat.TongSoTien.ToString();
+                txtTongCacChiPhi.Text = tongCacChiPhi.ToString();
+
+                thongKeDoanGridView.DataSource = dsThongKeChiPhiTour;
+                DatTenDauDanhSach();
+            }
+            
         }
 
         private void DatTenDauDanhSach()

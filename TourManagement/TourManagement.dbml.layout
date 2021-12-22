@@ -1,167 +1,154 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TourManagement">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.125" name="TourManagement">
   <DataContextMoniker Name="/TourManagementDataContext" />
   <nestedChildShapes>
-    <classShape Id="45d9569d-eb60-420f-8898-c6dc9e413492" absoluteBounds="1.5, 1, 2, 1.5785953776041666">
+    <classShape Id="6d887aef-7335-47e9-be68-ba173493680e" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/TourManagementDataContext/ChiPhi" />
       <nestedChildShapes>
-        <elementListCompartment Id="30d923d4-0310-4b21-b704-0ff40b21fff3" absoluteBounds="1.5150000000000001, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="86e9df11-3087-4b78-b388-394d22f14b02" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="55e42013-99af-48b5-8322-134742c008c1" absoluteBounds="4.75, 2.25, 2, 1.3862939453125">
+    <classShape Id="621ab00c-f75d-4dd6-8a18-1b4870768834" absoluteBounds="3.625, 1, 2, 1.3862939453125">
       <DataClassMoniker Name="/TourManagementDataContext/ChiTietDoan" />
       <nestedChildShapes>
-        <elementListCompartment Id="1e6a640c-48ba-4ad4-b516-59a411859323" absoluteBounds="4.765, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8b3a4c40-d3a9-4de2-b751-07f661803cb4" absoluteBounds="3.64, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="13ebae26-866a-4e70-96cb-574cc500b1e4" absoluteBounds="4.875, 0.625, 2, 1.1939925130208333">
+    <classShape Id="6bdeacef-dcc4-42f8-8cec-e591138bfa02" absoluteBounds="7.375, 1.875, 2, 1.1939925130208333">
       <DataClassMoniker Name="/TourManagementDataContext/DiaDiem" />
       <nestedChildShapes>
-        <elementListCompartment Id="67b6ae7e-af45-4b8d-acfc-1e10301f9c6e" absoluteBounds="4.89, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e108e251-4a50-4ef6-9c0f-8730f916b920" absoluteBounds="7.39, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="63e1c27f-e854-4d05-b650-35467ed874bc" absoluteBounds="2.5, 3.125, 2, 1.9631982421875">
+    <classShape Id="0d2b8f00-5334-4b9c-8e3a-20d5b32508e5" absoluteBounds="1.25, 3, 2, 2.3478011067708335">
       <DataClassMoniker Name="/TourManagementDataContext/DoanDuLich" />
       <nestedChildShapes>
-        <elementListCompartment Id="9dfe5de7-178d-45e4-b602-72b0eed76566" absoluteBounds="2.515, 3.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a247ff4d-6e3e-4e2b-8849-721e2eb5b87e" absoluteBounds="1.2650000000000001, 3.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.09375 : 3.125); (3.09375 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.875 : 3); (1.875 : 2.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/DoanDuLich/DoanDuLich_ChiPhi" />
       <nodes>
-        <classShapeMoniker Id="63e1c27f-e854-4d05-b650-35467ed874bc" />
-        <classShapeMoniker Id="45d9569d-eb60-420f-8898-c6dc9e413492" />
+        <classShapeMoniker Id="0d2b8f00-5334-4b9c-8e3a-20d5b32508e5" />
+        <classShapeMoniker Id="6d887aef-7335-47e9-be68-ba173493680e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.6406265 : 3.125); (3.6406265 : 2.68099537760417); (3.6024 : 2.68099537760417); (3.6024 : 2.0964); (3.73698241666667 : 2.0964 : JumpStart); (3.90364908333333 : 2.0964 : JumpEnd); (5.75 : 2.0964); (5.75 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.25 : 3); (3.625 : 2.3862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TourManagementDataContext/DoanDuLich/DoanDuLich_ChiTietDoan" />
       <nodes>
-        <classShapeMoniker Id="63e1c27f-e854-4d05-b650-35467ed874bc" />
-        <classShapeMoniker Id="55e42013-99af-48b5-8322-134742c008c1" />
+        <classShapeMoniker Id="0d2b8f00-5334-4b9c-8e3a-20d5b32508e5" />
+        <classShapeMoniker Id="621ab00c-f75d-4dd6-8a18-1b4870768834" />
       </nodes>
     </associationConnector>
-    <classShape Id="8a98a3e2-9ccd-41b3-8522-5f275f551651" absoluteBounds="1.5, 3.375, 2, 1.7708968098958331">
+    <classShape Id="ce972499-cbd3-42ca-8530-8656665a8970" absoluteBounds="4.75, 4, 2, 1.7708968098958331">
       <DataClassMoniker Name="/TourManagementDataContext/GiaTour" />
       <nestedChildShapes>
-        <elementListCompartment Id="62caea21-c750-4696-8058-27547dbee3d9" absoluteBounds="1.5150000000000001, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="11d659f0-486e-44bd-a83d-5c29a2dfa461" absoluteBounds="4.765, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c2525da3-18e9-4b4a-9104-570afb323c40" absoluteBounds="5, 4.375, 2, 2.1554996744791666">
+    <classShape Id="ef0df548-eca9-4d1c-bf1b-11f3a782e316" absoluteBounds="7.625, 4.5, 2, 2.1554996744791666">
       <DataClassMoniker Name="/TourManagementDataContext/KhachHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="7772c18b-6120-4d5a-80d9-07cffa2fabe7" absoluteBounds="5.015, 4.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="80f31def-5fc5-40c0-bd64-7b42bd1896e4" absoluteBounds="7.64, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.46875 : 4.375); (6.46875 : 3.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.53125 : 4.5); (9.53125 : 1.40625); (5.625 : 1.40625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/KhachHang/KhachHang_ChiTietDoan" />
       <nodes>
-        <classShapeMoniker Id="c2525da3-18e9-4b4a-9104-570afb323c40" />
-        <classShapeMoniker Id="55e42013-99af-48b5-8322-134742c008c1" />
+        <classShapeMoniker Id="ef0df548-eca9-4d1c-bf1b-11f3a782e316" />
+        <classShapeMoniker Id="621ab00c-f75d-4dd6-8a18-1b4870768834" />
       </nodes>
     </associationConnector>
-    <classShape Id="7e830010-0a06-49b3-808b-8ac265a234a3" absoluteBounds="4, 0.75, 2, 1.1939925130208333">
+    <classShape Id="f21c8968-f7d2-4141-8186-b8fe52ae9cb5" absoluteBounds="1.375, 6.625, 2, 1.1939925130208333">
       <DataClassMoniker Name="/TourManagementDataContext/LoaiChiPhi" />
       <nestedChildShapes>
-        <elementListCompartment Id="152980ea-384c-412b-8c47-5e1b51e4cdca" absoluteBounds="4.015, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b4918f91-34aa-4814-abba-2d036ec5e6f5" absoluteBounds="1.3900000000000001, 7.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4 : 1.47199625651042); (3.90364908333333 : 1.47199625651042 : JumpStart); (3.73698241666667 : 1.47199625651042 : JumpEnd); (3.5 : 1.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.375 : 7.22199625651042); (1.36458333333333 : 7.22199625651042 : JumpStart); (1.19791666666667 : 7.22199625651042 : JumpEnd); (1.08333333333333 : 7.22199625651042 : JumpStart); (0.916666666666667 : 7.22199625651042 : JumpEnd); (0.75 : 7.22199625651042); (0.75 : 2.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/LoaiChiPhi/LoaiChiPhi_ChiPhi" />
       <nodes>
-        <classShapeMoniker Id="7e830010-0a06-49b3-808b-8ac265a234a3" />
-        <classShapeMoniker Id="45d9569d-eb60-420f-8898-c6dc9e413492" />
+        <classShapeMoniker Id="f21c8968-f7d2-4141-8186-b8fe52ae9cb5" />
+        <classShapeMoniker Id="6d887aef-7335-47e9-be68-ba173493680e" />
       </nodes>
     </associationConnector>
-    <classShape Id="a1f185b8-169e-496e-bdb8-76479b13f169" absoluteBounds="0.625, 2.5, 2, 1.1939925130208333">
+    <classShape Id="cc807981-7c4e-4285-9181-e95752160aee" absoluteBounds="5.625, 7, 2, 1.1939925130208333">
       <DataClassMoniker Name="/TourManagementDataContext/LoaiTour" />
       <nestedChildShapes>
-        <elementListCompartment Id="d8a3e534-3a10-4afe-a6cd-1d2c9b50f4c5" absoluteBounds="0.64, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="82da48ed-e831-4a61-b383-7e1adf4119a8" absoluteBounds="5.64, 7.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="90230612-d660-48bd-82a8-5603a6a6800b" absoluteBounds="3.5, 5.75, 2, 1.1939925130208333">
+    <classShape Id="5dcdf00c-883e-41c8-9a36-7fde7e5e2349" absoluteBounds="8.375, 7.875, 2, 1.1939925130208333">
       <DataClassMoniker Name="/TourManagementDataContext/NhanVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="4b19860e-8a9f-409f-aef3-0dabe964d6ca" absoluteBounds="3.515, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5a988932-ca5a-4015-b937-e604020de9d8" absoluteBounds="8.39, 8.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b9e1cf73-60dd-423d-a69a-d00b8009c069" absoluteBounds="2.375, 5.375, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/TourManagementDataContext/NoiDungTour" />
-      <nestedChildShapes>
-        <elementListCompartment Id="90ae5274-482e-403b-a055-246df952cbee" absoluteBounds="2.39, 5.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(3.96875 : 5.0881982421875); (3.96875 : 5.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/TourManagementDataContext/DoanDuLich/DoanDuLich_NoiDungTour" />
-      <nodes>
-        <classShapeMoniker Id="63e1c27f-e854-4d05-b650-35467ed874bc" />
-        <classShapeMoniker Id="b9e1cf73-60dd-423d-a69a-d00b8009c069" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="0632b4a0-5eef-457b-b818-f040ca74a8a7" absoluteBounds="0.875, 5.25, 2, 1.3862939453125">
+    <classShape Id="08baeaf6-4362-4343-aaa7-150b1e5bb504" absoluteBounds="1.375, 8.5, 2, 1.3862939453125">
       <DataClassMoniker Name="/TourManagementDataContext/PhanCong" />
       <nestedChildShapes>
-        <elementListCompartment Id="e212e8fe-7bff-438e-afba-a573449202b0" absoluteBounds="0.89, 5.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="30e8bc08-7d33-4ae4-946f-3e25ade04976" absoluteBounds="1.3900000000000001, 8.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 4.48724659375); (4.5625 : 4.48724659375); (4.5625 : 5.1875); (4.05208333333333 : 5.1875 : JumpStart); (3.88541666666667 : 5.1875 : JumpEnd); (1.875 : 5.1875); (1.875 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.25153746153846 : 5.34780110677083); (0.876537461538462 : 5.72280110677083); (1 : 5.72280110677083); (1 : 8.125); (1.22232443490112 : 8.34732443490112 : JumpStart); (1.34017556509888 : 8.46517556509888 : JumpEnd); (1.375 : 8.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TourManagementDataContext/DoanDuLich/DoanDuLich_PhanCong" />
       <nodes>
-        <classShapeMoniker Id="63e1c27f-e854-4d05-b650-35467ed874bc" />
-        <classShapeMoniker Id="0632b4a0-5eef-457b-b818-f040ca74a8a7" />
+        <classShapeMoniker Id="0d2b8f00-5334-4b9c-8e3a-20d5b32508e5" />
+        <classShapeMoniker Id="08baeaf6-4362-4343-aaa7-150b1e5bb504" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.50091745577925 : 6.94399251302083); (3.12591745577925 : 7.31899251302083); (1.5937505 : 7.31899251302083); (1.5937505 : 6.6362939453125)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 8.78449625651042); (7.95833333333333 : 8.78449625651042 : JumpStart); (7.79166666666667 : 8.78449625651042 : JumpEnd); (7.11458333333333 : 8.78449625651042 : JumpStart); (6.94791666666667 : 8.78449625651042 : JumpEnd); (3.375 : 8.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/NhanVien/NhanVien_PhanCong" />
       <nodes>
-        <classShapeMoniker Id="90230612-d660-48bd-82a8-5603a6a6800b" />
-        <classShapeMoniker Id="0632b4a0-5eef-457b-b818-f040ca74a8a7" />
+        <classShapeMoniker Id="5dcdf00c-883e-41c8-9a36-7fde7e5e2349" />
+        <classShapeMoniker Id="08baeaf6-4362-4343-aaa7-150b1e5bb504" />
       </nodes>
     </associationConnector>
-    <classShape Id="bd7b980b-2d75-43a0-9af4-c946a02cec08" absoluteBounds="4.125, 2.5, 2, 1.3862939453125">
+    <classShape Id="29f896b7-0d51-4533-a4a6-c86a87d9a2af" absoluteBounds="4.375, 9.625, 2, 1.3862939453125">
       <DataClassMoniker Name="/TourManagementDataContext/ThamQuan" />
       <nestedChildShapes>
-        <elementListCompartment Id="75a48f33-98f9-45f8-a9bf-f98db689c35f" absoluteBounds="4.14, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ef874a2e-a53d-4d06-b797-93ee87ef2cd9" absoluteBounds="4.39, 10.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.84375 : 1.81899251302083); (6.84375 : 3.7925439453125); (6.55208333333333 : 3.7925439453125 : JumpStart); (6.38541666666667 : 3.7925439453125 : JumpEnd); (6.125 : 3.7925439453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 3.06899251302083); (8.375 : 4.25); (7.375 : 4.25); (7.375 : 6.75); (7.875 : 6.75); (7.875 : 10); (7.625 : 10); (7.625 : 10.3181469726562); (7.11458333333333 : 10.3181469726562 : JumpStart); (6.94791666666667 : 10.3181469726562 : JumpEnd); (6.375 : 10.3181469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/DiaDiem/DiaDiem_ThamQuan" />
       <nodes>
-        <classShapeMoniker Id="13ebae26-866a-4e70-96cb-574cc500b1e4" />
-        <classShapeMoniker Id="bd7b980b-2d75-43a0-9af4-c946a02cec08" />
+        <classShapeMoniker Id="6bdeacef-dcc4-42f8-8cec-e591138bfa02" />
+        <classShapeMoniker Id="29f896b7-0d51-4533-a4a6-c86a87d9a2af" />
       </nodes>
     </associationConnector>
-    <classShape Id="567313b9-c27f-4f14-b9de-13c2c4d5593b" absoluteBounds="0.875, 0.625, 2, 1.5785953776041666">
+    <classShape Id="eb9f79b9-a2c0-4031-b016-2fdb78d773e5" absoluteBounds="7.875, 10.25, 2, 1.5785953776041666">
       <DataClassMoniker Name="/TourManagementDataContext/Tour" />
       <nestedChildShapes>
-        <elementListCompartment Id="b92cc4e5-8a70-48a3-8739-f75f154bc22d" absoluteBounds="0.89, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="08997085-56d7-435e-b98b-bd2e1fa9ba1b" absoluteBounds="7.89, 10.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.875 : 0.65625); (3.82031575 : 0.65625); (3.82031575 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.875 : 11.4511946614583); (1.28125 : 11.4511946614583); (1.28125 : 5.34780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/Tour/Tour_DoanDuLich" />
       <nodes>
-        <classShapeMoniker Id="567313b9-c27f-4f14-b9de-13c2c4d5593b" />
-        <classShapeMoniker Id="63e1c27f-e854-4d05-b650-35467ed874bc" />
+        <classShapeMoniker Id="eb9f79b9-a2c0-4031-b016-2fdb78d773e5" />
+        <classShapeMoniker Id="0d2b8f00-5334-4b9c-8e3a-20d5b32508e5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(0.875 : 1.41429768880208); (0.375 : 1.41429768880208); (0.375 : 4.45119416145833); (1.5 : 4.45119416145833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.875 : 10.25); (8.875 : 9.31899251302083); (7.875 : 9.31899251302083); (7.875 : 6.8125); (7.375 : 6.8125); (7.375 : 5.01044790494792); (6.75 : 5.01044790494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/Tour/Tour_GiaTour" />
       <nodes>
-        <classShapeMoniker Id="567313b9-c27f-4f14-b9de-13c2c4d5593b" />
-        <classShapeMoniker Id="8a98a3e2-9ccd-41b3-8522-5f275f551651" />
+        <classShapeMoniker Id="eb9f79b9-a2c0-4031-b016-2fdb78d773e5" />
+        <classShapeMoniker Id="ce972499-cbd3-42ca-8530-8656665a8970" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.875 : 0.625); (1.875 : 0.465); (7.035 : 0.465); (7.035 : 4.1262939453125); (6.55208333333333 : 4.1262939453125 : JumpStart); (6.38541666666667 : 4.1262939453125 : JumpEnd); (5.3125005 : 4.1262939453125); (5.3125005 : 3.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.875 : 10.7272204589844); (7.11458333333333 : 10.7272204589844 : JumpStart); (6.94791666666667 : 10.7272204589844 : JumpEnd); (6.375 : 10.7272204589844)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/Tour/Tour_ThamQuan" />
       <nodes>
-        <classShapeMoniker Id="567313b9-c27f-4f14-b9de-13c2c4d5593b" />
-        <classShapeMoniker Id="bd7b980b-2d75-43a0-9af4-c946a02cec08" />
+        <classShapeMoniker Id="eb9f79b9-a2c0-4031-b016-2fdb78d773e5" />
+        <classShapeMoniker Id="29f896b7-0d51-4533-a4a6-c86a87d9a2af" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.15625 : 2.5); (1.15625 : 2.20359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.03125 : 8.19399251302083); (7.03125 : 11.2312418033854); (7.875 : 11.2312418033854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TourManagementDataContext/LoaiTour/LoaiTour_Tour" />
       <nodes>
-        <classShapeMoniker Id="a1f185b8-169e-496e-bdb8-76479b13f169" />
-        <classShapeMoniker Id="567313b9-c27f-4f14-b9de-13c2c4d5593b" />
+        <classShapeMoniker Id="cc807981-7c4e-4285-9181-e95752160aee" />
+        <classShapeMoniker Id="eb9f79b9-a2c0-4031-b016-2fdb78d773e5" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

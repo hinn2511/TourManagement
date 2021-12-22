@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtTenDoan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dtNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dtNgayKhoiHanh = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,8 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTenDoan = new System.Windows.Forms.TextBox();
+            this.txtKhachSan = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtHanhTrinh = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,12 +59,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(997, 495);
+            this.panel1.Size = new System.Drawing.Size(997, 728);
             this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.txtHanhTrinh);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.txtKhachSan);
+            this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtTenDoan);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.dtNgayKetThuc);
@@ -74,25 +82,44 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 55);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(997, 440);
+            this.panel3.Size = new System.Drawing.Size(997, 673);
             this.panel3.TabIndex = 1;
+            // 
+            // txtTenDoan
+            // 
+            this.txtTenDoan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenDoan.Location = new System.Drawing.Point(233, 127);
+            this.txtTenDoan.Name = "txtTenDoan";
+            this.txtTenDoan.Size = new System.Drawing.Size(734, 30);
+            this.txtTenDoan.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(17, 134);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(167, 19);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "TÊN ĐOÀN DU LỊCH";
             // 
             // dtNgayKetThuc
             // 
             this.dtNgayKetThuc.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtNgayKetThuc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtNgayKetThuc.Location = new System.Drawing.Point(285, 292);
+            this.dtNgayKetThuc.Location = new System.Drawing.Point(233, 292);
             this.dtNgayKetThuc.Name = "dtNgayKetThuc";
-            this.dtNgayKetThuc.Size = new System.Drawing.Size(682, 30);
+            this.dtNgayKetThuc.Size = new System.Drawing.Size(734, 30);
             this.dtNgayKetThuc.TabIndex = 16;
             // 
             // dtNgayKhoiHanh
             // 
             this.dtNgayKhoiHanh.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtNgayKhoiHanh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtNgayKhoiHanh.Location = new System.Drawing.Point(285, 210);
+            this.dtNgayKhoiHanh.Location = new System.Drawing.Point(233, 210);
             this.dtNgayKhoiHanh.Name = "dtNgayKhoiHanh";
-            this.dtNgayKhoiHanh.Size = new System.Drawing.Size(682, 30);
+            this.dtNgayKhoiHanh.Size = new System.Drawing.Size(734, 30);
             this.dtNgayKhoiHanh.TabIndex = 15;
             // 
             // label2
@@ -110,9 +137,9 @@
             // 
             this.cbxTour.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbxTour.FormattingEnabled = true;
-            this.cbxTour.Location = new System.Drawing.Point(285, 40);
+            this.cbxTour.Location = new System.Drawing.Point(233, 40);
             this.cbxTour.Name = "cbxTour";
-            this.cbxTour.Size = new System.Drawing.Size(682, 34);
+            this.cbxTour.Size = new System.Drawing.Size(734, 34);
             this.cbxTour.TabIndex = 13;
             // 
             // btnHuy
@@ -122,7 +149,7 @@
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(762, 368);
+            this.btnHuy.Location = new System.Drawing.Point(762, 606);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(205, 48);
             this.btnHuy.TabIndex = 12;
@@ -137,7 +164,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(539, 368);
+            this.btnThem.Location = new System.Drawing.Point(532, 606);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(205, 48);
             this.btnThem.TabIndex = 11;
@@ -188,30 +215,51 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "THÊM ĐOÀN DU LỊCH";
             // 
-            // label5
+            // txtKhachSan
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(17, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 19);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "TÊN ĐOÀN DU LỊCH";
+            this.txtKhachSan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtKhachSan.Location = new System.Drawing.Point(233, 365);
+            this.txtKhachSan.Multiline = true;
+            this.txtKhachSan.Name = "txtKhachSan";
+            this.txtKhachSan.Size = new System.Drawing.Size(734, 63);
+            this.txtKhachSan.TabIndex = 20;
             // 
-            // txtTenDoan
+            // label6
             // 
-            this.txtTenDoan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenDoan.Location = new System.Drawing.Point(285, 127);
-            this.txtTenDoan.Name = "txtTenDoan";
-            this.txtTenDoan.Size = new System.Drawing.Size(682, 30);
-            this.txtTenDoan.TabIndex = 18;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(17, 386);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 19);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "KHÁCH SẠN";
+            // 
+            // txtHanhTrinh
+            // 
+            this.txtHanhTrinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtHanhTrinh.Location = new System.Drawing.Point(233, 469);
+            this.txtHanhTrinh.Multiline = true;
+            this.txtHanhTrinh.Name = "txtHanhTrinh";
+            this.txtHanhTrinh.Size = new System.Drawing.Size(734, 108);
+            this.txtHanhTrinh.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(17, 476);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 19);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "HÀNH TRÌNH";
             // 
             // Gui_ThemDoanDuLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 495);
+            this.ClientSize = new System.Drawing.Size(997, 728);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_ThemDoanDuLich";
             this.Text = "Gui_ThemTour";
@@ -240,5 +288,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenDoan;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtKhachSan;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtHanhTrinh;
+        private System.Windows.Forms.Label label7;
     }
 }

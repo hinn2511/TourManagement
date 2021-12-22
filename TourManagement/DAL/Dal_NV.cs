@@ -4,7 +4,7 @@ using System.Linq;
 using TourManagement.DTO;
 namespace TourManagement.DAL
 {
-    internal class Dal_NV
+    public class Dal_NV
     {
         TourManagementDataContext context = new TourManagementDataContext();
         public List<NhanVien> LayDanhSachNV()

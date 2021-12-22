@@ -54,10 +54,18 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
                 return;
             }
 
+            if (txtHanhTrinh.Text == null || txtKhachSan == null || txtTenDoan == null)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+
             Dto_DoanDuLich doanDuLich = new Dto_DoanDuLich();
 
             doanDuLich.NgayKhoiHanh = dtNgayKhoiHanh.Value;
             doanDuLich.NgayKetThuc = dtNgayKetThuc.Value;
+            doanDuLich.HanhTrinh = txtHanhTrinh.Text;
+            doanDuLich.KhachSan = txtKhachSan.Text;
             doanDuLich.TenDoan = txtTenDoan.Text;
             doanDuLich.Tour_Id = dsTour[cbxTour.SelectedIndex].Id;
 

@@ -57,9 +57,6 @@ namespace TourManagement
     partial void InsertNhanVien(NhanVien instance);
     partial void UpdateNhanVien(NhanVien instance);
     partial void DeleteNhanVien(NhanVien instance);
-    partial void InsertNoiDungTour(NoiDungTour instance);
-    partial void UpdateNoiDungTour(NoiDungTour instance);
-    partial void DeleteNoiDungTour(NoiDungTour instance);
     partial void InsertPhanCong(PhanCong instance);
     partial void UpdatePhanCong(PhanCong instance);
     partial void DeletePhanCong(PhanCong instance);
@@ -72,7 +69,7 @@ namespace TourManagement
     #endregion
 		
 		public TourManagementDataContext() : 
-				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString1, mappingSource)
+				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -170,14 +167,6 @@ namespace TourManagement
 			get
 			{
 				return this.GetTable<NhanVien>();
-			}
-		}
-		
-		public System.Data.Linq.Table<NoiDungTour> NoiDungTours
-		{
-			get
-			{
-				return this.GetTable<NoiDungTour>();
 			}
 		}
 		
@@ -744,13 +733,15 @@ namespace TourManagement
 		
 		private System.DateTime _NgayKetThuc;
 		
+		private string _HanhTrinh;
+		
+		private string _KhachSan;
+		
 		private decimal _DoanhThu;
 		
 		private EntitySet<ChiPhi> _ChiPhis;
 		
 		private EntitySet<ChiTietDoan> _ChiTietDoans;
-		
-		private EntityRef<NoiDungTour> _NoiDungTour;
 		
 		private EntitySet<PhanCong> _PhanCongs;
 		
@@ -770,6 +761,10 @@ namespace TourManagement
     partial void OnNgayKhoiHanhChanged();
     partial void OnNgayKetThucChanging(System.DateTime value);
     partial void OnNgayKetThucChanged();
+    partial void OnHanhTrinhChanging(string value);
+    partial void OnHanhTrinhChanged();
+    partial void OnKhachSanChanging(string value);
+    partial void OnKhachSanChanged();
     partial void OnDoanhThuChanging(decimal value);
     partial void OnDoanhThuChanged();
     #endregion
@@ -778,7 +773,6 @@ namespace TourManagement
 		{
 			this._ChiPhis = new EntitySet<ChiPhi>(new Action<ChiPhi>(this.attach_ChiPhis), new Action<ChiPhi>(this.detach_ChiPhis));
 			this._ChiTietDoans = new EntitySet<ChiTietDoan>(new Action<ChiTietDoan>(this.attach_ChiTietDoans), new Action<ChiTietDoan>(this.detach_ChiTietDoans));
-			this._NoiDungTour = default(EntityRef<NoiDungTour>);
 			this._PhanCongs = new EntitySet<PhanCong>(new Action<PhanCong>(this.attach_PhanCongs), new Action<PhanCong>(this.detach_PhanCongs));
 			this._Tour = default(EntityRef<Tour>);
 			OnCreated();
@@ -888,6 +882,46 @@ namespace TourManagement
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HanhTrinh", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string HanhTrinh
+		{
+			get
+			{
+				return this._HanhTrinh;
+			}
+			set
+			{
+				if ((this._HanhTrinh != value))
+				{
+					this.OnHanhTrinhChanging(value);
+					this.SendPropertyChanging();
+					this._HanhTrinh = value;
+					this.SendPropertyChanged("HanhTrinh");
+					this.OnHanhTrinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KhachSan", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string KhachSan
+		{
+			get
+			{
+				return this._KhachSan;
+			}
+			set
+			{
+				if ((this._KhachSan != value))
+				{
+					this.OnKhachSanChanging(value);
+					this.SendPropertyChanging();
+					this._KhachSan = value;
+					this.SendPropertyChanged("KhachSan");
+					this.OnKhachSanChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoanhThu", DbType="Decimal(18,0) NOT NULL")]
 		public decimal DoanhThu
 		{
@@ -931,35 +965,6 @@ namespace TourManagement
 			set
 			{
 				this._ChiTietDoans.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DoanDuLich_NoiDungTour", Storage="_NoiDungTour", ThisKey="Id", OtherKey="DoanDuLich_Id", IsUnique=true, IsForeignKey=false)]
-		public NoiDungTour NoiDungTour
-		{
-			get
-			{
-				return this._NoiDungTour.Entity;
-			}
-			set
-			{
-				NoiDungTour previousValue = this._NoiDungTour.Entity;
-				if (((previousValue != value) 
-							|| (this._NoiDungTour.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NoiDungTour.Entity = null;
-						previousValue.DoanDuLich = null;
-					}
-					this._NoiDungTour.Entity = value;
-					if ((value != null))
-					{
-						value.DoanDuLich = this;
-					}
-					this.SendPropertyChanged("NoiDungTour");
-				}
 			}
 		}
 		
@@ -1839,181 +1844,6 @@ namespace TourManagement
 		{
 			this.SendPropertyChanging();
 			entity.NhanVien = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NoiDungTour")]
-	public partial class NoiDungTour : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DoanDuLich_Id;
-		
-		private string _HanhTrinh;
-		
-		private string _KhachSan;
-		
-		private string _DiaDiem;
-		
-		private EntityRef<DoanDuLich> _DoanDuLich;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDoanDuLich_IdChanging(int value);
-    partial void OnDoanDuLich_IdChanged();
-    partial void OnHanhTrinhChanging(string value);
-    partial void OnHanhTrinhChanged();
-    partial void OnKhachSanChanging(string value);
-    partial void OnKhachSanChanged();
-    partial void OnDiaDiemChanging(string value);
-    partial void OnDiaDiemChanged();
-    #endregion
-		
-		public NoiDungTour()
-		{
-			this._DoanDuLich = default(EntityRef<DoanDuLich>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoanDuLich_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int DoanDuLich_Id
-		{
-			get
-			{
-				return this._DoanDuLich_Id;
-			}
-			set
-			{
-				if ((this._DoanDuLich_Id != value))
-				{
-					if (this._DoanDuLich.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDoanDuLich_IdChanging(value);
-					this.SendPropertyChanging();
-					this._DoanDuLich_Id = value;
-					this.SendPropertyChanged("DoanDuLich_Id");
-					this.OnDoanDuLich_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HanhTrinh", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string HanhTrinh
-		{
-			get
-			{
-				return this._HanhTrinh;
-			}
-			set
-			{
-				if ((this._HanhTrinh != value))
-				{
-					this.OnHanhTrinhChanging(value);
-					this.SendPropertyChanging();
-					this._HanhTrinh = value;
-					this.SendPropertyChanged("HanhTrinh");
-					this.OnHanhTrinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KhachSan", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string KhachSan
-		{
-			get
-			{
-				return this._KhachSan;
-			}
-			set
-			{
-				if ((this._KhachSan != value))
-				{
-					this.OnKhachSanChanging(value);
-					this.SendPropertyChanging();
-					this._KhachSan = value;
-					this.SendPropertyChanged("KhachSan");
-					this.OnKhachSanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaDiem", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string DiaDiem
-		{
-			get
-			{
-				return this._DiaDiem;
-			}
-			set
-			{
-				if ((this._DiaDiem != value))
-				{
-					this.OnDiaDiemChanging(value);
-					this.SendPropertyChanging();
-					this._DiaDiem = value;
-					this.SendPropertyChanged("DiaDiem");
-					this.OnDiaDiemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DoanDuLich_NoiDungTour", Storage="_DoanDuLich", ThisKey="DoanDuLich_Id", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public DoanDuLich DoanDuLich
-		{
-			get
-			{
-				return this._DoanDuLich.Entity;
-			}
-			set
-			{
-				DoanDuLich previousValue = this._DoanDuLich.Entity;
-				if (((previousValue != value) 
-							|| (this._DoanDuLich.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DoanDuLich.Entity = null;
-						previousValue.NoiDungTour = null;
-					}
-					this._DoanDuLich.Entity = value;
-					if ((value != null))
-					{
-						value.NoiDungTour = this;
-						this._DoanDuLich_Id = value.Id;
-					}
-					else
-					{
-						this._DoanDuLich_Id = default(int);
-					}
-					this.SendPropertyChanged("DoanDuLich");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	

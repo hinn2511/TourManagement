@@ -36,7 +36,10 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
             doanDuLichGridView.Columns["TenDoan"].HeaderText = "Tên đoàn du lịch";
             doanDuLichGridView.Columns["TenTour"].HeaderText = "Tên tour";
             doanDuLichGridView.Columns["Tour_Id"].Visible = false;
+            doanDuLichGridView.Columns["HanhTrinh"].Visible = false;
+            doanDuLichGridView.Columns["KhachSan"].Visible = false;
             doanDuLichGridView.Columns["DoanhThu"].HeaderText = "Doanh thu (VNĐ)";
+            doanDuLichGridView.Columns["ChiPhi"].HeaderText = "Chi phí (VNĐ)";
             doanDuLichGridView.Columns["NgayKhoiHanh"].HeaderText = "Ngày khởi hành";
             doanDuLichGridView.Columns["NgayKetThuc"].HeaderText = "Ngày kết thúc";
             doanDuLichGridView.Columns["NgayKhoiHanh"].DefaultCellStyle.Format = "dd/MM/yyyy";
@@ -146,7 +149,7 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
                 return;
             }
 
-            Gui_ChiTietDoan chiTietTourForm = new Gui_ChiTietDoan(dsDoanDuLich[currentIndex]);
+            Gui_ChiTietDoanDuLich chiTietTourForm = new Gui_ChiTietDoanDuLich(dsDoanDuLich[currentIndex]);
             chiTietTourForm.ShowDialog();
         }
     }

@@ -46,32 +46,7 @@ namespace TourManagement.BUS
             return result;
         }
 
-        public bool SuaLichTrinhThamQuan(Dto_ThamQuan thamQuan, int thuTuMoi)
-        {
-
-
-            Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
-
-            var thamQuan1 = dal_ThamQuan.ChiTietThamQuanTheoThuTu(thamQuan.Tour_Id, thuTuMoi);
-
-            if (thamQuan1 != null)
-            {
-                thamQuan1.ThuTu = thamQuan.ThuTu;
-                if (dal_ThamQuan.CapNhatThamQuan(thamQuan1))
-                {
-                    var thamQuan2 = dal_ThamQuan.ChiTietThamQuanTheoDiaDiem(thamQuan.Tour_Id, thamQuan.DiaDiem_Id);
-                    if (thamQuan2 != null)
-                    {
-                        thamQuan2.ThuTu = thuTuMoi;
-                        if (dal_ThamQuan.CapNhatThamQuan(thamQuan2))
-                            return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        public bool SuaLichTrinhThamQuanWeb(Dto_ThamQuan thamQuan)
+        public bool SuaLichTrinhThamQuan(Dto_ThamQuan thamQuan)
         {
             Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
 

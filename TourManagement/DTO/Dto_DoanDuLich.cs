@@ -10,6 +10,8 @@ namespace TourManagement.DTO
         public int Tour_Id { get; set; }
         public DateTime NgayKhoiHanh { get; set; }
         public DateTime NgayKetThuc { get; set; }
+        public string HanhTrinh { get; set; }
+        public string KhachSan { get; set; }
         public decimal DoanhThu { get; set; }
         public decimal ChiPhi { get; set; }
     }

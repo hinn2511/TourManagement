@@ -42,7 +42,7 @@ namespace TourManagement.GUI.GiaoDienThamQuan
             }
             Bus_ThamQuan bus = new Bus_ThamQuan();
             thamQuan.ThuTu = (int)cbxThuTu.SelectedItem;
-            if (bus.SuaLichTrinhThamQuanWeb(thamQuan))
+            if (bus.SuaLichTrinhThamQuan(thamQuan))
             {
                 MessageBox.Show("Đã cập nhật lịch trình thành công", "Thành công", MessageBoxButtons.OK);
             }

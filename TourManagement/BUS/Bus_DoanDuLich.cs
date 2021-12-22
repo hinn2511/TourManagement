@@ -40,6 +40,8 @@ namespace TourManagement.BUS
             doan.NgayKetThuc = dto.NgayKetThuc;
             doan.NgayKhoiHanh = dto.NgayKhoiHanh;
             doan.Tour_Id = dto.Tour_Id;
+            doan.HanhTrinh = dto.HanhTrinh;
+            doan.KhachSan = dto.KhachSan;
             return doan;
         }
 
