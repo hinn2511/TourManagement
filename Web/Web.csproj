@@ -154,6 +154,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ThongKeController.cs" />
+    <Compile Include="Controllers\DoanDuLichController.cs" />
     <Compile Include="Controllers\ChiPhiController.cs" />
     <Compile Include="Controllers\DiaDiemController.cs" />
     <Compile Include="Controllers\GiaTourController.cs" />
@@ -214,6 +216,15 @@
     <Content Include="Views\Tour\Edit.cshtml" />
     <Content Include="Views\Tour\Detail.cshtml" />
     <Content Include="Views\GiaTour\Index.cshtml" />
+    <Content Include="Views\DoanDuLich\Create.cshtml" />
+    <Content Include="Views\DoanDuLich\Delete.cshtml" />
+    <Content Include="Views\DoanDuLich\Edit.cshtml" />
+    <Content Include="Views\DoanDuLich\Index.cshtml" />
+    <Content Include="Views\DoanDuLich\Detail.cshtml" />
+    <Content Include="Views\ThongKe\Index.cshtml" />
+    <Content Include="Views\ThongKe\Loinhuan.cshtml" />
+    <Content Include="Views\ThongKe\Chiphi.cshtml" />
+    <Content Include="Views\ThongKe\Nhanvien.cshtml" />
     <Content Include="Views\ChiPhi\Create.cshtml" />
     <Content Include="Views\ChiPhi\Delete.cshtml" />
     <Content Include="Views\ChiPhi\Edit.cshtml" />

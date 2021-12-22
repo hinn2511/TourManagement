@@ -1,0 +1,32 @@
+﻿@model TourManagement.DoanDuLich
+
+@{
+    ViewBag.Title = "Xóa đoàn du lịch";
+}
+
+<h2>Xóa đoàn du lịch</h2>
+
+<h3>Bạn có chắc muốn xóa đoàn du lịch này?</h3>
+<div>
+    <h4>Đoàn du lịch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên đoàn du lịch
+        </dt>
+ 
+        <dd>
+            @Model.TenDoanDuLich
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về danh sách", "Index")
+        </div>
+    }
+</div>

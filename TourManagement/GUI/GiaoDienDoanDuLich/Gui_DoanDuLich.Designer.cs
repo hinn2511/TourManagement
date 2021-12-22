@@ -288,6 +288,7 @@
             this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChiTiet.UseVisualStyleBackColor = false;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
             // btnThem
             // 

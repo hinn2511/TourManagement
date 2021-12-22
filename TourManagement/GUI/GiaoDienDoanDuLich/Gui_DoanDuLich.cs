@@ -137,5 +137,17 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
             loaiChiPhiForm.ShowDialog();
             CapNhatDanhSachDoanDuLich();
         }
+
+        private void btnChiTiet_Click(object sender, System.EventArgs e)
+        {
+            if (currentIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn đoàn du lịch cần xem chi tiết", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+
+            Gui_ChiTietDoan chiTietTourForm = new Gui_ChiTietDoan(dsDoanDuLich[currentIndex]);
+            chiTietTourForm.ShowDialog();
+        }
     }
 }
