@@ -217,11 +217,10 @@
     <Content Include="Views\DoanDuLich\Edit.cshtml" />
     <Content Include="Views\DoanDuLich\Index.cshtml" />
     <Content Include="Views\DoanDuLich\Detail.cshtml" />
-    <Content Include="Views\ThongKe\Create.cshtml" />
-    <Content Include="Views\ThongKe\Delete.cshtml" />
-    <Content Include="Views\ThongKe\Detail.cshtml" />
-    <Content Include="Views\ThongKe\Edit.cshtml" />
     <Content Include="Views\ThongKe\Index.cshtml" />
+    <Content Include="Views\ThongKe\Loinhuan.cshtml" />
+    <Content Include="Views\ThongKe\Chiphi.cshtml" />
+    <Content Include="Views\ThongKe\Nhanvien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

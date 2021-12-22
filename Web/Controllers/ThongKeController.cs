@@ -8,83 +8,83 @@ using TourManagement.DAL;
 using TourManagement.BUS;
 using TourManagement.DTO;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace Web.Controllers
 {
-    public class DoanDuLichController : Controller
+    public class ThongKeController : Controller
     {
-        Bus_DoanDuLich bus = new Bus_DoanDuLich();
+        Bus_ThongKe bus = new Bus_ThongKe();
         Dto_Tour currentTour;
 
-        // GET: Doan Du Lich
+        List<Dto_ThongKeLoiNhuanTour> dsThongKeLoiNhuanTour = new List<Dto_ThongKeLoiNhuanTour>();
+
+        CultureInfo provider = new CultureInfo("en-US");
+
+
+
         public ActionResult Index(String searchString)
-        {
-            var dsDoanDuLich = bus.LayDanhSachDoanDuLich();
-           
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                dsDoanDuLich = bus.TimKiemDoanDuLich(dsDoanDuLich, searchString);
-            }
-            return View(dsDoanDuLich);
-        }
-        [HttpGet]
-        public ActionResult Create()
         {
             return View();
         }
 
-        public ActionResult Create(TourManagement.DTO.Dto_DoanDuLich doanDuLich)
+        // Thống kê lợi nhuận
+        [HttpGet]
+        public ActionResult Loinhuan()
         {
-            if (string.IsNullOrEmpty(doanDuLich.TenDoan))
+            DateTime dtTuNgayDe = DateTime.Parse("01/01/2021", provider, DateTimeStyles.AdjustToUniversal);
+            DateTime dtDenNgayDe = DateTime.Parse("01/12/2021", provider, DateTimeStyles.AdjustToUniversal);
+            
+            dsThongKeLoiNhuanTour = bus.LayKetQuaThongKeLoiNhuan(1, dtTuNgayDe, dtDenNgayDe);
+            
+            return View(dsThongKeLoiNhuanTour);
+        }
+
+        public ActionResult thongKeLoiNhuan(String tourId, String tuNgay, String denNgay)
+        {
+            if (string.IsNullOrEmpty(tourId) || string.IsNullOrEmpty(tuNgay) || string.IsNullOrEmpty(denNgay))
             {
                 ViewBag.Error = "Vui lòng nhập đầy đủ thông tin";
-                return View(doanDuLich);
+                return View(dsThongKeLoiNhuanTour);
             }
             else
             {
-                bus.ThemDoanDuLich(doanDuLich);
-                return RedirectToAction("Index");
+                // convert string to Datetime
+                DateTime dtTuNgay = DateTime.Parse(tuNgay, provider, DateTimeStyles.AdjustToUniversal);
+                DateTime dtDenNgay = DateTime.Parse(denNgay, provider, DateTimeStyles.AdjustToUniversal);
+
+
+                dsThongKeLoiNhuanTour = bus.LayKetQuaThongKeLoiNhuan(Int16.Parse(tourId), dtTuNgay, dtDenNgay);
+                return RedirectToAction("Loinhuan");
             }
+
         }
 
-        public ActionResult Edit(int id)
+        // Thống kê chi phi
+        [HttpGet]
+        public ActionResult Chiphi()
         {
-            var chiTiet = bus.LayThongTinDoanDuLich(id);
-            return View(chiTiet);
-        }
-        [HttpPost]
-        public ActionResult Edit(int id, TourManagement.DTO.Dto_DoanDuLich doanDuLich)
-        {
-            if (string.IsNullOrEmpty(doanDuLich.TenDoan))
-            {
-                ViewBag.Error = "Vui lòng nhập đầy đủ thông tin";
-                return View(doanDuLich);
-            }
-            else
-            {
-                bus.CapNhatDoanDuLich(doanDuLich);
-                return RedirectToAction("Index");
-            }
+            return View();
         }
 
-        public ActionResult Delete(int id)
+        public ActionResult Chiphi(TourManagement.DTO.Dto_ThongKeChiPhiTour chiPhi)
         {
-            var chiTiet = bus.LayThongTinDoanDuLich(id);
-            return View(chiTiet);
-        }
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection formCollection)
-        {
-            bus.XoaDoanDuLich(id);
-            return RedirectToAction("Index");
+            return View();
+
         }
 
-        public ActionResult Detail(int id)
+        // Thống kê nhan vien
+        [HttpGet]
+        public ActionResult Nhanvien()
         {
-            Bus_ChiTietDoan bus = new Bus_ChiTietDoan();
-            List<Dto_ChiTietDoan> model = new List<Dto_ChiTietDoan>();
-            model = bus.LayDanhSachChiTietDoan(id);
-            return View(model);
+            return View();
         }
+
+        public ActionResult Nhanvien(TourManagement.DTO.Dto_ThongKePhanCongNV nhanVien)
+        {
+            return View();
+
+        }
+
     }
 }

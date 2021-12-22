@@ -47,6 +47,19 @@ namespace TourManagement.GUI.GiaoDienThongKe
             decimal tongChiPhi = bus.TinhTongChiPhi(dsThongKeLoiNhuanTour);
             decimal tongLoiNhuan = bus.TinhTongLoiNhuan(tongDoanhThu, tongChiPhi);
 
+            if (dsThongKeLoiNhuanTour == null)
+            {
+                Console.WriteLine("Null !!!");
+            }
+            else
+            {
+                Console.WriteLine("Not Null !!!");
+                foreach (var author in dsThongKeLoiNhuanTour)
+                {
+                    Console.WriteLine(author);
+                }
+            }
+
             txtDoanhThu.Text = tongDoanhThu.ToString();
             txtChiPhi.Text = tongChiPhi.ToString();
             txtLoiNhuan.Text = tongLoiNhuan.ToString();
