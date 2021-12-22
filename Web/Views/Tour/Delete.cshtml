@@ -1,24 +1,37 @@
-﻿@model TourManagement.LoaiTour
+﻿@model TourManagement.DTO.Dto_Tour
 
 @{
-    ViewBag.Title = "Xóa loại tour";
+    ViewBag.Title = "Xóa tour du lịch";
 }
 
-<h2>Xóa loại tour</h2>
+<h2>Xóa</h2>
 
-<h3>Bạn có chắc muốn xóa loại tour này?</h3>
+<h3>Bạn có chắc muốn xóa tour du lịch này?</h3>
 <div>
-    <h4>Loại tour</h4>
+    <h4>Tour du lịch: @Model.TenTour</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tên loại tour
+            Mã tour
         </dt>
 
         <dd>
-            @Model.TenLoai
+            @Model.Id
         </dd>
+        <dt>
+            Tên tour
+        </dt>
+        <dd>
+            @Model.TenTour
+        </dd>
+        <dt>
+            Đặc điểm
+        </dt>
 
+        <dd>
+            @Model.DacDiem
+        </dd>
+        
     </dl>
 
     @using (Html.BeginForm()) {

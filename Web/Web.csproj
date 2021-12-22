@@ -154,9 +154,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChiPhiController.cs" />
+    <Compile Include="Controllers\DiaDiemController.cs" />
     <Compile Include="Controllers\GiaTourController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiChiPhiController.cs" />
     <Compile Include="Controllers\LoaiTourController.cs" />
+    <Compile Include="Controllers\ThamQuanController.cs" />
     <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -210,6 +214,25 @@
     <Content Include="Views\Tour\Edit.cshtml" />
     <Content Include="Views\Tour\Detail.cshtml" />
     <Content Include="Views\GiaTour\Index.cshtml" />
+    <Content Include="Views\ChiPhi\Create.cshtml" />
+    <Content Include="Views\ChiPhi\Delete.cshtml" />
+    <Content Include="Views\ChiPhi\Edit.cshtml" />
+    <Content Include="Views\ChiPhi\Index.cshtml" />
+    <Content Include="Views\DiaDiem\Create.cshtml" />
+    <Content Include="Views\DiaDiem\Delete.cshtml" />
+    <Content Include="Views\DiaDiem\Edit.cshtml" />
+    <Content Include="Views\DiaDiem\Index.cshtml" />
+    <Content Include="Views\LoaiChiPhi\Create.cshtml" />
+    <Content Include="Views\LoaiChiPhi\Delete.cshtml" />
+    <Content Include="Views\LoaiChiPhi\Edit.cshtml" />
+    <Content Include="Views\LoaiChiPhi\Index.cshtml" />
+    <Content Include="Views\ThamQuan\Index.cshtml" />
+    <Content Include="Views\GiaTour\Create.cshtml" />
+    <Content Include="Views\GiaTour\Edit.cshtml" />
+    <Content Include="Views\GiaTour\Delete.cshtml" />
+    <Content Include="Views\ThamQuan\Create.cshtml" />
+    <Content Include="Views\ThamQuan\Edit.cshtml" />
+    <Content Include="Views\ThamQuan\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

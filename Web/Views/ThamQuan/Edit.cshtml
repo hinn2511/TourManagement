@@ -1,0 +1,55 @@
+﻿@model TourManagement.DTO.Dto_ThamQuan
+
+@{
+    ViewBag.Title = "Sửa lịch trình tham quan";
+}
+
+<h2>Cập nhật</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Tour du lịch: @ViewBag.TenTour</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.DiaDiem_Id)
+    @Html.HiddenFor(model => model.Tour_Id)
+
+    <div class="form-group">
+        <div class="col-md-2">Tour du lịch</div>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.TenTour, new { htmlAttributes = new { @class = "form-control"} })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2">Địa điểm</div>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.TenDiaDiem, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2">Thứ tự</div>
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ThuTu, ViewBag.dsThuTu as SelectList, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @if (ViewBag.Error != null)
+            {
+                <h5 style="color:red">@ViewBag.Error</h5>
+            }
+            <input type="submit" value="Lưu" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Trở về danh sách lịch trình", "Index/" + Model.Tour_Id, "ThamQuan")
+</div>

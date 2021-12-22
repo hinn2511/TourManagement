@@ -57,11 +57,12 @@
                 @Html.DisplayFor(modelItem => (item.Gia))
             </td>
             <td>
-                @Html.ActionLink("Quản lý giá", "Index/" + @item.Id, "GiaTour", @item.Id, item)  |
-                        @Html.ActionLink("Chi tiết", "Detail/" + @item.Id, @item.Id, item)  |
-                        @Html.ActionLink("Sửa", "Edit/" + @item.Id, @item.Id, item)  |
-                        @Html.ActionLink("Xóa", "Delete/" + @item.Id, @item.Id, item)
-                    </td>
+                @Html.ActionLink("Giá", "Index/" + @item.Id, "GiaTour", @item.Id, item)  |
+                @Html.ActionLink("Lịch trình tham quan", "Index/" + @item.Id, "ThamQuan", @item.Id, item)  |
+                @Html.ActionLink("Chi tiết", "Detail/" + @item.Id, @item.Id, item)  |
+                @Html.ActionLink("Sửa", "Edit/" + @item.Id, @item.Id, item)  |
+                @Html.ActionLink("Xóa", "Delete/" + @item.Id, @item.Id, item)
+            </td>
         </tr>
         }
     </tbody>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using TourManagement.DAL;
 using TourManagement.DTO;
@@ -7,14 +8,25 @@ namespace TourManagement.BUS
 {
     public class Bus_ThamQuan
     {
-        public List<Dto_Tour> LayDanhSachTour()
+
+        public string LayTenTour(int tourId)
         {
             Dal_Tour dal_tour = new Dal_Tour();
 
-            var result = dal_tour.LayDanhSachTour();
+            var result = dal_tour.ChiTietTour(tourId).TenTour;
 
             return result;
         }
+
+        public Dto_ThamQuan ChiTietThamQuan(int tourId, int diadiemId)
+        {
+            Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
+
+            var result = dal_ThamQuan.ChiTietThamQuanTheoDiaDiem(tourId, diadiemId);
+
+            return convertToDto(result);
+        }
+
 
         public List<Dto_ThamQuan> LayDanhSachThamQuan(int tourId)
         {
@@ -37,6 +49,7 @@ namespace TourManagement.BUS
         public bool SuaLichTrinhThamQuan(Dto_ThamQuan thamQuan, int thuTuMoi)
         {
 
+
             Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
 
             var thamQuan1 = dal_ThamQuan.ChiTietThamQuanTheoThuTu(thamQuan.Tour_Id, thuTuMoi);
@@ -53,6 +66,28 @@ namespace TourManagement.BUS
                         if (dal_ThamQuan.CapNhatThamQuan(thamQuan2))
                             return true;
                     }
+                }
+            }
+            return false;
+        }
+
+        public bool SuaLichTrinhThamQuanWeb(Dto_ThamQuan thamQuan)
+        {
+            Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
+
+            var thamQuanHienTai = dal_ThamQuan.ChiTietThamQuanTheoDiaDiem(thamQuan.Tour_Id, thamQuan.DiaDiem_Id);
+            int thuTuCu = thamQuanHienTai.ThuTu;
+            var thamQuanCanDoi = dal_ThamQuan.ChiTietThamQuanTheoThuTu(thamQuan.Tour_Id, thamQuan.ThuTu);
+
+            if (thamQuanHienTai != null && thamQuanCanDoi != null)
+            {
+                thamQuanHienTai.ThuTu = thamQuan.ThuTu;
+                if (dal_ThamQuan.CapNhatThamQuan(thamQuanHienTai))
+                {
+
+                    thamQuanCanDoi.ThuTu = thuTuCu;
+                    if (dal_ThamQuan.CapNhatThamQuan(thamQuanCanDoi))
+                        return true;
                 }
             }
             return false;
@@ -76,7 +111,7 @@ namespace TourManagement.BUS
             return dsConLai;
         }
 
-        public bool ThemThamQuan(ThamQuan thamQuan)
+        public bool ThemThamQuan(Dto_ThamQuan thamQuan)
         {
             Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
 
@@ -84,24 +119,26 @@ namespace TourManagement.BUS
 
             thamQuan.ThuTu = soLuongHienTai + 1;
 
-            if (dal_ThamQuan.ThemThamQuan(thamQuan))
+            if (dal_ThamQuan.ThemThamQuan(convertToEntity(thamQuan)))
                 return true;
 
             return false;
 
         }
 
-        public bool XoaThamQuan(Dto_ThamQuan thamQuan)
+        public bool XoaThamQuan(int tourId, int diaDiemId)
         {
             Dal_ThamQuan dal_ThamQuan = new Dal_ThamQuan();
 
-            int soLuongHienTai = dal_ThamQuan.SoLuongDiaDiemThamQuan(thamQuan.Tour_Id);
+            var chiTietThamQuan = ChiTietThamQuan(tourId, diaDiemId);
 
-            List<Dto_ThamQuan> dsThamQuan = dal_ThamQuan.LayDanhSachThamQuan(thamQuan.Tour_Id);
+            int soLuongHienTai = dal_ThamQuan.SoLuongDiaDiemThamQuan(chiTietThamQuan.Tour_Id);
 
-            if (thamQuan.ThuTu != soLuongHienTai)
+            List<Dto_ThamQuan> dsThamQuan = dal_ThamQuan.LayDanhSachThamQuan(chiTietThamQuan.Tour_Id);
+
+            if (chiTietThamQuan.ThuTu != soLuongHienTai)
             {
-                for (int i = thamQuan.ThuTu - 1; i < soLuongHienTai; i++)
+                for (int i = chiTietThamQuan.ThuTu - 1; i < soLuongHienTai; i++)
                 {
                     ThamQuan tq = new ThamQuan();
                     tq.Tour_Id = dsThamQuan[i].Tour_Id;
@@ -112,11 +149,31 @@ namespace TourManagement.BUS
                 }
             }
 
-            if (dal_ThamQuan.XoaThamQuan(thamQuan.Tour_Id, thamQuan.DiaDiem_Id))
+            if (dal_ThamQuan.XoaThamQuan(chiTietThamQuan.Tour_Id, chiTietThamQuan.DiaDiem_Id))
                 return true;
 
             return false;
 
+        }
+
+        public ThamQuan convertToEntity(Dto_ThamQuan dto)
+        {
+            ThamQuan tq = new ThamQuan();
+            tq.Tour_Id = dto.Tour_Id;
+            tq.DiaDiem_Id = dto.DiaDiem_Id;
+            tq.ThuTu = dto.ThuTu;
+            return tq;
+        }
+
+        public Dto_ThamQuan convertToDto(ThamQuan thamQuan)
+        {
+            Dto_ThamQuan dto = new Dto_ThamQuan();
+            dto.Tour_Id = thamQuan.Tour_Id;
+            dto.DiaDiem_Id = thamQuan.DiaDiem_Id;
+            dto.ThuTu = thamQuan.ThuTu;
+            dto.TenTour = thamQuan.Tour.TenTour;
+            dto.TenDiaDiem = thamQuan.DiaDiem.TenDiaDiem;
+            return dto;
         }
     }
 }

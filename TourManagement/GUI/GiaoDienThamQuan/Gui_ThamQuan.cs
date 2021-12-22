@@ -64,7 +64,7 @@ namespace TourManagement.GUI.GiaoDienThamQuan
             }
             Bus_ThamQuan bus = new Bus_ThamQuan();
             dsThamQuan = bus.LayDanhSachThamQuan(currentTour.Id);
-            if (bus.XoaThamQuan(dsThamQuan[currentIndex]))
+            if (bus.XoaThamQuan(dsThamQuan[currentIndex].Tour_Id, dsThamQuan[currentIndex].DiaDiem_Id))
             {
                 MessageBox.Show("Xóa lịch trình tham quan thành công", "Thành công", MessageBoxButtons.OK);
                 CapNhatDanhSachThamQuan();

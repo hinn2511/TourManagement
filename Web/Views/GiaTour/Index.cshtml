@@ -3,14 +3,23 @@
 @{
     ViewBag.Title = "Danh sách giá tour";
 }
-
-<h2>Index</h2>
+<p style="padding:20px 0px;">
+    @Html.ActionLink("< Trở về danh sách tour du lịch", "Index/", "Tour")
+</p>
+<h2>Giá tour</h2>
+<p>
+    Tour du lịch: @ViewBag.TenTour
+</p>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm giá mới", "Create", new { id = ViewBag.TourId })
 </p>
+
 <table class="table">
     <tr>
+        <th>
+            Mã giá
+        </th>
         <th>
             Ngày bắt đầu
         </th>
@@ -23,29 +32,34 @@
         <th>
             Đang áp dụng
         </th>
-        <th></th>
+        <th>
+            Hành động
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayBatDau)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayKetThuc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DangApDung)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.ValueFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.ValueFor(modelItem => item.NgayBatDau, "{0:dd/MM/yyyy}")
+    </td>
+    <td>
+        @Html.ValueFor(modelItem => item.NgayKetThuc, "{0:dd/MM/yyyy}")
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DangApDung)
+    </td>
+    <td>
+        @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
+    </td>
+</tr>
+    }
 
 </table>

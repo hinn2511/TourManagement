@@ -1,92 +1,115 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TourManagement.BUS;
+using TourManagement.DTO;
 
 namespace Web.Controllers
 {
     public class GiaTourController : Controller
     {
         Bus_GiaTour bus = new Bus_GiaTour();
-        // GET: GiaTour
+
         public ActionResult Index(int id)
         {
             var dsGia = bus.LayDanhSachGiaTour(id);
+            ViewBag.TenTour = bus.LayTenTour(id);
+            ViewBag.TourId = id;
             return View(dsGia);
         }
 
-        // GET: GiaTour/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Create(int id)
         {
-            return View();
+            ViewBag.TenTour = bus.LayTenTour(id);
+            Dto_GiaTour gia = new Dto_GiaTour();
+            gia.Tour_Id = id;
+            return View(gia);
         }
 
-        // GET: GiaTour/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: GiaTour/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Dto_GiaTour dto_GiaTour)
         {
-            try
+            if (!bus.KiemTraNgayGiaTour(dto_GiaTour.Tour_Id, dto_GiaTour.NgayBatDau, dto_GiaTour.NgayKetThuc))
             {
-                // TODO: Add insert logic here
+                ViewBag.Error = "Đã tồn tại giá tour trong khoảng thời gian từ " + dto_GiaTour.NgayBatDau.ToShortDateString() + " đến " + dto_GiaTour.NgayKetThuc.ToShortDateString();
+                return View(dto_GiaTour);
+            } 
+                
+            if (dto_GiaTour.NgayBatDau > dto_GiaTour.NgayKetThuc)
+            {
 
-                return RedirectToAction("Index");
+                ViewBag.Error = "Ngày áp dụng không hợp lệ";
+                return View(dto_GiaTour);
             }
-            catch
+            if (dto_GiaTour.Gia <= 0)
             {
-                return View();
+
+                ViewBag.Error = "Giá tour không hợp lệ";
+                return View(dto_GiaTour);
             }
+            
+            bus.ThemGiaTour(dto_GiaTour);
+            return RedirectToAction("Index", "GiaTour", new { id = dto_GiaTour.Tour_Id });
+            
         }
 
-        // GET: GiaTour/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var chiTietGiaTour = bus.ChiTietGiaTour(id);
+            ViewBag.TenTour = bus.LayTenTour(chiTietGiaTour.Tour_Id);
+            return View(chiTietGiaTour);
         }
 
-        // POST: GiaTour/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Dto_GiaTour dto_GiaTour)
         {
-            try
+            if (dto_GiaTour.Gia <= 0)
             {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                ViewBag.Error = "Giá tour không hợp lệ";
+                return View(dto_GiaTour);
             }
-            catch
+            if (dto_GiaTour.NgayBatDau >= dto_GiaTour.NgayKetThuc)
             {
-                return View();
+
+                ViewBag.Error = "Ngày áp dụng không hợp lệ";
+                return View(dto_GiaTour);
             }
+            bus.SuaGiaTour(dto_GiaTour);
+            return RedirectToAction("Index", "GiaTour", new { id = dto_GiaTour.Tour_Id });
+
+
         }
 
-        // GET: GiaTour/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var chiTietGiaTour = bus.ChiTietGiaTour(id);
+            ViewBag.TenTour = bus.LayTenTour(chiTietGiaTour.Tour_Id);
+            return View(chiTietGiaTour);
         }
 
-        // POST: GiaTour/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            var chiTietGiaTour = bus.ChiTietGiaTour(id);
+            if (chiTietGiaTour.DangApDung)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                ViewBag.Error = "Không thể xóa giá tour đang áp dụng";
+                ViewBag.TenTour = bus.LayTenTour(chiTietGiaTour.Tour_Id);
+                return View(chiTietGiaTour);
             }
-            catch
+            DateTime now = DateTime.Now;
+            if (chiTietGiaTour.NgayKetThuc < now)
             {
-                return View();
+                ViewBag.Error = "Không thể xóa giá tour đã áp dụng";
+                ViewBag.TenTour = bus.LayTenTour(chiTietGiaTour.Tour_Id);
+                return View(chiTietGiaTour); 
             }
+            bus.XoaGiaTour(id);
+            return RedirectToAction("Index", "GiaTour", new { id = chiTietGiaTour.Tour_Id });
         }
     }
 }

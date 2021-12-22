@@ -78,5 +78,19 @@ namespace Web.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        public ActionResult Delete(int id)
+        {
+            var chiTiet = bus.LayThongTinTour(id);
+            return View(bus.convertToDto(chiTiet));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection formCollection)
+        {
+            bus.XoaTour(id);
+            return RedirectToAction("Index");
+
+        }
     }
 }

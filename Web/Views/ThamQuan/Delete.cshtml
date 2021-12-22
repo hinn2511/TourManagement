@@ -1,0 +1,48 @@
+﻿@model TourManagement.DTO.Dto_ThamQuan
+
+@{
+    ViewBag.Title = "Xóa giá tour";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa lịch trình tham quan này?</h3>
+<div>
+    <h4>Tour du lịch: @ViewBag.TenTour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Địa điểm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDiaDiem)
+        </dd>
+
+        <dt>
+            Thứ tự
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThuTu)
+        </dd>
+
+ 
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    @if (ViewBag.Error != null)
+    {
+        <h5 style="color:red">@ViewBag.Error</h5>
+    }
+    <input type="submit" value="Xóa" class="btn btn-default" /> |
+    @Html.ActionLink("Trở về danh sách lịch trình tham quan", "Index/" + Model.Tour_Id, "ThamQuan")
+</div>
+    }
+</div>

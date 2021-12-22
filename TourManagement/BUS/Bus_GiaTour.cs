@@ -70,12 +70,14 @@ namespace TourManagement.BUS
 
         public Dto_GiaTour convertToDto(GiaTour giaTour)
         {
+            DateTime now = DateTime.Now;
             Dto_GiaTour dto = new Dto_GiaTour();
             dto.Id = giaTour.Id;
             dto.NgayBatDau = giaTour.NgayBatDau;
             dto.NgayKetThuc = giaTour.NgayKetThuc;
             dto.Gia = giaTour.Gia;
             dto.Tour_Id = (int)giaTour.Tour_Id;
+            dto.DangApDung = giaTour.NgayBatDau <= now && giaTour.NgayKetThuc >= now ? true : false;
             return dto;
         }
 

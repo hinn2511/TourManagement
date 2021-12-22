@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using TourManagement.BUS;
 using TourManagement.DTO;
@@ -40,7 +41,8 @@ namespace TourManagement.GUI.GiaoDienThamQuan
                 return;
             }
             Bus_ThamQuan bus = new Bus_ThamQuan();
-            if (bus.SuaLichTrinhThamQuan(thamQuan, (int)cbxThuTu.SelectedItem))
+            thamQuan.ThuTu = (int)cbxThuTu.SelectedItem;
+            if (bus.SuaLichTrinhThamQuanWeb(thamQuan))
             {
                 MessageBox.Show("Đã cập nhật lịch trình thành công", "Thành công", MessageBoxButtons.OK);
             }

@@ -39,7 +39,7 @@ namespace TourManagement.GUI.GiaoDienThamQuan
                 return;
             }
 
-            ThamQuan thamQuan = new ThamQuan();
+            Dto_ThamQuan thamQuan = new Dto_ThamQuan();
             thamQuan.Tour_Id = tourThemLichTrinh.Id;
             thamQuan.DiaDiem_Id = dsDiaDiem[cbxDiaDiem.SelectedIndex].Id;
 
