@@ -77,6 +77,11 @@ namespace TourManagement.DAL
             return false;
 
         }
+        public KhachHang LayThongTinKH(int id)
+        {
+            var kh = context.KhachHangs.FirstOrDefault(t => t.Id == id);
+            return kh;
+        }
     }
 }
 

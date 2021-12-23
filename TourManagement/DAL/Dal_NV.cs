@@ -71,5 +71,11 @@ namespace TourManagement.DAL
             return false;
 
         }
+        public NhanVien LayThongTinNV(int id)
+        {
+            var nv = context.NhanViens.FirstOrDefault(t => t.Id == id);
+
+            return nv;
+        }
     }
 }

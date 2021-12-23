@@ -32,8 +32,9 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult Loinhuan()
         {
+            // MM/DD/YYYY
             DateTime dtTuNgayDe = DateTime.Parse("01/01/2021", provider, DateTimeStyles.AdjustToUniversal);
-            DateTime dtDenNgayDe = DateTime.Parse("01/12/2021", provider, DateTimeStyles.AdjustToUniversal);
+            DateTime dtDenNgayDe = DateTime.Parse("12/12/2021", provider, DateTimeStyles.AdjustToUniversal);
             
             dsThongKeLoiNhuanTour = bus.LayKetQuaThongKeLoiNhuan(1, dtTuNgayDe, dtDenNgayDe);
             
