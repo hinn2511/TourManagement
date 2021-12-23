@@ -1,11 +1,66 @@
-﻿@model TourManagement.DTO.Dto_ThongKeChiPhiTour
+﻿@model List<TourManagement.DTO.Dto_ThongKeChiPhiTour>
 
 @{
-    ViewBag.Title = "Thống kê chi phí tour";
+    ViewBag.Title = "Thống kê chi phí";
 }
 
 
 <div class="form-horizontal">
-    <h4>Thống kê chi phí tour</h4>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <h4>Thống kê chi phí</h4>
     <hr />
+
+    <form asp-action="thongKeChiPhi" method="get">
+        <div class="form-actions no-color">
+            <p>
+                <select name="tourId">
+                    @foreach (var item in ViewBag.dsTour)
+                    {
+                        <option value="@item.Id">@item.TenTour</option>
+                    }
+                </select>
+                <input type="date" name="tuNgay" />
+                <input type="date" name="denNgay" />
+                <input type="submit" value="Thống kê" class="btn btn-default"
+
+            </p>
+        </div>
+    </form>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Loại chi phí
+            </th>
+            <th>
+                Tổng tiền
+            </th>
+            
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoaiChiPhi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TongSoTien)
+                    </td>
+
+
+
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>

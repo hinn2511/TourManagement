@@ -11,13 +11,19 @@
     <h4>Thống kê lợi nhuận tour</h4>
     <hr />
 
-    <form asp-action="thongKeLoiNhuan" method="get">
+    <form asp-action="LoiNhuan" method="get">
         <div class="form-actions no-color">
             <p>
-                Mã tour: <input type="text" name="SearchString" />
-                Từ ngày: <input type="text" name="SearchString" />
-                Đến ngày: <input type="text" name="SearchString" />
-                <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+                <select name="tourId">
+                    @foreach (var item in ViewBag.dsTour)
+                    {
+                        <option value="@item.Id">@item.TenTour</option>
+                    }
+                </select>
+                <input type="date" name="tuNgay" />
+                <input type="date" name="denNgay" />
+                <input type="submit" value="Thống kê" class="btn btn-default"
+
             </p>
         </div>
     </form>
@@ -43,24 +49,28 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @if (Model != null)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenDoanDuLich)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DoanhThu)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ChiPhi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SoLuongKhach)
-                </td>
-                
-               
-            </tr>
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenDoanDuLich)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoanhThu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChiPhi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuongKhach)
+                    </td>
+
+
+                </tr>
+            }
         }
+
     </tbody>
 </table>

@@ -52,17 +52,17 @@ namespace TourManagement.GUI.GiaoDienThongKe
             txtChiPhi.Text = tongChiPhi.ToString();
             txtLoiNhuan.Text = tongLoiNhuan.ToString();
 
-            // Console.WriteLine(dtTuNgay.Value);
+            Console.WriteLine(dtTuNgay.Value);
 
 
             thongKeDoanGridView.DataSource = dsThongKeLoiNhuanTour;
             DatTenDauDanhSach();
 
-           /* if(dsThongKeLoiNhuanTour != null)
+            if (dsThongKeLoiNhuanTour != null)
             {
-                decimal tongDoanhThu = bus.TinhTongDoanhThu(dsThongKeLoiNhuanTour);
-                decimal tongChiPhi = bus.TinhTongChiPhi(dsThongKeLoiNhuanTour);
-                decimal tongLoiNhuan = bus.TinhTongLoiNhuan(tongDoanhThu, tongChiPhi);
+                tongDoanhThu = bus.TinhTongDoanhThu(dsThongKeLoiNhuanTour);
+                tongChiPhi = bus.TinhTongChiPhi(dsThongKeLoiNhuanTour);
+                tongLoiNhuan = bus.TinhTongLoiNhuan(tongDoanhThu, tongChiPhi);
 
                 txtDoanhThu.Text = tongDoanhThu.ToString();
                 txtChiPhi.Text = tongChiPhi.ToString();
@@ -70,8 +70,8 @@ namespace TourManagement.GUI.GiaoDienThongKe
 
                 thongKeDoanGridView.DataSource = dsThongKeLoiNhuanTour;
                 DatTenDauDanhSach();
-            }*/
-            
+            }
+
 
         }
 
