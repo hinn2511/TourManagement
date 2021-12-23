@@ -47,7 +47,6 @@ CREATE TABLE DoanDuLich (
     NgayKetThuc date NOT NULL,
 	HanhTrinh nvarchar(255) NOT NULL,
 	KhachSan nvarchar(255) NOT NULL,
-    DiaDiem nvarchar(255) NOT NULL,
     DoanhThu decimal(18,0) NOT NULL,
 );
 
