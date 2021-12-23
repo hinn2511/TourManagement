@@ -25,10 +25,8 @@ namespace TourManagement.GUI.GiaoDienTour
             txtTenTour.Text = t.TenTour;
             txtDacDiem.Text = t.DacDiem;
             txtLoaiTour.Text = t.LoaiTour.TenLoai;
-            GiaTour gt = bus.LayGiaTour(tour.Id);
-            txtGiaTour.Text = gt.Gia.ToString();
-            txtNgayBatDau.Text = gt.NgayBatDau.ToString();
-            txtNgayKetThuc.Text = gt.NgayKetThuc.ToString();
+           
+            
             List<Dto_ThamQuan> dsThamQuan = bus.LayLichTrinhThamQuan(tour.Id);
             thamQuanGridView.DataSource = dsThamQuan;
         }
@@ -37,9 +35,18 @@ namespace TourManagement.GUI.GiaoDienTour
         {
             Bus_Tour bus = new Bus_Tour();
             GiaTour gt = bus.LayGiaTour(tour.Id);
-            txtGiaTour.Text = gt.Gia.ToString();
-            txtNgayBatDau.Text = gt.NgayBatDau.ToShortDateString().ToString();
-            txtNgayKetThuc.Text = gt.NgayKetThuc.ToShortDateString().ToString();
+            if (gt != null)
+            {
+                txtGiaTour.Text = gt.Gia.ToString();
+                txtNgayBatDau.Text = gt.NgayBatDau.ToString();
+                txtNgayKetThuc.Text = gt.NgayKetThuc.ToString();
+            }
+            else
+            {
+                txtGiaTour.Text = "Chưa áp dụng giá";
+                txtNgayBatDau.Text = "Chưa áp dụng giá";
+                txtNgayKetThuc.Text = "Chưa áp dụng giá";
+            }
         }
 
         private void LayDanhSachThamQuanTour(Dto_Tour tour)

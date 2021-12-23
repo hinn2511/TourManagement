@@ -60,7 +60,7 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Edit(Dto_ThamQuan thamQuan)
         {
-            bus.SuaLichTrinhThamQuanWeb(thamQuan);
+            bus.SuaLichTrinhThamQuan(thamQuan);
             return RedirectToAction("Index", "ThamQuan", new { id = thamQuan.Tour_Id });
         }
 

@@ -143,6 +143,12 @@
     <Compile Include="GUI\GiaoDienDiaDiem\Gui_ThemDiaDiem.designer.cs">
       <DependentUpon>Gui_ThemDiaDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiaoDienDoanDuLich\Gui_ChiTietDoanDuLich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienDoanDuLich\Gui_ChiTietDoanDuLich.Designer.cs">
+      <DependentUpon>Gui_ChiTietDoanDuLich.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienDiaDiem\Gui_ThemDiaDiem.resx">
       <DependentUpon>Gui_ThemDiaDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienDoanDuLich\Gui_ChiTietDoanDuLich.resx">
+      <DependentUpon>Gui_ChiTietDoanDuLich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienDoanDuLich\Gui_DoanDuLich.resx">
       <DependentUpon>Gui_DoanDuLich.cs</DependentUpon>

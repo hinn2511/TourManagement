@@ -18,6 +18,8 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
             currentDoanDuLich = doanDuLich;
             cbxTour.Text = doanDuLich.TenTour;
             txtTenDoan.Text = doanDuLich.TenDoan;
+            txtKhachSan.Text = doanDuLich.KhachSan;
+            txtHanhTrinh.Text = doanDuLich.HanhTrinh;
             dtNgayKhoiHanh.Value = currentDoanDuLich.NgayKhoiHanh;
             dtNgayKetThuc.Value = currentDoanDuLich.NgayKetThuc;
             LayDanhSachTour();
@@ -47,7 +49,13 @@ namespace TourManagement.GUI.GiaoDienDoanDuLich
             currentDoanDuLich.NgayKhoiHanh = dtNgayKhoiHanh.Value;
             currentDoanDuLich.NgayKetThuc = dtNgayKetThuc.Value;
             currentDoanDuLich.TenDoan = txtTenDoan.Text;
-            Debug.WriteLine(currentDoanDuLich.TenDoan);
+            currentDoanDuLich.HanhTrinh = txtHanhTrinh.Text;
+            currentDoanDuLich.KhachSan = txtKhachSan.Text;
+            if (txtHanhTrinh.Text == null || txtKhachSan.Text == null || txtTenDoan.Text == null)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             if (currentDoanDuLich.NgayKhoiHanh > currentDoanDuLich.NgayKetThuc)
             {
                 MessageBox.Show("Ngày khởi hành hoặc ngày kết thúc không hợp lệ", "Lỗi", MessageBoxButtons.OK);

@@ -45,14 +45,10 @@ CREATE TABLE DoanDuLich (
     Tour_Id int NOT NULL,
 	NgayKhoiHanh date NOT NULL,
     NgayKetThuc date NOT NULL,
-    DoanhThu decimal(18,0) NOT NULL,
-);
-
-CREATE TABLE NoiDungTour (
-    DoanDuLich_Id int PRIMARY KEY,
-    HanhTrinh nvarchar(255) NOT NULL,
+	HanhTrinh nvarchar(255) NOT NULL,
 	KhachSan nvarchar(255) NOT NULL,
     DiaDiem nvarchar(255) NOT NULL,
+    DoanhThu decimal(18,0) NOT NULL,
 );
 
 CREATE TABLE KhachHang (
@@ -110,9 +106,6 @@ ADD FOREIGN KEY (Tour_Id) REFERENCES Tour(Id) ON DELETE CASCADE;
 
 ALTER TABLE DoanDuLich
 ADD FOREIGN KEY (Tour_Id) REFERENCES Tour(Id) ON DELETE CASCADE;
-
-ALTER TABLE NoiDungTour
-ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id) ON DELETE CASCADE;
 
 ALTER TABLE ChiTietDoan
 ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id) ON DELETE CASCADE;

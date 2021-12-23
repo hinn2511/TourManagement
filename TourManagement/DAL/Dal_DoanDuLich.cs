@@ -23,6 +23,8 @@ namespace TourManagement.DAL
                 NgayKhoiHanh = dll.NgayKhoiHanh,
                 NgayKetThuc = dll.NgayKetThuc,
                 DoanhThu = dll.DoanhThu,
+                KhachSan = dll.KhachSan,
+                HanhTrinh = dll.HanhTrinh,
                 ChiPhi = context.ChiPhis.Where(cp => cp.DoanDuLich_Id == dll.Id).Any() ?
                             context.ChiPhis.Where(cp => cp.DoanDuLich_Id == dll.Id).Select(cp => cp.SoTien).Sum() : 0
             }).ToList();
@@ -73,6 +75,8 @@ namespace TourManagement.DAL
                 DoanDuLichUpdate.Tour_Id = DoanDuLich.Tour_Id;
                 DoanDuLichUpdate.NgayKhoiHanh = DoanDuLich.NgayKhoiHanh;
                 DoanDuLichUpdate.NgayKetThuc = DoanDuLich.NgayKetThuc;
+                DoanDuLichUpdate.HanhTrinh = DoanDuLich.HanhTrinh;
+                DoanDuLichUpdate.KhachSan = DoanDuLich.KhachSan;
                 DoanDuLichUpdate.DoanhThu = DoanDuLich.DoanhThu;
             }
             try

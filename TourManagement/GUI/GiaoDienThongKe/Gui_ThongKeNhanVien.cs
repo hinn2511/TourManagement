@@ -33,9 +33,13 @@ namespace TourManagement.GUI.GiaoDienThongKe
         {
             Bus_ThongKe bus = new Bus_ThongKe();
             dsThongKeNhanVien = bus.LayKetQuaThongKeNhanVien(dsNhanVien[cbxTour.SelectedIndex].Id, dtTuNgay.Value, dtDenNgay.Value);
-            txtSoLanPhanCong.Text = bus.TinhTongSoLanPhanCong(dsThongKeNhanVien).ToString();
-            thongKeDoanGridView.DataSource = dsThongKeNhanVien;
-            DatTenDauDanhSach();
+            if(dsThongKeNhanVien != null)
+            {
+                txtSoLanPhanCong.Text = bus.TinhTongSoLanPhanCong(dsThongKeNhanVien).ToString();
+                thongKeDoanGridView.DataSource = dsThongKeNhanVien;
+                DatTenDauDanhSach();
+            }
+            
         }
 
         private void DatTenDauDanhSach()

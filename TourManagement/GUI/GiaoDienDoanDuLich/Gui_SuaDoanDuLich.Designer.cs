@@ -42,6 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtHanhTrinh = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtKhachSan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,12 +59,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(958, 484);
+            this.panel1.Size = new System.Drawing.Size(958, 736);
             this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.txtHanhTrinh);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.txtKhachSan);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.txtTenDoan);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.cbxTour);
@@ -74,7 +82,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 55);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(958, 429);
+            this.panel3.Size = new System.Drawing.Size(958, 681);
             this.panel3.TabIndex = 1;
             // 
             // txtTenDoan
@@ -154,7 +162,7 @@
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(721, 358);
+            this.btnHuy.Location = new System.Drawing.Point(721, 611);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(205, 48);
             this.btnHuy.TabIndex = 12;
@@ -169,7 +177,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(489, 358);
+            this.btnSua.Location = new System.Drawing.Point(500, 611);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(205, 48);
             this.btnSua.TabIndex = 11;
@@ -210,11 +218,51 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SỬA ĐOÀN DU LỊCH";
             // 
+            // txtHanhTrinh
+            // 
+            this.txtHanhTrinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtHanhTrinh.Location = new System.Drawing.Point(253, 462);
+            this.txtHanhTrinh.Multiline = true;
+            this.txtHanhTrinh.Name = "txtHanhTrinh";
+            this.txtHanhTrinh.Size = new System.Drawing.Size(673, 108);
+            this.txtHanhTrinh.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(12, 500);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 19);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "HÀNH TRÌNH";
+            // 
+            // txtKhachSan
+            // 
+            this.txtKhachSan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtKhachSan.Location = new System.Drawing.Point(253, 358);
+            this.txtKhachSan.Multiline = true;
+            this.txtKhachSan.Name = "txtKhachSan";
+            this.txtKhachSan.Size = new System.Drawing.Size(673, 63);
+            this.txtKhachSan.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(12, 377);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 19);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "KHÁCH SẠN";
+            // 
             // Gui_SuaDoanDuLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 484);
+            this.ClientSize = new System.Drawing.Size(958, 736);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_SuaDoanDuLich";
             this.Text = "Gui_ThemTour";
@@ -243,5 +291,9 @@
         private System.Windows.Forms.ComboBox cbxTour;
         private System.Windows.Forms.TextBox txtTenDoan;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtHanhTrinh;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtKhachSan;
+        private System.Windows.Forms.Label label3;
     }
 }
