@@ -1,0 +1,84 @@
+﻿@model List<TourManagement.KhachHang>
+
+@{
+    ViewData["Title"] = "Khách Hàng";
+}
+
+<h2>Quản lý khách hàng</h2>
+
+<p>
+    @Html.ActionLink("Thêm khách hàng mới", "Create")
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Tìm kiếm theo tên: <input type="text" name="SearchString" />
+            <input type="submit" value="Tìm kiếm" class="btn btn-default" /> |
+            @Html.ActionLink("Làm mới", "Index")
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã khách hàng
+            </th>
+            <th>
+                Họ tên
+            </th>
+            <th>
+                CMND
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Giới tính
+            </th>
+            <th>
+                SĐT
+            </th>
+            <th>
+                Quốc tịch
+            </th>
+            <th>
+                Hành động
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CMND)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuocTich)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit/" + @item.Id, @item.Id, item)  |
+                @Html.ActionLink("Xóa", "Delete/" + @item.Id, @item.Id, item)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

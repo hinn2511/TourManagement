@@ -1,0 +1,34 @@
+﻿@model TourManagement.KhachHang
+@{
+    ViewBag.Title = "Xóa khách hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa khách hàng</h2>
+
+<h3>Bạn có chắc muốn xóa khách hàng này?</h3>
+<div>
+    <h4>Khách Hàng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Họ tên
+        </dt>
+
+        <dd>
+            @Model.HoTen
+        </dd>
+
+    </dl>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về danh sách", "Index")
+        </div>
+    }
+</div>

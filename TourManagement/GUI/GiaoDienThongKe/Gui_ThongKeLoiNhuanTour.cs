@@ -58,7 +58,7 @@ namespace TourManagement.GUI.GiaoDienThongKe
             thongKeDoanGridView.DataSource = dsThongKeLoiNhuanTour;
             DatTenDauDanhSach();
 
-            if(dsThongKeLoiNhuanTour != null)
+           /* if(dsThongKeLoiNhuanTour != null)
             {
                 decimal tongDoanhThu = bus.TinhTongDoanhThu(dsThongKeLoiNhuanTour);
                 decimal tongChiPhi = bus.TinhTongChiPhi(dsThongKeLoiNhuanTour);
@@ -70,7 +70,7 @@ namespace TourManagement.GUI.GiaoDienThongKe
 
                 thongKeDoanGridView.DataSource = dsThongKeLoiNhuanTour;
                 DatTenDauDanhSach();
-            }
+            }*/
             
 
         }

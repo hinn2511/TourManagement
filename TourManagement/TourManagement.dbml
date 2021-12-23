@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tourmanagement" Class="TourManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3R5K64P\DB;Initial Catalog=tourmanagement;Integrated Security=True" SettingsObjectName="TourManagement.Properties.Settings" SettingsPropertyName="tourmanagementConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JREQFRS\HLONG;Initial Catalog=tourmanagement;Integrated Security=True" SettingsObjectName="TourManagement.Properties.Settings" SettingsPropertyName="tourmanagementConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiPhi" Member="ChiPhis">
     <Type Name="ChiPhi">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -35,6 +35,7 @@
       <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="HanhTrinh" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="KhachSan" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaDiem" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="DoanhThu" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Association Name="DoanDuLich_ChiPhi" Member="ChiPhis" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiPhi" />
       <Association Name="DoanDuLich_ChiTietDoan" Member="ChiTietDoans" ThisKey="Id" OtherKey="DoanDuLich_Id" Type="ChiTietDoan" />
