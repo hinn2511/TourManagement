@@ -3,11 +3,16 @@
     ViewBag.Title = "Chi phí";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<p style="padding:20px 0px;">
+    @Html.ActionLink("< Trở về danh sách đoàn du lịch", "Index/", "DoanDuLich")
+</p>
 
 <h2>Quản lý chi phí</h2>
-
 <p>
-    @Html.ActionLink("Thêm chi phí mới", "Create")
+    Tên đoàn du lịch: @ViewBag.TenDoan
+</p>
+<p>
+    @Html.ActionLink("Thêm chi phí mới", "Create", new {id = ViewBag.DoanId })
 </p>
 
 <form asp-action="Index" method="get">
@@ -52,7 +57,7 @@
                </td>
                <td>
                    @Html.ActionLink("Sửa", "Edit/" + @item.Id, @item.Id, item)  |
-                   @Html.ActionLink("Xóa", "Delete/" + @item.Id, @item.Id, item)
+                   @Html.ActionLink("Xóa", "Delete", new {id = item.Id, IdDoan = item.DoanDuLich_Id})
                </td>
            </tr>
         }
