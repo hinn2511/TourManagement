@@ -2,10 +2,13 @@
 @{
     ViewData["Title"] = "Loại chi phí";
 }
+<p style="padding:20px 0px;">
+    @Html.ActionLink("< Trở về danh sách đoàn du lịch", "Index/", "DoanDuLich")
+</p>
 
 <h2>Quản lý loại chi phí</h2>
 <p>
-    @Html.ActionLink("Thêm địa điểm mới", "Create")
+    @Html.ActionLink("Thêm loại chi phí mới", "Create")
 </p>
 
 <form asp-action="Index" method="get">
