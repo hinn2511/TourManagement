@@ -124,6 +124,7 @@ ADD FOREIGN KEY (DoanDuLich_Id) REFERENCES DoanDuLich(Id) ON DELETE CASCADE;
 
 ALTER TABLE ChiPhi
 ADD FOREIGN KEY (LoaiChiPhi_Id) REFERENCES LoaiChiPhi(Id);
+
 INSERT INTO LoaiTour(TenLoai)
 VALUES (N'Du lịch sinh thái');
 INSERT INTO LoaiTour(TenLoai)
@@ -274,7 +275,7 @@ VALUES (2,17,3);
 INSERT INTO ThamQuan(Tour_Id, DiaDiem_Id, ThuTu)
 VALUES (3,13,1);
 INSERT INTO ThamQuan(Tour_Id, DiaDiem_Id, ThuTu)
-VALUES (4,14,2);
+VALUES (3,14,2);
 INSERT INTO ThamQuan(Tour_Id, DiaDiem_Id, ThuTu)
 VALUES (4,11,1);
 INSERT INTO ThamQuan(Tour_Id, DiaDiem_Id, ThuTu)
