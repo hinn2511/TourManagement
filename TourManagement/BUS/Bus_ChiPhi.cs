@@ -9,6 +9,12 @@ namespace TourManagement.BUS
     {
         Dal_ChiPhi dal = new Dal_ChiPhi();
 
+        public string LayTenDoan (int doanId)
+        {
+            Dal_DoanDuLich dal_doan = new Dal_DoanDuLich();
+            var result = dal_doan.ChiTietDoanDuLich(doanId).TenDoanDuLich;
+            return result;
+        }
         public List<Dto_ChiPhi> LayDanhSachChiPhi(int doanDuLichId)
         {
             return dal.LayDsChiPhiTheoDoan(doanDuLichId);
@@ -36,8 +42,14 @@ namespace TourManagement.BUS
         }
 
         public ChiPhi LayThongTinChiPhi(int id)
-        {
+        {           
             return dal.LayThongTinChiPhi(id);
+        }
+
+        public Dto_ChiPhi LayThongTinChiTietChiPhi(int id)
+        {
+            var result = dal.LayThongTinChiPhi(id);
+            return convertToDto(result);
         }
 
         public List<Dto_ChiPhi> TimKiem(List<Dto_ChiPhi> dsChiPhi, string key)
@@ -54,6 +66,18 @@ namespace TourManagement.BUS
             cp.DoanDuLich_Id = dto.DoanDuLich_Id;
             cp.SoTien = dto.SoTien;
             return cp;
+        }
+
+        public Dto_ChiPhi convertToDto (ChiPhi chiPhi)
+        {
+            Dto_ChiPhi dto = new Dto_ChiPhi();
+            dto.Id = chiPhi.Id;
+            dto.DoanDuLich_Id = chiPhi.DoanDuLich_Id;
+            dto.LoaiChiPhi_id = chiPhi.LoaiChiPhi_Id;
+            dto.SoTien = chiPhi.SoTien;
+            dto.TenLoaiChiPhi = chiPhi.LoaiChiPhi.TenLoai;
+            dto.TenDoan = chiPhi.DoanDuLich.TenDoanDuLich;
+            return dto;
         }
     }
 }
