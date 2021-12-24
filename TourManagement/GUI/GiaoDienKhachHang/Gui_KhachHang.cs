@@ -67,5 +67,12 @@ namespace TourManagement.GUI.GiaoDienKhachHang
                 currentIndex = e.RowIndex;
             }
         }
+
+        private void btnSua_Click(object sender, System.EventArgs e)
+        {
+            Gui_SuaKH suaKHForm = new Gui_SuaKH(dsKH[currentIndex]);
+            suaKHForm.ShowDialog();
+            CapNhatDanhSachKH();
+        }
     }
 }

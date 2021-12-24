@@ -9,25 +9,21 @@ namespace TourManagement.BUS
         Dal_NV dal = new Dal_NV();
         public List<NhanVien> LayDanhSachNV()
         {
-            
             return dal.LayDanhSachNV();
         }
 
         public bool ThemNV(NhanVien Nv)
         {
-            
             return dal.ThemNV(Nv);
         }
 
         public bool CapNhatNV(NhanVien Nv)
         {
-            
             return dal.CapNhatNhanVien(Nv);
         }
 
         public bool XoaNV(int id)
         {
-            
             return dal.XoaNV(id);
         }
         public List<NhanVien> TimKiemNV(List<NhanVien> dsNV, string key)

@@ -41,7 +41,6 @@ namespace Web.Controllers
             ViewBag.dsTour = bus.LayDanhSachTour();
             if (tourId != null && tuNgay != null && denNgay != null)
             {
-                
                     dtTuNgay = DateTime.Parse(tuNgay, provider, DateTimeStyles.AdjustToUniversal);
                     dtDenNgay = DateTime.Parse(denNgay, provider, DateTimeStyles.AdjustToUniversal);
                     if (dtTuNgay < dtDenNgay)
@@ -55,9 +54,6 @@ namespace Web.Controllers
                     }
             }
             return View();
-
-
-
         }
 
 

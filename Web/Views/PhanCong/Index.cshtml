@@ -1,0 +1,59 @@
+﻿@model List<TourManagement.PhanCong>
+
+@{
+    ViewData["Title"] = "Phân Công";
+}
+<p style="padding:20px 0px;">
+    @Html.ActionLink("< Trở về danh sách nhân viên", "Index/", "NhanVien")
+</p>
+<h2>Phân Công</h2>
+
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Tìm kiếm theo tên: <input type="text" name="SearchString" />
+            <input type="submit" value="Tìm kiếm" class="btn btn-default" /> |
+            @Html.ActionLink("Làm mới", "Index")
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã nhân viên
+            </th>
+            <th>
+                Tên đoàn du lịch
+            </th>
+            <th>
+                Nhiệm vụ
+            </th>
+            <th>
+                Hành động
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var phanCong in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelphanCong => phanCong.NhanVien_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelphanCong => phanCong.DoanDuLich_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelphanCong => phanCong.NhiemVu)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { NvId = phanCong.NhanVien_Id, ddlID = phanCong.DoanDuLich_Id }) |
+                @Html.ActionLink("Xóa", "Delete", new { NvId = phanCong.NhanVien_Id, ddlID = phanCong.DoanDuLich_Id })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

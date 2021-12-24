@@ -1,0 +1,39 @@
+﻿@model TourManagement.DTO.Dto_PhanCong
+
+@{
+    ViewBag.Title = "Xóa phân công";
+}
+
+<h2>Xóa phân công</h2>
+
+<h3>Bạn có chắc muốn xóa phân công này?</h3>
+<div>
+    <h4>Phân Công</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên đoàn du lịch
+        </dt>
+        <dt>
+            Nhiệm vụ
+        </dt>
+
+        <dd>
+            @Model.TenDoan
+        </dd>
+        <dd>
+            @Model.NhiemVu
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về danh sách", "Index")
+        </div>
+    }
+</div>

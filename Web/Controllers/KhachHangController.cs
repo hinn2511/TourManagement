@@ -14,7 +14,7 @@ namespace Web.Controllers
     public class KhachHangController : Controller
     {
         Bus_KH bus = new Bus_KH();
-        // Lay danh sach loai tour
+        // Lay danh sach kh
         public ActionResult Index(string searchString)
         {
             var dsKH = bus.LayDanhSachKH();

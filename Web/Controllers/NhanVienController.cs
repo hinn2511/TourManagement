@@ -14,7 +14,7 @@ namespace Web.Controllers
     public class NhanVienController : Controller
     {
         Bus_NV bus = new Bus_NV();
-        // Lay danh sach loai tour
+        // Lay danh sach nv
         public ActionResult Index(string searchString)
         {
             var dsNV = bus.LayDanhSachNV();

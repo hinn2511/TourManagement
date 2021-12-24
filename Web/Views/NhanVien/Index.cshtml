@@ -10,6 +10,7 @@
     @Html.ActionLink("Thêm nhân viên mới", "Create")
 </p>
 
+
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
@@ -46,7 +47,8 @@
                 </td>
                 <td>
                     @Html.ActionLink("Sửa", "Edit/" + @item.Id, @item.Id, item)  |
-                    @Html.ActionLink("Xóa", "Delete/" + @item.Id, @item.Id, item)
+                    @Html.ActionLink("Xóa", "Delete/" + @item.Id, @item.Id, item) |
+                    @Html.ActionLink("Phân Công", "Index/" + @item.Id,"PhanCong", @item.Id, item)
                 </td>
             </tr>
         }

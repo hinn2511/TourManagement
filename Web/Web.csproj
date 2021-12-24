@@ -156,6 +156,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
+    <Compile Include="Controllers\PhanCongController.cs" />
     <Compile Include="Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\DoanDuLichController.cs" />
     <Compile Include="Controllers\ChiPhiController.cs" />
@@ -254,6 +255,10 @@
     <Content Include="Views\KhachHang\Delete.cshtml" />
     <Content Include="Views\KhachHang\Edit.cshtml" />
     <Content Include="Views\KhachHang\Index.cshtml" />
+    <Content Include="Views\PhanCong\Index.cshtml" />
+    <Content Include="Views\PhanCong\Create.cshtml" />
+    <Content Include="Views\PhanCong\Delete.cshtml" />
+    <Content Include="Views\PhanCong\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

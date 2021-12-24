@@ -52,32 +52,25 @@ namespace TourManagement.BUS
             return false;
         }
 
-        public bool XoaPC(Dto_PhanCong PC)
+        public bool XoaPC(int NvId, int doanDuLichId)
         {
-            Dal_PhanCong dal_PC = new Dal_PhanCong();
+            return dal_PC.XoaPC(NvId,doanDuLichId);
 
-            int soLuongHienTai = dal_PC.SoLuongNvPhanCong(PC.NV_Id);
-
-            List<Dto_PhanCong> dsPC = dal_PC.LayDanhSachPhanCong(PC.NV_Id);
-            /*
-                        if (thamQuan.ThuTu != soLuongHienTai)
-                        {
-                            for (int i = thamQuan.ThuTu - 1; i < soLuongHienTai; i++)
-                            {
-                                ThamQuan tq = new ThamQuan();
-                                tq.Tour_Id = dsThamQuan[i].Tour_Id;
-                                tq.DiaDiem_Id = dsThamQuan[i].DiaDiem_Id;
-                                tq.ThuTu = i;
-                                if (dal_ThamQuan.CapNhatThamQuan(tq))
-                                    continue;
-                            }
-                        }
-
-                        if (dal_ThamQuan.XoaThamQuan(thamQuan.Tour_Id, thamQuan.DiaDiem_Id))
-                            return true;
-            */
-            return false;
-
+        }
+        public Dto_PhanCong ChiTietPhanCong(int NvId, int doandulichId)
+        {
+            var result = dal_PC.ChiTietPhanCongTheoDoanDuLich(NvId, doandulichId);
+            return convertToDto(result);
+        }
+        public Dto_PhanCong convertToDto(PhanCong phanCong)
+        {
+            Dto_PhanCong dto = new Dto_PhanCong();
+            dto.NV_Id = phanCong.NhanVien_Id;
+            dto.DoanDuLich_Id = phanCong.DoanDuLich_Id;
+            dto.NhiemVu = phanCong.NhiemVu;
+            dto.HoTen = phanCong.NhanVien.HoTen;
+            dto.TenDoan = phanCong.DoanDuLich.TenDoanDuLich;
+            return dto;
         }
     }
 }

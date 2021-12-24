@@ -68,20 +68,16 @@ namespace Web.Controllers
         {
             if (dto_GiaTour.Gia <= 0)
             {
-
                 ViewBag.Error = "Giá tour không hợp lệ";
                 return View(dto_GiaTour);
             }
             if (dto_GiaTour.NgayBatDau >= dto_GiaTour.NgayKetThuc)
             {
-
                 ViewBag.Error = "Ngày áp dụng không hợp lệ";
                 return View(dto_GiaTour);
             }
             bus.SuaGiaTour(dto_GiaTour);
             return RedirectToAction("Index", "GiaTour", new { id = dto_GiaTour.Tour_Id });
-
-
         }
 
         public ActionResult Delete(int id)
