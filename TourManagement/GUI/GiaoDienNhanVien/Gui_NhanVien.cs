@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using TourManagement.BUS;
-using TourManagement.DTO;
+using TourManagement.GUI.GiaoDienPhanCong;
 namespace TourManagement.GUI.GiaoDienNhanVien
 {
     public partial class Gui_NhanVien : Form
@@ -75,6 +75,13 @@ namespace TourManagement.GUI.GiaoDienNhanVien
             {
                 currentIndex = e.RowIndex;
             }
+        }
+
+        private void btnSua_Click(object sender, System.EventArgs e)
+        {
+            Gui_SuaNV suaNVForm = new Gui_SuaNV();
+            suaNVForm.ShowDialog();
+            CapNhatDanhSachNV();
         }
     }
 }

@@ -42,6 +42,9 @@
                 Doanh thu
             </th>
             <th>
+                Chi Phí
+            </th>
+            <th>
                 Hành động
             </th>
         </tr>
@@ -67,6 +70,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DoanhThu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChiPhi)
             </td>
             <td>
                 @Html.ActionLink("Chi tiết", "Detail/" + @item.Id, @item.Id, item)  |

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TourManagement.DAL;
 using TourManagement.DTO;
 
@@ -6,85 +7,58 @@ namespace TourManagement.BUS
 {
     public class Bus_PhanCong
     {
+        Dal_PhanCong dal_PC = new Dal_PhanCong();
         public List<Dto_PhanCong> LayDanhSachPhanCong(int NvId)
         {
-            Dal_PhanCong dal_PC = new Dal_PhanCong();
-
             return dal_PC.LayDanhSachPhanCong(NvId);
         }
-
-        public int LaySoLuongNV(int NvId)
+        public List<DoanDuLich> LayDanhSachDDL(int NvId)
         {
             Dal_PhanCong dal_PC = new Dal_PhanCong();
 
-            var result = dal_PC.SoLuongNvPhanCong(NvId);
+            List<DoanDuLich> dsDDL = dal_PC.DanhSachDDL();
 
-            return result;
-        }
+            List<Dto_PhanCong> dsDDLPhanCong = dal_PC.LayDanhSachPhanCong(NvId);
 
-        public bool SuaLichPhanCong(Dto_PhanCong pC, string nhiemVuMoi)
-        {
+            List<DoanDuLich> dsDDLConLai = new List<DoanDuLich>();
 
-            Dal_PhanCong dal_pc = new Dal_PhanCong();
-
-            var pC1 = dal_pc.ChiTietPhanCongTheoNhiemVu(pC.NV_Id, nhiemVuMoi);
-
-            if (pC1 != null)
+            foreach (var dd in dsDDL)
             {
-                pC1.NhiemVu = pC.NhiemVu;
-                if (dal_pc.CapNhatPC(pC1))
-                {
-                    var pC2 = dal_pc.ChiTietPhanCongTheoDoanDuLich(pC.NV_Id, pC.DoanDuLich_Id);
-                    if (pC2 != null)
-                    {
-                        pC2.NhiemVu = nhiemVuMoi;
-                        if (dal_pc.CapNhatPC(pC2))
-                            return true;
-                    }
-                }
+                if (dsDDLPhanCong.FirstOrDefault(ddlpc => ddlpc.DoanDuLich_Id == dd.Id) == null)
+                    dsDDLConLai.Add(dd);
             }
-            return false;
+            return dsDDLConLai;
         }
-
-        /*public List<DoanDuLich> LayDanhSachDoanDuLich(int NvId)
+        public bool SuaPhanCong(Dto_PhanCong pcCanSua)
         {
-            Dal_PhanCong dal_pc = new Dal_PhanCong();
-
-            List<DoanDuLich> dsDoanDuLich = dal_pc.DanhSachDoanDuLich();
-
-            List<Dto_PhanCong> dsPhanCong = dal_pc.LayDanhSachPhanCong(NvId);
-
-            List<DiaDiem> dsConLai = new List<DiaDiem>();
-
-            foreach (var dd in dsDiaDiem)
-            {
-                if (dsDiaDiemThamQuan.FirstOrDefault(ddtq => ddtq.DiaDiem_Id == dd.Id) == null)
-                    dsConLai.Add(dd);
-            }
-            return dsConLai;
-    }*/
-
-        public bool ThemPC(PhanCong pC)
-        {
-            Dal_PhanCong dal_pc = new Dal_PhanCong();
-
-            int soLuongHienTai = dal_pc.SoLuongNvPhanCong(pC.NhanVien_Id);
-
-
-            if (dal_pc.ThemPC(pC))
+            if (dal_PC.CapNhatPC(ConvertToEntity(pcCanSua)))
                 return true;
-
             return false;
-
+        }
+    
+        public PhanCong ConvertToEntity(Dto_PhanCong dto)
+        {
+            PhanCong pc = new PhanCong();
+            pc.NhanVien_Id = dto.NV_Id;
+            pc.DoanDuLich_Id = dto.DoanDuLich_Id;
+            pc.NhiemVu = dto.NhiemVu;
+            return pc;
         }
 
-        public bool XoaPC(Dto_PhanCong pC)
+        public bool ThemPC(Dto_PhanCong PC)
         {
-            Dal_PhanCong dal_pc = new Dal_PhanCong();
+            if (dal_PC.ThemPC(ConvertToEntity(PC)))
+                return true;
+            return false;
+        }
 
-            int soLuongHienTai = dal_pc.SoLuongNvPhanCong(pC.NV_Id);
+        public bool XoaPC(Dto_PhanCong PC)
+        {
+            Dal_PhanCong dal_PC = new Dal_PhanCong();
 
-            List<Dto_PhanCong> dsPC = dal_pc.LayDanhSachPhanCong(pC.NV_Id);
+            int soLuongHienTai = dal_PC.SoLuongNvPhanCong(PC.NV_Id);
+
+            List<Dto_PhanCong> dsPC = dal_PC.LayDanhSachPhanCong(PC.NV_Id);
             /*
                         if (thamQuan.ThuTu != soLuongHienTai)
                         {

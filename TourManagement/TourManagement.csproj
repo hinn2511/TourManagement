@@ -197,11 +197,29 @@
     <Compile Include="GUI\GiaoDienLoaiChiPhi\Gui_ThemLoaiChiPhi.designer.cs">
       <DependentUpon>Gui_ThemLoaiChiPhi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiaoDienNhanVien\Gui_SuaNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienNhanVien\Gui_SuaNV.Designer.cs">
+      <DependentUpon>Gui_SuaNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoDienPhanCong\Gui_PhanCong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\GiaoDienPhanCong\Gui_PhanCong.Designer.cs">
       <DependentUpon>Gui_PhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienPhanCong\Gui_SuaPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienPhanCong\Gui_SuaPhanCong.Designer.cs">
+      <DependentUpon>Gui_SuaPhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDienPhanCong\Gui_ThemPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDienPhanCong\Gui_ThemPC.Designer.cs">
+      <DependentUpon>Gui_ThemPC.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.cs">
       <SubType>Form</SubType>
@@ -411,8 +429,17 @@
     <EmbeddedResource Include="GUI\GiaoDienLoaiChiPhi\Gui_ThemLoaiChiPhi.resx">
       <DependentUpon>Gui_ThemLoaiChiPhi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienNhanVien\Gui_SuaNV.resx">
+      <DependentUpon>Gui_SuaNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienPhanCong\Gui_PhanCong.resx">
       <DependentUpon>Gui_PhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienPhanCong\Gui_SuaPhanCong.resx">
+      <DependentUpon>Gui_SuaPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDienPhanCong\Gui_ThemPC.resx">
+      <DependentUpon>Gui_ThemPC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoDienThamQuan\Gui_ThamQuan.resx">
       <DependentUpon>Gui_ThamQuan.cs</DependentUpon>

@@ -8,10 +8,9 @@ namespace TourManagement.DAL
 
     public class Dal_PhanCong
     {
+        TourManagementDataContext context = new TourManagementDataContext();
         public List<Dto_PhanCong> LayDanhSachPhanCong(int NvId)
         {
-            TourManagementDataContext context = new TourManagementDataContext();
-
             List<Dto_PhanCong> dsPhanCong = context.PhanCongs.Where(pc => pc.NhanVien_Id == NvId).Select(pc => new Dto_PhanCong
             {
                 NV_Id = pc.NhanVien_Id,
@@ -25,8 +24,6 @@ namespace TourManagement.DAL
 
         public PhanCong ChiTietPhanCongTheoDoanDuLich(int NvId, int DoanDuLichId)
         {
-            TourManagementDataContext context = new TourManagementDataContext();
-
             var PhanCong = context.PhanCongs.FirstOrDefault(pc => pc.NhanVien_Id == NvId && pc.DoanDuLich_Id == DoanDuLichId);
 
             return PhanCong;
@@ -34,8 +31,6 @@ namespace TourManagement.DAL
 
         public PhanCong ChiTietPhanCongTheoNhiemVu(int NvId, string Nhiemvu)
         {
-            TourManagementDataContext context = new TourManagementDataContext();
-
             var PhanCong = context.PhanCongs.FirstOrDefault(pc => pc.NhanVien_Id == NvId && pc.NhiemVu == Nhiemvu);
 
             return PhanCong;
@@ -43,8 +38,6 @@ namespace TourManagement.DAL
 
         public int SoLuongNvPhanCong(int NvId)
         {
-            TourManagementDataContext context = new TourManagementDataContext();
-
             var soLuong = context.PhanCongs.Where(pc => pc.NhanVien_Id == NvId).Count();
 
             return soLuong;
@@ -52,7 +45,6 @@ namespace TourManagement.DAL
 
         public bool ThemPC(PhanCong phanCong)
         {
-            TourManagementDataContext context = new TourManagementDataContext();
             context.PhanCongs.InsertOnSubmit(phanCong);
 
             try
@@ -69,8 +61,6 @@ namespace TourManagement.DAL
 
         public bool CapNhatPC(PhanCong phanCong)
         {
-            TourManagementDataContext context = new TourManagementDataContext();
-
             var PcUpdate = context.PhanCongs.FirstOrDefault(pc => pc.NhanVien_Id == phanCong.NhanVien_Id && pc.DoanDuLich_Id == phanCong.DoanDuLich_Id);
 
             if (PcUpdate != null)
@@ -90,8 +80,6 @@ namespace TourManagement.DAL
 
         public bool XoaPC(int NvId, int doanDuLichId)
         {
-            TourManagementDataContext context = new TourManagementDataContext();
-
             var PcDelete = context.PhanCongs.FirstOrDefault(pc => pc.NhanVien_Id == NvId && pc.DoanDuLich_Id == doanDuLichId);
 
             if (PcDelete != null)
@@ -111,6 +99,12 @@ namespace TourManagement.DAL
             }
             return false;
 
+        }
+        public List<DoanDuLich> DanhSachDDL()
+        {
+            var dsDDL = context.DoanDuLiches.ToList();
+
+            return dsDDL;
         }
     }
 }

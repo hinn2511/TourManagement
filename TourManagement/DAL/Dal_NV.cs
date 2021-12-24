@@ -32,7 +32,7 @@ namespace TourManagement.DAL
         {
             TourManagementDataContext context = new TourManagementDataContext();
 
-            var UpdateNv = context.NhanViens.First(nv => nv.Id == nhanVien.Id);
+            var UpdateNv = context.NhanViens.First(nv => nv.HoTen == nhanVien.HoTen);
 
             if (UpdateNv != null)
             {

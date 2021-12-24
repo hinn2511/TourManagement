@@ -19,7 +19,6 @@ namespace TourManagement.GUI.GiaoDienThamQuan
             LayDanhSachDiaDiem();
         }
 
-
         private void LayDanhSachDiaDiem()
         {
             Bus_ThamQuan bus = new Bus_ThamQuan();

@@ -41,11 +41,18 @@ namespace Web.Controllers
             ViewBag.dsTour = bus.LayDanhSachTour();
             if (tourId != null && tuNgay != null && denNgay != null)
             {
-                dtTuNgay = DateTime.Parse(tuNgay, provider, DateTimeStyles.AdjustToUniversal);
-                dtDenNgay = DateTime.Parse(denNgay, provider, DateTimeStyles.AdjustToUniversal);
-                var dsThongKe = bus.LayKetQuaThongKeLoiNhuan(Int16.Parse(tourId), dtTuNgay, dtDenNgay);
-                return View(dsThongKe);
-
+                
+                    dtTuNgay = DateTime.Parse(tuNgay, provider, DateTimeStyles.AdjustToUniversal);
+                    dtDenNgay = DateTime.Parse(denNgay, provider, DateTimeStyles.AdjustToUniversal);
+                    if (dtTuNgay < dtDenNgay)
+                    {
+                        var dsThongKe = bus.LayKetQuaThongKeLoiNhuan(Int16.Parse(tourId), dtTuNgay, dtDenNgay);
+                        return View(dsThongKe);
+                    }
+                    else
+                    {
+                        ViewBag.Error = "Vui lòng chọn ngày bắt đầu nhỏ hơn ngày kết thúc!";
+                    }
             }
             return View();
 
@@ -63,9 +70,15 @@ namespace Web.Controllers
             {
                 dtTuNgay = DateTime.Parse(tuNgay, provider, DateTimeStyles.AdjustToUniversal);
                 dtDenNgay = DateTime.Parse(denNgay, provider, DateTimeStyles.AdjustToUniversal);
-                var dsThongKe = bus.LayKetQuaThongKeChiPhi(Int16.Parse(tourId), dtTuNgay, dtDenNgay);
-                return View(dsThongKe);
-
+                if (dtTuNgay < dtDenNgay)
+                {
+                    var dsThongKe = bus.LayKetQuaThongKeChiPhi(Int16.Parse(tourId), dtTuNgay, dtDenNgay);
+                    return View(dsThongKe);
+                }
+                else
+                {
+                    ViewBag.Error = "Vui lòng chọn ngày bắt đầu nhỏ hơn ngày kết thúc!";
+                }
             }
             return View();
 
@@ -82,8 +95,15 @@ namespace Web.Controllers
             {
                 dtTuNgay = DateTime.Parse(tuNgay, provider, DateTimeStyles.AdjustToUniversal);
                 dtDenNgay = DateTime.Parse(denNgay, provider, DateTimeStyles.AdjustToUniversal);
-                var dsThongKe = bus.LayKetQuaThongKeNhanVien(Int16.Parse(nvId), dtTuNgay, dtDenNgay);
-                return View(dsThongKe);
+                if (dtTuNgay < dtDenNgay)
+                {
+                    var dsThongKe = bus.LayKetQuaThongKeNhanVien(Int16.Parse(nvId), dtTuNgay, dtDenNgay);
+                    return View(dsThongKe);
+                }
+                else
+                {
+                    ViewBag.Error = "Vui lòng chọn ngày bắt đầu nhỏ hơn ngày kết thúc!";
+                }
 
             }
             return View();
