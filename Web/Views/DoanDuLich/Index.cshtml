@@ -43,9 +43,6 @@
                 Ngày kết thúc
             </th>
             <th>
-                Chi phí
-            </th>
-            <th>
                 Doanh thu
             </th>
             <th>
@@ -76,14 +73,11 @@
                 @Html.DisplayFor(modelItem => item.NgayKetThuc)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ChiPhi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DoanhThu)
+                @Html.DisplayFor(modelItem => ((int)item.DoanhThu))
             </td>
             <td>
 
-                @Html.DisplayFor(modelItem => item.ChiPhi)
+                @Html.DisplayFor(modelItem => ((int)item.ChiPhi))
             </td>
             <td>
 
