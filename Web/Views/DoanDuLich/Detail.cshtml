@@ -15,7 +15,9 @@
                 <th>
                     Mã khách du lịch
                 </th>
-                
+                <th>
+                    Tên khách du lịch
+                </th>
                 <th>
                     Ngày tham gia
                 </th>
@@ -27,19 +29,22 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.KhachHang_Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NgayThamGia)
-                    </td>
-                    
-                    <td>
-                        @Html.ActionLink("Chi tiết", "Detail/" + @item.DoanDuLich_Id, @item.DoanDuLich_Id, item) 
-                        
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KhachHang_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenKhachHang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayThamGia)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Chi tiết", "Detail/" + @item.DoanDuLich_Id, @item.DoanDuLich_Id, item)
+
+                </td>
+            </tr>
             }
         </tbody>
     </table>
