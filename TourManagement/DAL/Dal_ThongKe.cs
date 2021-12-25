@@ -47,8 +47,7 @@ namespace TourManagement.DAL
                     .Select(pc => new Dto_ThongKePhanCongNV
                     {
                         TenTour = pc.First().DoanDuLich.Tour.TenTour,
-                        SoLanPhanCong = pc.Sum(c => c.NhanVien_Id)
-
+                        SoLanPhanCong = pc.Select(c => c.NhanVien_Id).Count(),
                     })
                     .ToList();
             return pcnv;

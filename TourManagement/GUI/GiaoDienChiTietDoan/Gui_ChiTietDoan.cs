@@ -26,6 +26,7 @@ namespace TourManagement.GUI.GiaoDienChiTietDoan
             chiTietDoanGridView.Columns["DoanDuLich_Id"].Visible = false;
             chiTietDoanGridView.Columns["KhachHang_Id"].HeaderText = "Mã khách hàng";
             chiTietDoanGridView.Columns["TenKhachHang"].HeaderText = "Tên khách hàng";
+            chiTietDoanGridView.Columns["NgayThamGia"].HeaderText = "Ngày tham gia";
         }
 
         private void CapNhatDanhSachChiTietDoan()
