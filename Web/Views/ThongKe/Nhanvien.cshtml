@@ -38,6 +38,20 @@
         </div>
     </div>
 </div>
+@if (Model != null)
+{
+<dl class="dl-horizontal">
+    <h4>Tổng quan</h4>
+    <hr />
+    <dt>
+        Tổng số lần phân công
+    </dt>
+
+    <dd>
+        @ViewBag.soLanPhanCong
+    </dd>
+</dl>
+}
 
 <table class="table">
     <thead>

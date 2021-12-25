@@ -46,7 +46,14 @@ namespace Web.Controllers
                     if (dtTuNgay < dtDenNgay)
                     {
                         var dsThongKe = bus.LayKetQuaThongKeLoiNhuan(Int16.Parse(tourId), dtTuNgay, dtDenNgay);
-                        return View(dsThongKe);
+                        decimal tongDoanhThu = bus.TinhTongDoanhThu(dsThongKe);
+                        decimal tongChiPhi = bus.TinhTongChiPhi(dsThongKe);
+                        decimal tongLoiNhuan = bus.TinhTongLoiNhuan(tongDoanhThu, tongChiPhi);
+                        ViewBag.doanhThu = tongDoanhThu;
+                        ViewBag.chiPhi = tongChiPhi;
+                        ViewBag.tongLoiNhuan = tongLoiNhuan;
+
+                    return View(dsThongKe);
                     }
                     else
                     {
@@ -69,6 +76,17 @@ namespace Web.Controllers
                 if (dtTuNgay < dtDenNgay)
                 {
                     var dsThongKe = bus.LayKetQuaThongKeChiPhi(Int16.Parse(tourId), dtTuNgay, dtDenNgay);
+                    Dto_ThongKeChiPhiTour cpCaoNhat = bus.ChiPhiCaoNhat(dsThongKe);
+                    Dto_ThongKeChiPhiTour cpThapNhat = bus.ChiPhiThapNhat(dsThongKe);
+                    decimal tongCacChiPhi = bus.TinhTongChiPhi(dsThongKe);
+
+                    ViewBag.cpCaoNhat = cpCaoNhat.TongSoTien;
+                    ViewBag.cpThapNhat = cpThapNhat.TongSoTien;
+                    ViewBag.tenCpCaoNhat = cpCaoNhat.LoaiChiPhi;
+                    ViewBag.tenCpThapNhat = cpThapNhat.LoaiChiPhi;
+                    ViewBag.tongChiPhi = tongCacChiPhi;
+
+
                     return View(dsThongKe);
                 }
                 else
@@ -94,6 +112,7 @@ namespace Web.Controllers
                 if (dtTuNgay < dtDenNgay)
                 {
                     var dsThongKe = bus.LayKetQuaThongKeNhanVien(Int16.Parse(nvId), dtTuNgay, dtDenNgay);
+                    ViewBag.soLanPhanCong = bus.TinhTongSoLanPhanCong(dsThongKe);
                     return View(dsThongKe);
                 }
                 else

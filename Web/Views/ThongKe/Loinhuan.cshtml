@@ -34,16 +34,45 @@
             {
                 <h5 style="color:red">@ViewBag.Error</h5>
             }
-           
+
         </div>
     </div>
 </div>
+
+@if (Model != null)
+{
+    <dl class="dl-horizontal">
+        <h4>Tổng quan</h4>
+        <hr />
+        <dt>
+            Doanh thu
+        </dt>
+
+        <dd>
+            @ViewBag.doanhThu VNĐ
+        </dd>
+        <dt>
+            Chi phí
+        </dt>
+
+        <dd>
+            @ViewBag.chiPhi VNĐ
+        </dd>
+        <dt>
+            Lợi nhuận
+        </dt>
+
+        <dd>
+            @ViewBag.tongLoiNhuan VNĐ
+        </dd>
+    </dl>
+}
 
 <table class="table">
     <thead>
         <tr>
             <th>
-               Tên đoàn du lịch
+                Tên đoàn du lịch
             </th>
             <th>
                 Doanh thu
@@ -54,8 +83,8 @@
             <th>
                 Số lượng khách
             </th>
-            
-           
+
+
         </tr>
     </thead>
     <tbody>

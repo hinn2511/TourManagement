@@ -39,16 +39,46 @@
     </div>
 </div>
 
+@if (Model != null)
+{
+    <dl class="dl-horizontal">
+        <h4>Tổng quan</h4>
+        <hr />
+        <dt>
+            Chi phí cao nhất
+        </dt>
+
+        <dd>
+            @ViewBag.tenCpCaoNhat - @ViewBag.cpCaoNhat VNĐ
+        </dd>
+        <dt>
+            Chi phí thấp nhất
+        </dt>
+
+        <dd>
+            @ViewBag.tenCpThapNhat - @ViewBag.cpThapNhat VNĐ
+        </dd>
+        <dt>
+            Tổng các chi phí
+        </dt>
+
+        <dd>
+            @ViewBag.tongChiPhi VNĐ
+        </dd>
+    </dl>
+}
+
+<hr />
 <table class="table">
     <thead>
         <tr>
             <th>
-               Loại chi phí
+                Loại chi phí
             </th>
             <th>
-                Tổng tiền
+                Tổng tiền (VNĐ)
             </th>
-            
+
 
 
         </tr>
