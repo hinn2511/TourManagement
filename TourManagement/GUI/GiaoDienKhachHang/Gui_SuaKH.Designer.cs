@@ -248,16 +248,17 @@
             this.lbThemKH.Name = "lbThemKH";
             this.lbThemKH.Size = new System.Drawing.Size(209, 19);
             this.lbThemKH.TabIndex = 0;
-            this.lbThemKH.Text = "THÊM KHÁCH HÀNG MỚI";
+            this.lbThemKH.Text = "SỬA KHÁCH HÀNG";
+           
             // 
-            // Gui_ThemKH
+            // Gui_SuaKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 570);
             this.Controls.Add(this.panel1);
-            this.Name = "Gui_ThemKH";
-            this.Text = "Thêm Khách Hàng mới";
+            this.Name = "Gui_SuaKH";
+            this.Text = "Sửa Khách Hàng";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

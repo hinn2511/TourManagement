@@ -133,7 +133,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "THÊM NHÂN VIÊN MỚI";
+            this.label1.Text = "SỬA NHÂN VIÊN";
             // 
             // Gui_ThemNV
             // 
@@ -142,7 +142,7 @@
             this.ClientSize = new System.Drawing.Size(876, 253);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_ThemNV";
-            this.Text = "Thêm Nhân Viên Mới";
+            this.Text = "Sửa Nhân Viên";
             this.Load += new System.EventHandler(this.Gui_SuaNV_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

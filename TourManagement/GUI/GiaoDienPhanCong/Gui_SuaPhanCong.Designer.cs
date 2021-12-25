@@ -91,7 +91,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 19);
             this.label6.TabIndex = 14;
-            this.label6.Text = "THỨ TỰ";
+            this.label6.Text = "NHIỆM VỤ";
             // 
             // btnHuy
             // 
@@ -132,7 +132,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 19);
             this.label3.TabIndex = 7;
-            this.label3.Text = "ĐỊA ĐIỂM";
+            this.label3.Text = "TÊN ĐOÀN";
             // 
             // txtTenNV
             // 
@@ -152,7 +152,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 19);
             this.label4.TabIndex = 1;
-            this.label4.Text = "TÊN TOUR";
+            this.label4.Text = "TÊN NHÂN VIÊN";
             // 
             // panel2
             // 
@@ -173,7 +173,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(246, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SỬA LỊCH TRÌNH THAM QUAN";
+            this.label1.Text = "SỬA PHÂN CÔNG";
             // 
             // txtNhiemVu
             // 
@@ -190,7 +190,7 @@
             this.ClientSize = new System.Drawing.Size(879, 417);
             this.Controls.Add(this.panel1);
             this.Name = "Gui_SuaPhanCong";
-            this.Text = "Sửa Lịch Trình Tham Quan";
+            this.Text = "Sửa Phân Công";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
