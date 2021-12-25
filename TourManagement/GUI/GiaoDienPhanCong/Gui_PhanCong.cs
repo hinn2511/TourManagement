@@ -28,6 +28,7 @@ namespace TourManagement.GUI.GiaoDienPhanCong
         private void DatTenDauDanhSach()
         {
             pcGridView.Columns["NV_Id"].HeaderText = "Mã Nhân Viên";
+            pcGridView.Columns["HoTen"].HeaderText = "Họ tên";
             pcGridView.Columns["DoanDuLich_Id"].Visible = false; 
             pcGridView.Columns["TenDoan"].HeaderText = "Tên Đoàn Du Lịch ";
             pcGridView.Columns["NhiemVu"].HeaderText = "Nhiệm Vụ";
