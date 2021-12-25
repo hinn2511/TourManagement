@@ -69,7 +69,7 @@ namespace TourManagement
     #endregion
 		
 		public TourManagementDataContext() : 
-				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString1, mappingSource)
+				base(global::TourManagement.Properties.Settings.Default.tourmanagementConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -737,8 +737,6 @@ namespace TourManagement
 		
 		private string _KhachSan;
 		
-		private string _DiaDiem;
-		
 		private decimal _DoanhThu;
 		
 		private EntitySet<ChiPhi> _ChiPhis;
@@ -767,8 +765,6 @@ namespace TourManagement
     partial void OnHanhTrinhChanged();
     partial void OnKhachSanChanging(string value);
     partial void OnKhachSanChanged();
-    partial void OnDiaDiemChanging(string value);
-    partial void OnDiaDiemChanged();
     partial void OnDoanhThuChanging(decimal value);
     partial void OnDoanhThuChanged();
     #endregion
@@ -922,26 +918,6 @@ namespace TourManagement
 					this._KhachSan = value;
 					this.SendPropertyChanged("KhachSan");
 					this.OnKhachSanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaDiem", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string DiaDiem
-		{
-			get
-			{
-				return this._DiaDiem;
-			}
-			set
-			{
-				if ((this._DiaDiem != value))
-				{
-					this.OnDiaDiemChanging(value);
-					this.SendPropertyChanging();
-					this._DiaDiem = value;
-					this.SendPropertyChanged("DiaDiem");
-					this.OnDiaDiemChanged();
 				}
 			}
 		}
@@ -1403,7 +1379,7 @@ namespace TourManagement
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(20)")]
 		public string DiaChi
 		{
 			get

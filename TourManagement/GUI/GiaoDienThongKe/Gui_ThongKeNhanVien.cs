@@ -17,6 +17,7 @@ namespace TourManagement.GUI.GiaoDienThongKe
         {
             InitializeComponent();
             LayDanhSachNhanVien();
+            DieuChinhNgay();
 
         }
 
@@ -28,6 +29,16 @@ namespace TourManagement.GUI.GiaoDienThongKe
             {
                 cbxTour.Items.Add(item.HoTen);
             }
+        }
+
+        private void DieuChinhNgay()
+        {
+            dtTuNgay.Format = DateTimePickerFormat.Custom;
+            dtDenNgay.Format = DateTimePickerFormat.Custom;
+            dtTuNgay.CustomFormat = "dd/MM/yyyy";
+            dtDenNgay.CustomFormat = "dd/MM/yyyy";
+            dtTuNgay.Value = DateTime.Now;
+            dtDenNgay.Value = DateTime.Now;
         }
         private void btnThongKeTour_Click(object sender, System.EventArgs e)
         {
