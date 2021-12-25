@@ -120,6 +120,8 @@
             this.pcGridView.RowTemplate.Height = 24;
             this.pcGridView.Size = new System.Drawing.Size(933, 450);
             this.pcGridView.TabIndex = 1;
+            this.pcGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pcGridView_CellClick);
+            
             // 
             // panelDuoiTimKiem
             // 
@@ -278,6 +280,7 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // Gui_PhanCong
             // 

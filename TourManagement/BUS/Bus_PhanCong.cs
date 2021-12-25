@@ -52,9 +52,9 @@ namespace TourManagement.BUS
             return false;
         }
 
-        public bool XoaPC(int NvId, int doanDuLichId)
+        public bool XoaPC(int NvId, int ddlID)
         {
-            return dal_PC.XoaPC(NvId,doanDuLichId);
+            return dal_PC.XoaPC(NvId, ddlID);
 
         }
         public Dto_PhanCong ChiTietPhanCong(int NvId, int doandulichId)
@@ -71,6 +71,14 @@ namespace TourManagement.BUS
             dto.HoTen = phanCong.NhanVien.HoTen;
             dto.TenDoan = phanCong.DoanDuLich.TenDoanDuLich;
             return dto;
+        }
+        public string LayTenDoan(int ddlId)
+        {
+            Dal_DoanDuLich dal_ddl = new Dal_DoanDuLich();
+
+            var result = dal_ddl.ChiTietDoanDuLich(ddlId).TenDoanDuLich;
+
+            return result;
         }
     }
 }

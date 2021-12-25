@@ -36,13 +36,6 @@ namespace TourManagement.DAL
             return PhanCong;
         }
 
-        public int SoLuongNvPhanCong(int NvId)
-        {
-            var soLuong = context.PhanCongs.Where(pc => pc.NhanVien_Id == NvId).Count();
-
-            return soLuong;
-        }
-
         public bool ThemPC(PhanCong phanCong)
         {
             context.PhanCongs.InsertOnSubmit(phanCong);
@@ -78,9 +71,9 @@ namespace TourManagement.DAL
             }
         }
 
-        public bool XoaPC(int NvId, int doanDuLichId)
+        public bool XoaPC(int NvId, int ddlID)
         {
-            var PcDelete = context.PhanCongs.FirstOrDefault(pc => pc.NhanVien_Id == NvId && pc.DoanDuLich_Id == doanDuLichId);
+            var PcDelete = context.PhanCongs.FirstOrDefault(pc => pc.NhanVien_Id == NvId && pc.DoanDuLich_Id == ddlID);
 
             if (PcDelete != null)
             {
@@ -105,6 +98,12 @@ namespace TourManagement.DAL
             var dsDDL = context.DoanDuLiches.ToList();
 
             return dsDDL;
+        }
+        public PhanCong LayThongTinPC(int id)
+        {
+            var pc = context.PhanCongs.FirstOrDefault(t => t.NhanVien_Id == id);
+
+            return pc;
         }
     }
 }

@@ -32,6 +32,15 @@ namespace TourManagement.GUI.GiaoDienPhanCong
             pcGridView.Columns["TenDoan"].HeaderText = "Tên Đoàn Du Lịch ";
             pcGridView.Columns["NhiemVu"].HeaderText = "Nhiệm Vụ";
         }
+        private void pcGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            if (pcGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                currentIndex = e.RowIndex;
+            }
+        }
 
         private void btnThem_Click(object sender, System.EventArgs e)
         {
@@ -42,9 +51,35 @@ namespace TourManagement.GUI.GiaoDienPhanCong
 
         private void btnSua_Click(object sender, System.EventArgs e)
         {
+            if (currentIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn phân công cần sửa", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             Gui_SuaPhanCong suaPCForm = new Gui_SuaPhanCong(dsPC[currentIndex]);
             suaPCForm.ShowDialog();
             CapNhatDanhSachPC();
         }
+        private void btnXoa_Click(object sender, System.EventArgs e)
+        {
+
+            if (currentIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn phân công cần xóa", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            Bus_PhanCong bus = new Bus_PhanCong();
+            dsPC = bus.LayDanhSachPhanCong(currentNvPc.Id);
+            if (bus.XoaPC(dsPC[currentIndex].NV_Id, dsPC[currentIndex].DoanDuLich_Id))
+            {
+                MessageBox.Show("Xóa pah6n công thành công", "Thành công", MessageBoxButtons.OK);
+                CapNhatDanhSachPC();
+            }
+            else
+                MessageBox.Show("Xóa phân công thất bại", "Lỗi", MessageBoxButtons.OK);
+
+        }
+
+      
     }
 }

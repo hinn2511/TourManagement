@@ -29,7 +29,6 @@ namespace Web.Controllers
             return View(phanCong);
         }
 
-
         [HttpPost]
         public ActionResult Create(Dto_PhanCong PhanCong)
         {
@@ -43,9 +42,9 @@ namespace Web.Controllers
             return RedirectToAction("Index", "PhanCong", new { id = PhanCong.NV_Id });
         }
 
-        public ActionResult Edit(int NvId, int ddlID)
+        public ActionResult Edit(int nhanvienId, int doanId)
         {
-            var chiTietPhanCong = bus.ChiTietPhanCong(NvId, ddlID);
+            var chiTietPhanCong = bus.ChiTietPhanCong(nhanvienId, doanId);
             return View(chiTietPhanCong);
         }
 
@@ -56,11 +55,18 @@ namespace Web.Controllers
             return RedirectToAction("Index", "PhanCong", new { id = PhanCong.NV_Id });
         }
 
-        [HttpPost]
-        public ActionResult Delete(int NvId, int ddlID)
+        public ActionResult Delete(int nhanvienId, int doanId)
         {
-            bus.XoaPC(NvId, ddlID);
-            return RedirectToAction("Index", "PhanCong", new { id = NvId });
+            var chiTietPhanCong = bus.ChiTietPhanCong(nhanvienId, doanId);
+            ViewBag.TenTour = bus.LayTenDoan(chiTietPhanCong.DoanDuLich_Id);
+            return View(chiTietPhanCong);
+        }
+        [HttpPost]
+        public ActionResult Delete(int nhanvienId, int doanId, FormCollection formCollection)
+        {
+            bus.XoaPC(nhanvienId, doanId);
+            return RedirectToAction("Index", "PhanCong", new { id = nhanvienId });
         }
     }
 }
+

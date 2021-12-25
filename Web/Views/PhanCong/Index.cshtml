@@ -1,4 +1,4 @@
-﻿@model List<TourManagement.PhanCong>
+﻿@model List<TourManagement.DTO.Dto_PhanCong>
 
 @{
     ViewData["Title"] = "Phân Công";
@@ -37,23 +37,23 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var phanCong in Model)
+        @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelphanCong => phanCong.NhanVien_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelphanCong => phanCong.DoanDuLich_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelphanCong => phanCong.NhiemVu)
-            </td>
-            <td>
-                @Html.ActionLink("Sửa", "Edit", new { NvId = phanCong.NhanVien_Id, ddlID = phanCong.DoanDuLich_Id }) |
-                @Html.ActionLink("Xóa", "Delete", new { NvId = phanCong.NhanVien_Id, ddlID = phanCong.DoanDuLich_Id })
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem => item.NV_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.DoanDuLich_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.NhiemVu)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { nhanvienId = item.NV_Id, doanId = item.DoanDuLich_Id })  |
+                    @Html.ActionLink("Xóa", "Delete" , new { nhanvienId = item.NV_Id, doanId = item.DoanDuLich_Id })
+                </td>
+            </tr>
         }
     </tbody>
 </table>
